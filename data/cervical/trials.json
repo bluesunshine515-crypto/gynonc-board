@@ -96,6 +96,18 @@
     "citation": "Mileshkin LR, et al. Lancet Oncol 2023;24(5):468-482. PMID 37080222"
   },
   {
+    "name": "KEYNOTE-A18 (ENGOT-cx11)",
+    "year": "2024",
+    "design": "Phase III RCT, ~1060 patients locally advanced cervix cancer",
+    "population": "FIGO 2014 IB2-IIB ≥4cm with LN(+) 或 III-IVA（FIGO 2018 對應：含 IIIC LN-defined 子族群）",
+    "intervention": "Pembrolizumab + CCRT（cisplatin weekly + EBRT + brachy）→ Pembrolizumab 維持 12 cycles",
+    "control": "Placebo + CCRT → Placebo 維持",
+    "primary_endpoint": "Progression-free survival (PFS), Overall survival (OS)",
+    "key_result": "3-yr PFS 65% vs 57%（HR 0.70, p=0.0020）；OS interim HR 0.67 偏向 pembro 組（持續追蹤中）",
+    "implication": "**首個 IO + CCRT 在子宮頸癌的 positive trial**。NCCN 已納入：FIGO 2014 IIIA-IVA 用 Pembrolizumab + CCRT 為 **category 1**；FIGO 2018 純粹 LN-defined III（IIIC1/IIIC2）為 **category 2B**。把免疫治療從 advanced/recurrent (KEYNOTE-826) 推進到 locally advanced + CCRT 場景。",
+    "citation": "Lorusso D, et al. Lancet 2024;403(10434):1341-1350. PMID 38521086"
+  },
+  {
     "name": "INTERLACE",
     "year": "2024",
     "design": "Phase III RCT, 500 patients locally advanced cervix cancer",

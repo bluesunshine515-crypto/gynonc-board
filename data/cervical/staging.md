@@ -1,116 +1,134 @@
-# 子宮頸癌 FIGO 分期草稿（給 NotebookLM 驗證用）
+# 子宮頸癌 FIGO 分期 v2（NotebookLM 驗證後）
 
-> 本檔是 `staging.json` 的 Markdown 版本，目的：上傳到 NotebookLM 與 NCCN/FIGO PDF 做交叉驗證。
-> 找出與最新 NCCN/FIGO 不一致或可補充處後，請將修正回填 `staging.json`。
+> **狀態**：v2，已通過 NotebookLM 對照 NCCN Cervical Cancer Guidelines v.2.2026 + FIGO 2018/2023 驗證
+> **生成日期**：2026-05-13
+> **review status**：reviewed-by-NotebookLM-NCCN-v2.2026
 >
-> **資料來源（建議的 NotebookLM source）**：
-> - NCCN Cervical Cancer Guidelines（最新版）
+> **資料來源**：
+> - NCCN Cervical Cancer Guidelines v.2.2026
 > - Bhatla N, et al. Revised FIGO staging 2018. *Int J Gynaecol Obstet* 2019;145(1):129-135.
 > - Bhatla N, et al. FIGO 2023 update. *Int J Gynaecol Obstet* 2023;162(2):382-385.
 >
-> **生成日期**：2026-05-13 · **review 狀態**：pending
->
-> **NotebookLM 建議提問範本**（複製到 NotebookLM chat）：
->
-> ```
-> 請對照 NCCN Cervical Cancer Guidelines 與 FIGO 2018/2023 文獻，
-> 檢視我這份「子宮頸癌 FIGO 分期草稿」並指出：
->
-> 1. 與最新 NCCN 不一致的內容（特別是治療摘要部分）
-> 2. 分期定義數字（mm / cm cutoff）是否準確
-> 3. 「考點」欄位是否仍是當前考試重點
-> 4. 缺漏的重要分期細節或臨床要點
-> 5. 是否該加入特殊組織型（small cell, adenosquamous）的處置差異
->
-> 請引用 NCCN 章節編號或 FIGO 文獻頁碼。
-> ```
+> **v2 主要更新（NotebookLM review 結論吃入）**：
+> 1. IA2-IB1 加入 NCCN 保守手術標準（Type A hysterectomy 降級選項）
+> 2. IB2 trachelectomy 重新開放（強烈希望保留生育者）
+> 3. IB3-IIA2 加入 selective completion hysterectomy（category 3）
+> 4. III-IVA 加入 KEYNOTE-A18：Pembrolizumab + CCRT（FIGO 2014 IIIA-IVA = cat 1；FIGO 2018 IIIC = cat 2B）
+> 5. INTERLACE 適用範圍擴大至 IB3, IIA2, IIB-IVA（非僅 IIB / IIIC2）
+> 6. 加入 Silva classification（HPV 相關腺癌病理）
+> 7. 加入 SLN algorithm strictness 與特殊組織型例外（NECC, gastric-type adeno）
 
 ---
 
 ## 1. FIGO 2009 → 2018 重大變動
 
-| 變動 | 2009 版本 | 2018 版本 | 原因 |
+| 變動 | 2009 | 2018 | 原因 |
 |---|---|---|---|
-| **IA 期取消橫向寬度限制** | IA1 ≤3 mm depth + ≤7 mm width；IA2 >3-5 mm depth + ≤7 mm width | IA1 ≤3 mm depth；IA2 >3-5 mm depth（橫向寬度不再列入分期條件） | 橫向寬度測量再現性差，FIGO panel 一致認為侵犯深度才是預後關鍵 |
-| **IB 細分為 IB1 / IB2 / IB3** | IB1 < 4 cm；IB2 ≥ 4 cm（兩級） | IB1 > 5 mm 至 < 2 cm；IB2 ≥ 2 cm 至 < 4 cm；IB3 ≥ 4 cm（三級） | 2 cm 是預後重要切點（< 2 cm 才可考慮 trachelectomy 保留生育），分三層精準對應治療決策 |
-| **新增 Stage IIIC**（基於淋巴結狀態） | LN 狀態不正式納入 FIGO 分期（雖然臨床決策考慮） | IIIC1 = pelvic LN+；IIIC2 = para-aortic LN+（不論原發腫瘤大小） | 影像技術進步，LN 狀態可靠且強烈影響治療（CCRT 是否含 extended-field RT） |
-| **影像 / 病理結果可正式用於分期** | 嚴格 clinical staging（PE + 限定檢查；CT/MRI 不能改分期） | 允許 imaging（CT/MRI/PET）與 pathology 整合；以 suffix `r`（radiologic）或 `p`（pathologic）標註 | 現代影像精準度高，硬性排除已不合適。例：IIICr1 = 影像懷疑 pelvic LN+ |
+| **IA 取消橫向寬度** | IA1 ≤3 mm + ≤7 mm width；IA2 >3-5 mm + ≤7 mm width | IA1 ≤3 mm；IA2 >3-5 mm（無 width 條件） | 橫向寬度再現性差 |
+| **IB 細分三級** | IB1 <4 cm；IB2 ≥4 cm | IB1 >5 mm-<2 cm；IB2 ≥2-<4 cm；IB3 ≥4 cm | 2 cm 對應保留生育 / NCCN 保守手術切點 |
+| **新增 IIIC（LN）** | LN 不正式分期 | IIIC1 = pelvic LN+；IIIC2 = para-aortic LN+ | 影像精準度提升 |
+| **影像 / 病理可分期** | 嚴格 clinical staging | 允許 imaging + pathology（suffix r / p） | CT/MRI/PET 已是標準 |
 
-## 2. FIGO 2023 微調補充
+## 2. FIGO 2023 微調
 
-- **IIIC 期淋巴結轉移定義精緻化**：Macrometastasis (> 2 mm) 計入 IIIC；Micrometastasis (0.2-2 mm) 也計入但建議備註；Isolated tumor cells / ITC (< 0.2 mm) **不**計入分期。
-- **Suffix 標註強化**：明確推薦寫為 IIIC1p（pathologic, 病理證實）或 IIIC1r（radiologic, 影像懷疑），影響預後與治療選擇。
-- **2018 核心架構不變**：2023 update 主要是定義精緻化，未變更分期切點，臨床實務可繼續用 FIGO 2018。
+- **IIIC LN 大小定義**：Macromet (> 2 mm) 計入 IIIC；Micromet (0.2-2 mm) 計入但備註；ITC (< 0.2 mm) **不**計入
+- **Suffix 強化**：IIIC1p（病理）/ IIIC1r（影像），影響預後與治療選擇
+- **2018 架構不變**：定義精緻化，未變更切點
 
 ---
 
-## 3. 各期詳表（FIGO 2018）
+## 3. 各期詳表（FIGO 2018，治療依 NCCN v.2.2026）
 
 ### Stage I — 腫瘤局限於子宮頸
 
 | 分期 | 定義 | 治療摘要 | 考點 |
 |---|---|---|---|
-| **IA1** | 鏡下侵犯，間質侵犯深度 ≤ 3 mm | Conization（保留生育，切緣陰性）或 extrafascial / simple hysterectomy。LVSI(+) 加 pelvic LND（哨兵 SLN 可）。 | LVSI 是 IA1 是否做 LND 的關鍵；conization 切緣陰性即足夠（生育保留） |
-| **IA2** | 鏡下侵犯，間質侵犯深度 > 3 mm 至 ≤ 5 mm | Modified radical / radical trachelectomy（保留生育，腫瘤 < 2 cm + LN(-)）或 modified radical hysterectomy + pelvic LND ± SLN。 | IA2 開始考慮 radical 手術；LVSI 普遍存在，LND 為標準 |
-| **IB1** | 侵犯 > 5 mm（即超出 IA），最大徑 < 2 cm | Radical hysterectomy + pelvic LND（**open approach 首選 per LACC**）。保留生育：radical trachelectomy + LND。CCRT 是替代方案。 | LACC trial 後 NCCN 預設 open，MIS 需充分知情同意；trachelectomy 適合 < 2 cm |
-| **IB2** | 腫瘤 ≥ 2 cm 至 < 4 cm | Radical hysterectomy + pelvic LND ± para-aortic LND；或 definitive CCRT（特別 ≥ 3-4 cm）。Trachelectomy 不建議（腫瘤 > 2 cm）。 | 2 cm 是 trachelectomy / NACT 的分水嶺；考慮 NACT-IDS 或 primary CCRT |
-| **IB3** | 腫瘤 ≥ 4 cm | **Definitive CCRT 優於手術**（cisplatin weekly + EBRT + brachytherapy）。手術後高機率需 adjuvant RT/CCRT。 | 大腫瘤（≥4 cm）首選 CCRT；避免「手術 + 必加輔助 RT」雙重治療 |
+| **IA1** | Depth ≤ 3 mm | LVSI(-)：Conization 切緣陰性或 Type A hyst。LVSI(+)：加 pelvic LND 或 SLN。 | LVSI 是是否做 LND 的關鍵；conization 切緣陰性即足夠（生育保留） |
+| **IA2** | Depth >3 至 ≤5 mm | **符合保守手術標準**（無 LVSI + 切緣(-) + 鱗狀/一般腺癌 + ≤2 cm + depth <10 mm）：Type A hyst + SLN/LND。**不符**：modified radical hyst + LND ± SLN。保留生育：radical trachelectomy + LND。 | IA2-IB1 是否降級為 Type A 取決於保守手術標準 |
+| **IB1** | Depth >5 mm，maximum <2 cm | **符合保守手術標準**：Type A hyst + SLN/LND。**不符**：Type B/C radical hyst + pelvic LND（**open 首選 per LACC**）。保留生育：radical trachelectomy + LND。 | LACC 後 NCCN radical 預設 open；MIS 需充分知情同意；IB1 也可符合 Type A |
+| **IB2** | Maximum 2-<4 cm | Radical hyst + pelvic LND ± para-aortic LND；或 definitive CCRT。**強烈希望保留生育**：abdominal radical trachelectomy + SLN/LND（經篩選，非絕對禁忌）。 | 2 cm 是 trachelectomy 最佳切點但**非絕對禁忌**；2-4 cm 經篩選可考慮 abdominal radical trachelectomy |
+| **IB3** | Maximum ≥4 cm | **Definitive CCRT 優於手術**（cisplatin weekly + EBRT + IGBT）。**可考慮 INTERLACE**（前導 carbo/paclitaxel × 6 wk → CCRT）。CCRT 後若殘餘或不適合 IGBT → selective completion hyst（cat 3）。 | 大腫瘤首選 CCRT；避免「手術 + 必加 RT」雙重；INTERLACE 2024 提升 PFS/OS |
 
-### Stage II — 腫瘤超出子宮頸但未達骨盆壁 / 陰道下 1/3
-
-| 分期 | 定義 | 治療摘要 | 考點 |
-|---|---|---|---|
-| **IIA1** | 侵犯陰道上 2/3，無 parametrial 侵犯，腫瘤 < 4 cm | Radical hysterectomy + LND 或 definitive CCRT 二擇一 | IIA 仍可手術；IIB（parametrium+）開始全面走 CCRT |
-| **IIA2** | 侵犯陰道上 2/3，無 parametrial 侵犯，腫瘤 ≥ 4 cm | Definitive CCRT 為主（大腫瘤）；手術非首選。 | IIA2 開始大多走 CCRT 而非手術 |
-| **IIB** | Parametrial invasion 存在，但未達骨盆壁 | **Definitive CCRT**（cisplatin weekly + EBRT + brachytherapy）為標準；不建議 primary surgery。 | Parametrium 侵犯 = 走 CCRT，這是分水嶺；INTERLACE 2024 證實 induction chemo 加在 CCRT 前 PFS/OS 提升 |
-
-### Stage III — 侵犯骨盆壁 / 陰道下 1/3 / LN+ / hydronephrosis
+### Stage II — 超出子宮頸但未達骨盆壁 / 陰道下 1/3
 
 | 分期 | 定義 | 治療摘要 | 考點 |
 |---|---|---|---|
-| **IIIA** | 侵犯陰道下 1/3，未達骨盆壁 | Definitive CCRT + brachytherapy（陰道延伸範圍納入 RT field） | 陰道下 1/3 = IIIA；考慮 vaginal brachy 提升劑量 |
-| **IIIB** | 侵犯骨盆壁 OR 出現 hydronephrosis / non-functioning kidney | Definitive CCRT；hydronephrosis 可放支架（PCN / DJ stent）改善腎功能 | Hydronephrosis 即列 IIIB（不論原發腫瘤大小）；INTERLACE 主要族群即 III 期 |
-| **IIIC1** | **Pelvic lymph node 轉移**（不論原發腫瘤大小或陰道侵犯範圍） | Definitive CCRT，pelvic field 含 LN drainage 範圍；若 para-aortic LN 也疑似 → 擴展 RT field | FIGO 2018 新增；LN(+) 不論原發大小都算 IIIC1；`r` 後綴 = 影像懷疑，`p` = 病理確診 |
-| **IIIC2** | **Para-aortic lymph node 轉移**（不論 pelvic LN 與否） | Extended-field CCRT 包含 para-aortic 區域；考慮加 systemic chemo（如 INTERLACE pattern） | Para-aortic LN+ 預後最差的 stage III；extended-field RT 取代 pelvic-only field |
+| **IIA1** | 陰道上 2/3，無 parametrium，<4 cm | Radical hyst + LND 或 CCRT 二擇一 | IIA1 仍可手術；IIA2 開始大多 CCRT |
+| **IIA2** | 陰道上 2/3，無 parametrium，≥4 cm | Definitive CCRT 為主；**INTERLACE 前導化療**；殘餘可 selective completion hyst（cat 3）。 | IIA2 開始走 CCRT；INTERLACE 與 selective completion hyst 為 NCCN v.2.2026 新增 |
+| **IIB** | Parametrial invasion，未達骨盆壁 | **Definitive CCRT**（cisplatin + EBRT + IGBT）；**INTERLACE 前導化療**；不建議 primary surgery。 | Parametrium 侵犯 = CCRT 分水嶺；INTERLACE 適用 IB3/IIA2/IIB-IVA |
 
-### Stage IV — 腫瘤擴展到 true pelvis 外或侵犯膀胱 / 直腸黏膜
+### Stage III — 骨盆壁 / 陰道下 1/3 / LN+ / hydronephrosis
 
 | 分期 | 定義 | 治療摘要 | 考點 |
 |---|---|---|---|
-| **IVA** | 侵犯**膀胱**或**直腸黏膜**（biopsy 證實，bullous edema 不算） | Definitive CCRT（特別 fistula 風險高時謹慎）；或考慮 pelvic exenteration（選擇性個案） | Bullous edema 本身不算 IVA；要有切片才確診膀胱/直腸黏膜侵犯 |
-| **IVB** | **Distant metastasis**（含 supraclavicular LN, lung, liver, bone 等） | Systemic therapy 為主：cisplatin/carbo + paclitaxel + bevacizumab + pembrolizumab（KEYNOTE-826 適應症）；palliative RT for symptomatic site | Pembrolizumab（CPS≥1）+ bevacizumab + chemo = 第一線標準；Cemiplimab 為二線；Tisotumab vedotin 為後線 |
+| **IIIA** | 陰道下 1/3，未達骨盆壁 | Definitive CCRT + vaginal brachy；**KEYNOTE-A18：Pembrolizumab + CCRT + 維持（FIGO 2014 IIIA-IVA = cat 1）**；可 INTERLACE。 | 陰道下 1/3 = IIIA；Pembrolizumab + CCRT 為 KEYNOTE-A18 新標準 |
+| **IIIB** | 骨盆壁 OR hydronephrosis | Definitive CCRT + IGBT；**Pembrolizumab + CCRT（cat 1）**；可 INTERLACE；hydronephrosis 放支架。 | Hydronephrosis 即列 IIIB；INTERLACE + KEYNOTE-A18 均屬研究族群 |
+| **IIIC1** | Pelvic LN+ | Definitive CCRT（pelvic field 含 LN drainage）；**Pembrolizumab + CCRT（純 LN-defined FIGO 2018 III 為 cat 2B；若同時符合 FIGO 2014 IIIA-IVA 為 cat 1）**；可 INTERLACE。 | FIGO 2018 新增；r/p 後綴；Pembrolizumab 強度依 FIGO 2014/2018 對應 |
+| **IIIC2** | Para-aortic LN+ | Extended-field CCRT；**Pembrolizumab + CCRT（同 IIIC1）**；可 INTERLACE。 | Para-aortic LN+ 預後最差 stage III；extended-field RT 取代 pelvic-only |
+
+### Stage IV — true pelvis 外或膀胱 / 直腸黏膜
+
+| 分期 | 定義 | 治療摘要 | 考點 |
+|---|---|---|---|
+| **IVA** | 膀胱 OR 直腸黏膜（biopsy 證實） | Definitive CCRT；**Pembrolizumab + CCRT（FIGO 2014 IIIA-IVA = cat 1）**；可 INTERLACE；選擇性 pelvic exenteration。 | Bullous edema 不算 IVA；需切片證實 |
+| **IVB** | Distant metastasis | Systemic：cisplatin/carbo + paclitaxel + bev + **Pembrolizumab（KEYNOTE-826，CPS≥1 cat 1）**；後線：cemiplimab、tisotumab vedotin。 | KEYNOTE-826 第一線；cemiplimab 二線；tisotumab vedotin 後線 |
 
 ---
 
-## 4. 給 NotebookLM 的 review checklist
+## 4. ⚠️ 特殊考量（重要例外與最新更新）
 
-請 NotebookLM 對下列重點逐一驗證，**標記不一致處**：
+### 4.1 NCCN 保守手術標準（Conservative Surgery Criteria, CERV-4）
+- **適用**：IA2, IB1
+- **條件**：
+  - 無 LVSI
+  - Conization 切緣陰性
+  - 鱗狀細胞癌、一般型腺癌或 adenosquamous（須評估）
+  - 腫瘤 ≤ 2 cm
+  - 間質侵犯深度 < 10 mm
+- **意義**：符合條件且非保留生育情境 → 手術降級為 **Type A hyst + SLN/LND**
 
-### A. 分期定義數字
-- [ ] IA1 / IA2 切點：3 mm（這是 FIGO 2018 深度切點）
-- [ ] IB1 / IB2 / IB3 切點：5 mm / 2 cm / 4 cm
-- [ ] IIA1 / IIA2 切點：4 cm
-- [ ] IIIC1 vs IIIC2：pelvic vs para-aortic
-- [ ] IVA：bullous edema 不算
+### 4.2 Silva Classification（HPV 相關子宮頸腺癌）
+- **適用**：HPV-related endocervical adenocarcinoma（all stages）
+- **Pattern A**：無破壞性基質侵犯 + 無 LVSI → LN/復發率極低；可考慮 conservative surgery
+- **Pattern B**：局部破壞性侵犯（focal destructive）
+- **Pattern C**：瀰漫破壞性侵犯（diffuse destructive）→ standard radical treatment
+- **意義**：Pattern A 是擴大降級手術適應症的關鍵分型
 
-### B. 治療首選（與 NCCN 比對）
-- [ ] IA1 LVSI(+) 是否仍要 LND（NCCN 最新可能允許 SLN 取代 systematic LND）
-- [ ] IB1 是否真的「open 首選」（LACC 後的 NCCN 文字）
-- [ ] IB2 / IB3 治療差異（NACT vs primary surgery vs primary CCRT）
-- [ ] IIB primary surgery 在哪些情況可考慮（日本等國家有不同實務）
-- [ ] IIIC2 是否真的 routine 加 systemic chemo（INTERLACE adoption 狀況）
-- [ ] IVB 第一線是否真是 KEYNOTE-826 regimen（看 PD-L1 CPS 切點）
+### 4.3 Small Cell Neuroendocrine Carcinoma (NECC) 例外
+- **絕對禁忌**：保留生育手術（trachelectomy）
+- **IA1-IB2（≤4 cm）**：根除性子宮切除 + SLN/LND + 系統化療
+- **IB3 以上**：高度依賴全身化療（cisplatin/etoposide）+ CCRT
+- **廣泛轉移**：考慮 durvalumab + 鉑金/etoposide
+- **意義**：NECC 高度侵襲性，治療策略明顯偏離一般鱗狀/腺癌
 
-### C. 缺漏項目
-- [ ] 是否該加 small cell neuroendocrine carcinoma 的特殊處置
-- [ ] 是否該加 adenocarcinoma / adenosquamous 的 LACC / treatment 區別
-- [ ] 是否該加 fertility-sparing 適應症的完整列表（含 IB2 邊緣狀況）
-- [ ] 是否該加 elderly / poor PS 病人的 modified protocol
+### 4.4 Gastric-type Adenocarcinoma / Adenoma malignum 例外
+- **不適用**保留生育手術
+- **不適用**保守性降級手術
+- 與 NECC 同列高風險組織型，須走 standard radical treatment
+- **意義**：選擇 conservative surgery 前必確認組織型為鱗狀或 grade 1/2 一般型腺癌
 
-### D. 命名與引註
-- [ ] FIGO 2018 vs 2023 的標註方式是否符合最新文獻
-- [ ] NCCN 章節編號是否需要明確標出
+### 4.5 SLN Mapping Algorithm 嚴格性
+- 必須**嚴格遵守 algorithm**
+- 若某一側骨盆未成功標定 SLN → **該側必須做 side-specific 傳統 pelvic LND**
+- 任何**肉眼懷疑的淋巴結**皆須切除（不依賴 mapping）
+- **意義**：SLN 不是『取代』systematic LND，而是『取代成功標定那側』；mapping failure 仍需 side-specific 補做 LND
+
+### 4.6 Selective Completion Hysterectomy（CCRT 後輔助子宮切除）
+- **適用**：IB3, IIA2, IIB-IVA
+- **情境**：CCRT 後有殘餘腫瘤或不適合 IGBT
+- **NCCN category**：3（非 routine，補救選項）
+
+### 4.7 Pembrolizumab + CCRT（KEYNOTE-A18）
+- **FIGO 2014 IIIA-IVA**：Pembrolizumab + CCRT + 維持治療 = **category 1**
+- **FIGO 2018 純粹 LN-defined III（IIIC1/IIIC2）**：**category 2B**
+- 區別於 KEYNOTE-826（用於 IVB / persistent / recurrent）
+- **意義**：婦癌專科必背近年 paradigm shift；免疫治療從 advanced/recurrent 進入 locally advanced + CCRT
 
 ---
 
-驗證完請把要修改的點告訴我（或直接編輯 `staging.json` + commit）。
+## 5. 仍待後續補強
+
+- [ ] NCCN 各 stage 治療決策樹（→ 處置流程 section）
+- [ ] TSGH 院內化療處方對照（→ 藥物 cheatsheet section）
+- [ ] 子宮頸癌題庫整合（Obstetrica 既有 11 題 + 專科自製題）
+- [ ] KEYNOTE-A18 加入 trials.json（目前 9 trials 內無）

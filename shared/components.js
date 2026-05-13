@@ -101,6 +101,27 @@ function renderStaging(data) {
     `;
   }
 
+  // 3.5 特殊考量（special_considerations）
+  if (data.special_considerations?.length) {
+    html += `<h3 class="staging-h3">⚠️ 特殊考量（重要例外與最新更新）</h3>`;
+    data.special_considerations.forEach(sc => {
+      const list = sc.criteria || sc.patterns || sc.rules || [];
+      html += `
+        <div class="staging-special">
+          <h4 class="staging-special-title">${escapeHtml(sc.topic)}</h4>
+          <div class="staging-special-meta">
+            ${sc.source ? `<span><b>來源</b>：${escapeHtml(sc.source)}</span>` : ''}
+            ${sc.applies_to ? `<span><b>適用</b>：${escapeHtml(Array.isArray(sc.applies_to) ? sc.applies_to.join(', ') : sc.applies_to)}</span>` : ''}
+            ${sc.category ? `<span><b>NCCN</b>：${escapeHtml(sc.category)}</span>` : ''}
+          </div>
+          ${list.length ? `<ul class="staging-special-list">${list.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}
+          ${sc.context ? `<div class="staging-special-note"><b>情境</b>：${escapeHtml(sc.context)}</div>` : ''}
+          ${sc.implication ? `<div class="staging-special-impl"><b>意義</b>：${escapeHtml(sc.implication)}</div>` : ''}
+        </div>
+      `;
+    });
+  }
+
   // 4. 各期詳表（按 group I/II/III/IV 分組）
   if (data.stages?.length) {
     const grouped = {};
