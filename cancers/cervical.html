@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>子宮頸癌 · gynonc-board</title>
+<link rel="stylesheet" href="../shared/styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <h1><a href="../index.html">← 婦癌專科準備</a> / 子宮頸癌</h1>
+  <div class="site-sub">Cervical Cancer · FIGO 2018/2023 · NCCN v.X.2026</div>
+</header>
+
+<main class="container">
+
+  <nav class="tab-bar">
+    <a href="#staging" class="active">分期</a>
+    <a href="#treatment">處置流程</a>
+    <a href="#drugs">藥物</a>
+    <a href="#trials">Landmark Trials</a>
+    <a href="#questions">練習題</a>
+  </nav>
+
+  <section class="section" id="staging">
+    <h2>分期速查 · FIGO 2018/2023</h2>
+    <div class="stub">TODO：填入 FIGO 2018 + 2023 變動對照表（IA1-IVB 全期）</div>
+  </section>
+
+  <section class="section" id="treatment">
+    <h2>處置流程 · NCCN 摘要</h2>
+    <div class="stub">TODO：填入 NCCN 各 stage 治療決策樹（含 Sedlis / Peters criteria）</div>
+  </section>
+
+  <section class="section" id="drugs">
+    <h2>藥物 cheatsheet · TSGH 處方</h2>
+    <div class="stub">TODO：填入 TSGH 各 regimen（cisplatin/paclitaxel/bevacizumab/pembrolizumab 等）</div>
+  </section>
+
+  <section class="section" id="trials">
+    <h2>Landmark Trials</h2>
+    <div id="trialsContainer">載入中…</div>
+  </section>
+
+  <section class="section" id="questions">
+    <h2>練習題</h2>
+    <div class="stub">TODO：整合 Obstetrica 子宮頸癌 11 題 + 自製專科考題</div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div>內容為自行整理摘要 · 引註 NCCN Cervical Cancer Guidelines / FIGO Cancer Report</div>
+</footer>
+
+<script src="../shared/components.js"></script>
+<script>
+  // 載入 trials.json 並渲染
+  (async () => {
+    try {
+      const res = await fetch('../data/cervical/trials.json');
+      const trials = await res.json();
+      const html = trials.map(renderTrialCard).join('');
+      document.getElementById('trialsContainer').innerHTML = html;
+    } catch (e) {
+      document.getElementById('trialsContainer').innerHTML =
+        '<div class="stub">trials.json 載入失敗: ' + e.message + '</div>';
+    }
+  })();
+</script>
+
+</body>
+</html>

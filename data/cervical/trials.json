@@ -1,0 +1,110 @@
+[
+  {
+    "name": "GOG-92 (Sedlis criteria)",
+    "year": "1999",
+    "design": "RCT, IB cervical cancer, 277 patients",
+    "population": "FIGO IB 術後病理具中度風險（intermediate risk）：LVSI + 深度間質侵犯 + tumor size 三因子組合",
+    "intervention": "Pelvic radiotherapy 50.4 Gy 術後輔助",
+    "control": "Observation",
+    "primary_endpoint": "Recurrence-free survival (RFS)",
+    "key_result": "Adjuvant RT 顯著降低復發率（HR 0.53），但 OS 差異不顯著（追蹤短）",
+    "implication": "建立 Sedlis criteria：IB 術後若符合 LVSI + invasion depth + size 組合 → 加做 pelvic RT",
+    "citation": "Sedlis A, et al. Gynecol Oncol 1999;73(2):177-183. PMID 10329031"
+  },
+  {
+    "name": "GOG-109 (Peters criteria)",
+    "year": "2000",
+    "design": "RCT, IA2-IIA cervical cancer, 243 patients",
+    "population": "Radical hysterectomy + LND 術後病理具高度風險：LN(+) / parametrial(+) / margin(+)（任一）",
+    "intervention": "Pelvic RT + concurrent cisplatin chemo (CCRT)",
+    "control": "Pelvic RT alone",
+    "primary_endpoint": "Progression-free survival, Overall survival",
+    "key_result": "4-yr PFS 80% vs 63% (HR 0.54); 4-yr OS 81% vs 71% (HR 0.50)，CCRT 顯著優於 RT alone",
+    "implication": "建立 Peters criteria：術後若符合 LN+/parametrial+/margin+ → 加做 CCRT（非單純 RT）",
+    "citation": "Peters WA III, et al. J Clin Oncol 2000;18(8):1606-1613. PMID 10764420"
+  },
+  {
+    "name": "LACC Trial",
+    "year": "2018",
+    "design": "Phase III RCT non-inferiority, 631 patients early-stage cervical cancer",
+    "population": "FIGO 2009 IA1 (LVSI+) / IA2 / IB1 squamous, adeno, adenosquamous",
+    "intervention": "Minimally invasive (laparoscopic / robotic) radical hysterectomy",
+    "control": "Open abdominal radical hysterectomy",
+    "primary_endpoint": "4.5-yr disease-free survival",
+    "key_result": "MIS DFS 86.0% vs Open 96.5%（HR 3.74, 95% CI 1.63-8.58）；MIS OS 顯著較差（HR 6.0）",
+    "implication": "推翻過去做法：早期子宮頸癌 radical hysterectomy **不應** routine MIS。NCCN/ESGO 隨後改寫指引 → 預設 open。MIS 僅限選擇個案 + 充分知情同意。",
+    "citation": "Ramirez PT, et al. NEJM 2018;379(20):1895-1904. PMID 30380365"
+  },
+  {
+    "name": "GOG-240",
+    "year": "2014",
+    "design": "Phase III RCT 2x2 factorial, 452 patients recurrent/metastatic cervical cancer",
+    "population": "Persistent / recurrent / metastatic 子宮頸癌",
+    "intervention": "Cisplatin + paclitaxel（± bevacizumab）or topotecan + paclitaxel（± bevacizumab）",
+    "control": "Cisplatin + paclitaxel（不加 bev）",
+    "primary_endpoint": "Overall survival",
+    "key_result": "加 bevacizumab：OS 17.0 vs 13.3 月（HR 0.71, p=0.004）；ORR 48% vs 36%；fistula 8.6% vs 0.6%",
+    "implication": "Bevacizumab 加入 platinum + paclitaxel 是 advanced cervix cancer 治療轉折點。NCCN 第一線首選。注意 GU/GI fistula 風險（既往 RT 區域）。",
+    "citation": "Tewari KS, et al. NEJM 2014;370(8):734-743. PMID 24552320"
+  },
+  {
+    "name": "KEYNOTE-826",
+    "year": "2021",
+    "design": "Phase III RCT, 617 patients persistent/recurrent/metastatic cervix cancer",
+    "population": "Untreated persistent/recurrent/metastatic 子宮頸癌（PD-L1 CPS ≥ 1 為主要分析族群）",
+    "intervention": "Pembrolizumab + chemo (paclitaxel + cisplatin or carbo) ± bevacizumab",
+    "control": "Chemo ± bevacizumab (placebo for pembro)",
+    "primary_endpoint": "PFS, OS",
+    "key_result": "CPS ≥ 1：PFS 10.4 vs 8.2 月 (HR 0.62)；OS 24.4 vs 16.5 月 (HR 0.64)。All-comer 也 positive。",
+    "implication": "PD-1 抑制劑首次成為 advanced cervix cancer 一線標準。CPS ≥ 1 為主要適應症。NCCN 2022 列入第一線首選。",
+    "citation": "Colombo N, et al. NEJM 2021;385(20):1856-1867. PMID 34534429"
+  },
+  {
+    "name": "innovaTV 204",
+    "year": "2021",
+    "design": "Phase II single-arm, 101 patients recurrent/metastatic cervix cancer",
+    "population": "Recurrent/metastatic 子宮頸癌，至少 2 線治療失敗",
+    "intervention": "Tisotumab vedotin（anti-Tissue Factor ADC）2.0 mg/kg q3w",
+    "control": "（單臂試驗無對照）",
+    "primary_endpoint": "ORR",
+    "key_result": "ORR 24%，median DOR 8.3 月。常見 AE：alopecia、conjunctival AE、epistaxis、neuropathy。",
+    "implication": "Tisotumab vedotin 成為 advanced cervix cancer 後線治療新選項（FDA 2021 加速批准）。Phase III innovaTV 301 確認 OS 益處後 2024 完全批准。",
+    "citation": "Coleman RL, et al. Lancet Oncol 2021;22(5):609-619. PMID 33845034"
+  },
+  {
+    "name": "EMPOWER-Cervical 1 (GOG-3016/ENGOT-cx9)",
+    "year": "2022",
+    "design": "Phase III RCT, 608 patients recurrent/metastatic cervix cancer",
+    "population": "Recurrent/metastatic 子宮頸癌，第一線 platinum chemo 失敗",
+    "intervention": "Cemiplimab（anti-PD-1）350 mg q3w IV",
+    "control": "Investigator's choice chemo（pemetrexed/topotecan/irinotecan/gemcitabine/vinorelbine）",
+    "primary_endpoint": "Overall survival",
+    "key_result": "OS 12.0 vs 8.5 月 (HR 0.69)。Squamous histology 收益較大；adenocarcinoma 也獲益。",
+    "implication": "Cemiplimab 成為 platinum 失敗後二線標準（不論 PD-L1）。NCCN 2022 加入 second-line preferred。",
+    "citation": "Tewari KS, et al. NEJM 2022;386(6):544-555. PMID 35139273"
+  },
+  {
+    "name": "OUTBACK (ANZGOG-0902/GOG-0274/NRG-CC1)",
+    "year": "2022",
+    "design": "Phase III RCT, 919 patients locally advanced cervix cancer",
+    "population": "FIGO 2008 IB1+LN / IB2 / II / IIIB / IVA",
+    "intervention": "Standard CCRT 後加 adjuvant chemo（4 cycles carboplatin + paclitaxel）",
+    "control": "Standard CCRT alone",
+    "primary_endpoint": "5-yr Overall survival",
+    "key_result": "5-yr OS 72% vs 71%（HR 0.91, p=0.81）；無顯著差異。Adjuvant arm 毒性顯著增加。",
+    "implication": "**Negative trial**：CCRT 後加輔助化療無 OS 益處。當前標準仍是 CCRT 單獨；之後 INTERLACE 改採 induction 前置 chemo 才證實有益。",
+    "citation": "Mileshkin LR, et al. Lancet Oncol 2023;24(5):468-482. PMID 37080222"
+  },
+  {
+    "name": "INTERLACE",
+    "year": "2024",
+    "design": "Phase III RCT, 500 patients locally advanced cervix cancer",
+    "population": "FIGO 2008 IB1+LN+ / IB2 / II / IIIB / IVA 局部進階子宮頸癌（適合 CCRT）",
+    "intervention": "Induction chemo（carboplatin AUC 2 + paclitaxel 80 mg/m² weekly × 6 週）→ 接標準 CCRT",
+    "control": "Standard CCRT alone（cisplatin weekly + EBRT + brachy）",
+    "primary_endpoint": "5-yr PFS",
+    "key_result": "5-yr PFS 72% vs 64% (HR 0.65, p=0.013)；5-yr OS 80% vs 72% (HR 0.61, p=0.04)；induction 組 grade ≥3 AE 較高但可耐受。",
+    "implication": "**改寫指引的 positive trial**：induction chemo（不是 adjuvant）置於 CCRT 之前提升 PFS / OS。NCCN 2024+ 已加入此選項。OUTBACK 結果 + INTERLACE 結果方向一致：化療要放 CCRT 之前才有益。",
+    "citation": "McCormack M, et al. Lancet 2024;404(10462):1525-1535. PMID 39419054"
+  }
+]
