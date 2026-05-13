@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "system": "FIGO Cervical Cancer Staging",
+    "current_version": "FIGO 2018 (with 2023 clarifications)",
+    "previous_version": "FIGO 2009",
+    "key_references": [
+      "Bhatla N, et al. Revised FIGO staging for carcinoma of the cervix uteri. Int J Gynaecol Obstet 2019;145(1):129-135.",
+      "Bhatla N, et al. FIGO 2023 update on staging of cancer of the cervix uteri. Int J Gynaecol Obstet 2023;162(2):382-385.",
+      "NCCN Cervical Cancer Guidelines (latest)"
+    ],
+    "last_updated": "2026-05-13",
+    "review_status": "pending",
+    "review_notes": "FIGO 2018 為核心；2023 微調主要在 IIIC LN 定義 + suffix 規範。NCCN 治療摘要與 ESGO/ESTRO/ESP 一致。"
+  },
+
+  "key_changes_2009_to_2018": [
+    {
+      "change": "IA 期取消橫向寬度限制",
+      "before_2009": "IA1 ≤3mm depth + ≤7mm width；IA2 >3-5mm depth + ≤7mm width",
+      "after_2018": "IA1 ≤3mm depth；IA2 >3-5mm depth（橫向寬度不再列入分期條件）",
+      "why": "橫向寬度測量再現性差，FIGO panel 一致認為侵犯深度才是預後關鍵"
+    },
+    {
+      "change": "IB 細分為 IB1 / IB2 / IB3",
+      "before_2009": "IB1 < 4cm；IB2 ≥ 4cm（兩級）",
+      "after_2018": "IB1 > 5mm 至 < 2cm；IB2 ≥ 2cm 至 < 4cm；IB3 ≥ 4cm（三級）",
+      "why": "2cm 是預後重要切點（< 2cm 才可考慮 trachelectomy 保留生育），分三層精準對應治療決策"
+    },
+    {
+      "change": "新增 Stage IIIC（基於淋巴結狀態）",
+      "before_2009": "LN 狀態不正式納入 FIGO 分期（雖然臨床決策考慮）",
+      "after_2018": "IIIC1 = pelvic LN+；IIIC2 = para-aortic LN+（不論原發腫瘤大小）",
+      "why": "影像技術進步，LN 狀態可靠且強烈影響治療（CCRT 是否含 extended-field RT）"
+    },
+    {
+      "change": "影像 / 病理結果可正式用於分期",
+      "before_2009": "嚴格 clinical staging（PE + 限定檢查；CT/MRI 不能改分期）",
+      "after_2018": "允許 imaging（CT/MRI/PET）與 pathology 整合；以 suffix r（radiologic）或 p（pathologic）標註",
+      "why": "現代影像精準度高，硬性排除已不合適。例如 IIICr1 = 影像懷疑 pelvic LN+"
+    }
+  ],
+
+  "clarifications_2023": [
+    {
+      "topic": "IIIC 期淋巴結轉移定義精緻化",
+      "detail": "Macrometastasis (> 2 mm) 計入 IIIC；Micrometastasis (0.2-2 mm) 也計入但建議備註；Isolated tumor cells / ITC (< 0.2 mm) **不**計入分期"
+    },
+    {
+      "topic": "Suffix 標註強化",
+      "detail": "明確推薦寫為 IIIC1p（pathologic, 病理證實）或 IIIC1r（radiologic, 影像懷疑），影響預後與治療選擇"
+    },
+    {
+      "topic": "2018 核心架構不變",
+      "detail": "2023 update 主要是定義精緻化，未變更分期切點，臨床實務可繼續用 FIGO 2018"
+    }
+  ],
+
+  "stages": [
+    {
+      "stage": "IA1",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮頸（cervix 限定）",
+      "definition": "鏡下侵犯，間質侵犯深度 ≤ 3 mm",
+      "criteria_detail": "Stromal invasion depth ≤ 3 mm，肉眼不可見（microscopic）。橫向寬度不列入。",
+      "treatment_brief": "Conization（保留生育，切緣陰性）或 extrafascial / simple hysterectomy。LVSI(+) 加 pelvic LND（哨兵 SLN 可）。",
+      "exam_pearl": "LVSI 是 IA1 是否做 LND 的關鍵；conization 切緣陰性即足夠（生育保留）"
+    },
+    {
+      "stage": "IA2",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮頸",
+      "definition": "鏡下侵犯，間質侵犯深度 > 3 mm 至 ≤ 5 mm",
+      "criteria_detail": "Stromal invasion > 3 mm 至 5 mm，肉眼不可見。",
+      "treatment_brief": "Modified radical / radical trachelectomy（保留生育，腫瘤 < 2cm + LN(-)）或 modified radical hysterectomy + pelvic LND ± SLN。",
+      "exam_pearl": "IA2 開始考慮 radical 手術；LVSI 普遍存在，LND 為標準"
+    },
+    {
+      "stage": "IB1",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮頸",
+      "definition": "侵犯 > 5 mm（即超出 IA），最大徑 < 2 cm",
+      "criteria_detail": "Depth > 5 mm 或肉眼可見，maximum dimension < 2 cm",
+      "treatment_brief": "Radical hysterectomy + pelvic LND（open approach 首選 per LACC）。保留生育：radical trachelectomy + LND。CCRT 是替代方案。",
+      "exam_pearl": "LACC trial 後 NCCN 預設 open，MIS 需充分知情同意；trachelectomy 適合 < 2cm"
+    },
+    {
+      "stage": "IB2",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮頸",
+      "definition": "腫瘤 ≥ 2 cm 至 < 4 cm",
+      "criteria_detail": "Maximum dimension 2 cm 至 < 4 cm",
+      "treatment_brief": "Radical hysterectomy + pelvic LND ± para-aortic LND；或 definitive CCRT（特別 ≥ 3-4cm）。Trachelectomy 不建議（腫瘤 > 2cm）。",
+      "exam_pearl": "2cm 是 trachelectomy / NACT 的分水嶺；考慮 NACT-IDS 或 primary CCRT"
+    },
+    {
+      "stage": "IB3",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮頸",
+      "definition": "腫瘤 ≥ 4 cm",
+      "criteria_detail": "Maximum dimension ≥ 4 cm，仍局限於子宮頸",
+      "treatment_brief": "**Definitive CCRT 優於手術**（cisplatin weekly + EBRT + brachytherapy）。手術後高機率需 adjuvant RT/CCRT。",
+      "exam_pearl": "大腫瘤（≥4cm）首選 CCRT；避免『手術 + 必加輔助 RT』雙重治療"
+    },
+    {
+      "stage": "IIA1",
+      "group": "Stage II",
+      "group_definition": "腫瘤超出子宮頸但未達骨盆壁 / 陰道下 1/3",
+      "definition": "侵犯陰道上 2/3，無 parametrial 侵犯，腫瘤 < 4 cm",
+      "criteria_detail": "Vaginal involvement (upper 2/3), no parametrial invasion, tumor < 4 cm",
+      "treatment_brief": "Radical hysterectomy + LND 或 definitive CCRT 二擇一",
+      "exam_pearl": "IIA 仍可手術；IIB（parametrium+）開始全面走 CCRT"
+    },
+    {
+      "stage": "IIA2",
+      "group": "Stage II",
+      "group_definition": "腫瘤超出子宮頸但未達骨盆壁 / 陰道下 1/3",
+      "definition": "侵犯陰道上 2/3，無 parametrial 侵犯，腫瘤 ≥ 4 cm",
+      "criteria_detail": "Vaginal involvement (upper 2/3), no parametrial invasion, tumor ≥ 4 cm",
+      "treatment_brief": "Definitive CCRT 為主（大腫瘤）；手術非首選。",
+      "exam_pearl": "IIA2 開始大多走 CCRT 而非手術"
+    },
+    {
+      "stage": "IIB",
+      "group": "Stage II",
+      "group_definition": "腫瘤超出子宮頸但未達骨盆壁 / 陰道下 1/3",
+      "definition": "Parametrial invasion 存在，但未達骨盆壁",
+      "criteria_detail": "侵犯 parametrium（兩側或單側），未抵骨盆壁",
+      "treatment_brief": "**Definitive CCRT**（cisplatin weekly + EBRT + brachytherapy）為標準；不建議 primary surgery。",
+      "exam_pearl": "Parametrium 侵犯 = 走 CCRT，這是分水嶺；INTERLACE 2024 證實 induction chemo 加在 CCRT 前 PFS/OS 提升"
+    },
+    {
+      "stage": "IIIA",
+      "group": "Stage III",
+      "group_definition": "侵犯骨盆壁 / 陰道下 1/3 / LN+ / hydronephrosis",
+      "definition": "侵犯陰道下 1/3，未達骨盆壁",
+      "criteria_detail": "Lower 1/3 vaginal involvement, no pelvic wall extension",
+      "treatment_brief": "Definitive CCRT + brachytherapy（陰道延伸範圍納入 RT field）",
+      "exam_pearl": "陰道下 1/3 = IIIA；考慮 vaginal brachy 提升劑量"
+    },
+    {
+      "stage": "IIIB",
+      "group": "Stage III",
+      "group_definition": "侵犯骨盆壁 / 陰道下 1/3 / LN+ / hydronephrosis",
+      "definition": "侵犯骨盆壁 OR 出現 hydronephrosis / non-functioning kidney",
+      "criteria_detail": "Pelvic wall extension, 或 hydronephrosis / nonfunctioning kidney（除非已知由其他原因造成）",
+      "treatment_brief": "Definitive CCRT；hydronephrosis 可放支架（PCN / DJ stent）改善腎功能",
+      "exam_pearl": "Hydronephrosis 即列 IIIB（不論原發腫瘤大小）；INTERLACE 主要族群即 III 期"
+    },
+    {
+      "stage": "IIIC1",
+      "group": "Stage III",
+      "group_definition": "侵犯骨盆壁 / 陰道下 1/3 / LN+ / hydronephrosis",
+      "definition": "**Pelvic lymph node 轉移**（不論原發腫瘤大小或陰道侵犯範圍）",
+      "criteria_detail": "Pelvic LN(+) by imaging（IIIC1r）或 pathology（IIIC1p）",
+      "treatment_brief": "Definitive CCRT，pelvic field 含 LN drainage 範圍；若 para-aortic LN 也疑似 → 擴展 RT field",
+      "exam_pearl": "FIGO 2018 新增；LN(+) 不論原發大小都算 IIIC1；r 後綴 = 影像懷疑，p = 病理確診"
+    },
+    {
+      "stage": "IIIC2",
+      "group": "Stage III",
+      "group_definition": "侵犯骨盆壁 / 陰道下 1/3 / LN+ / hydronephrosis",
+      "definition": "**Para-aortic lymph node 轉移**（不論 pelvic LN 與否）",
+      "criteria_detail": "Para-aortic LN(+) by imaging（IIIC2r）或 pathology（IIIC2p）",
+      "treatment_brief": "Extended-field CCRT 包含 para-aortic 區域；考慮加 systemic chemo（如 INTERLACE pattern）",
+      "exam_pearl": "Para-aortic LN+ 預後最差的 stage III；extended-field RT 取代 pelvic-only field"
+    },
+    {
+      "stage": "IVA",
+      "group": "Stage IV",
+      "group_definition": "腫瘤擴展到 true pelvis 外或侵犯膀胱 / 直腸黏膜",
+      "definition": "侵犯**膀胱**或**直腸黏膜**（biopsy 證實，bullous edema 不算）",
+      "criteria_detail": "Mucosal invasion of bladder or rectum, 須切片證實",
+      "treatment_brief": "Definitive CCRT（特別 fistula 風險高時謹慎）；或考慮 pelvic exenteration（選擇性個案）",
+      "exam_pearl": "Bullous edema 本身不算 IVA；要有切片才確診膀胱/直腸黏膜侵犯"
+    },
+    {
+      "stage": "IVB",
+      "group": "Stage IV",
+      "group_definition": "腫瘤擴展到 true pelvis 外或侵犯膀胱 / 直腸黏膜",
+      "definition": "**Distant metastasis**（含 supraclavicular LN, lung, liver, bone 等）",
+      "criteria_detail": "Distant spread beyond pelvis (含 para-aortic 以外的 LN 與遠端器官)",
+      "treatment_brief": "Systemic therapy 為主：cisplatin/carbo + paclitaxel + bevacizumab + pembrolizumab（KEYNOTE-826 適應症）；palliative RT for symptomatic site",
+      "exam_pearl": "Pembrolizumab（CPS≥1）+ bevacizumab + chemo = 第一線標準；Cemiplimab 為二線；Tisotumab vedotin 為後線"
+    }
+  ]
+}

@@ -24,8 +24,8 @@
   </nav>
 
   <section class="section" id="staging">
-    <h2>分期速查 · FIGO 2018/2023</h2>
-    <div class="stub">TODO：填入 FIGO 2018 + 2023 變動對照表（IA1-IVB 全期）</div>
+    <h2>分期速查 · FIGO 2018 / 2023</h2>
+    <div id="stagingContainer">載入中…</div>
   </section>
 
   <section class="section" id="treatment">
@@ -66,6 +66,18 @@
     } catch (e) {
       document.getElementById('trialsContainer').innerHTML =
         '<div class="stub">trials.json 載入失敗: ' + e.message + '</div>';
+    }
+  })();
+
+  // 載入 staging.json 並渲染
+  (async () => {
+    try {
+      const res = await fetch('../data/cervical/staging.json');
+      const data = await res.json();
+      document.getElementById('stagingContainer').innerHTML = renderStaging(data);
+    } catch (e) {
+      document.getElementById('stagingContainer').innerHTML =
+        '<div class="stub">staging.json 載入失敗: ' + e.message + '</div>';
     }
   })();
 </script>

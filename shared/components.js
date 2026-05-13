@@ -52,3 +52,90 @@ function renderTrialCard(trial) {
 function escapeHtml(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+
+// 渲染 FIGO 分期 (staging.json)
+function renderStaging(data) {
+  let html = '';
+
+  // 1. 版本資訊
+  if (data._metadata) {
+    html += `
+      <div class="staging-meta">
+        <div><b>版本：</b>${escapeHtml(data._metadata.current_version)}</div>
+        <div class="meta-small">最後更新：${escapeHtml(data._metadata.last_updated || '—')} · review：${escapeHtml(data._metadata.review_status || '—')}</div>
+      </div>
+    `;
+  }
+
+  // 2. 2009 → 2018 變動
+  if (data.key_changes_2009_to_2018?.length) {
+    html += `
+      <h3 class="staging-h3">📌 FIGO 2009 → 2018 重大變動</h3>
+      <table class="staging-changes">
+        <thead><tr>
+          <th>變動</th><th>2009</th><th>2018</th><th>原因</th>
+        </tr></thead>
+        <tbody>
+          ${data.key_changes_2009_to_2018.map(c => `
+            <tr>
+              <td><b>${escapeHtml(c.change)}</b></td>
+              <td>${escapeHtml(c.before_2009)}</td>
+              <td>${escapeHtml(c.after_2018)}</td>
+              <td>${escapeHtml(c.why)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+  }
+
+  // 3. 2023 精緻化
+  if (data.clarifications_2023?.length) {
+    html += `
+      <h3 class="staging-h3">📌 FIGO 2023 微調補充</h3>
+      <ul class="staging-clarifications">
+        ${data.clarifications_2023.map(c => `
+          <li><b>${escapeHtml(c.topic)}</b>：${escapeHtml(c.detail)}</li>
+        `).join('')}
+      </ul>
+    `;
+  }
+
+  // 4. 各期詳表（按 group I/II/III/IV 分組）
+  if (data.stages?.length) {
+    const grouped = {};
+    data.stages.forEach(s => {
+      const g = s.group || 'Other';
+      grouped[g] = grouped[g] || { def: s.group_definition, items: [] };
+      grouped[g].items.push(s);
+    });
+
+    html += `<h3 class="staging-h3">📋 各期詳表（FIGO 2018）</h3>`;
+    for (const [g, payload] of Object.entries(grouped)) {
+      html += `
+        <h4 class="staging-h4">${escapeHtml(g)}</h4>
+        <div class="staging-group-def">${escapeHtml(payload.def || '')}</div>
+        <table class="staging-stages">
+          <thead><tr>
+            <th>分期</th>
+            <th>定義</th>
+            <th>治療摘要</th>
+            <th>考點</th>
+          </tr></thead>
+          <tbody>
+            ${payload.items.map(s => `
+              <tr>
+                <td><b>${escapeHtml(s.stage)}</b></td>
+                <td>${escapeHtml(s.definition)}</td>
+                <td>${escapeHtml(s.treatment_brief || '')}</td>
+                <td><i>${escapeHtml(s.exam_pearl || '')}</i></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+  }
+
+  return html;
+}
