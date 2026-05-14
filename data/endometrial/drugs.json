@@ -1,0 +1,225 @@
+{
+  "_metadata": {
+    "source": "TSGH 婦癌多專科團隊 - 癌症治療藥物處方修訂 V1（修訂日 2026-01-20）",
+    "external_basis": "NCCN Uterine Cancer Guidelines 2025 V1 + 各 trial 原始 protocol",
+    "last_updated": "2026-05-14",
+    "review_status": "extracted-from-tsgh-pdf-pending-review",
+    "note": "Regimen / dose / cycle 依 TSGH 處方 PDF v1（2026-01-12 final）endometrial cancer 段落（pages 21-26）。"
+  },
+
+  "categories": [
+    {
+      "id": "first_line_adjuvant",
+      "title": "第一線：Adjuvant / Primary Chemotherapy",
+      "subtitle": "用於 stage III-IVA 術後輔助治療或晚期 endometrial cancer 第一線",
+      "regimens": [
+        {
+          "name": "Carboplatin + Paclitaxel ± Bevacizumab",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Carboplatin", "dose": "AUC 4-6", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Bevacizumab (optional)", "dose": "7.5-15 mg/kg", "route": "IV (N/S 100 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle × 6 cycles",
+          "indication": "Advanced/recurrent endometrial cancer first-line（GOG-209 standard）",
+          "note": "**Pac + Carbo 為 endometrial cancer 化療骨幹**（GOG-209 confirmed non-inferior to TAP）",
+          "reference": "Miller D, et al. GOG-209. Gynecol Oncol 2012;125(3):771 + Secord AA Gynecol Oncol 2009"
+        },
+        {
+          "name": "Carboplatin + Paclitaxel + Pembrolizumab (KEYNOTE-B21)",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Carboplatin", "dose": "AUC 4-6", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Pembrolizumab", "dose": "200 mg", "route": "IV (N/S 100 mL, 30 min)", "schedule": "Q3W"}
+          ],
+          "cycle": "21-day cycle × 6 + 維持 Pembro 200mg Q3W × 28 cycles 或 400mg Q6W × 14 cycles",
+          "indication": "Stage III-IV adjuvant（除 carcinosarcoma 外）",
+          "note": "**KEYNOTE-B21** Phase III adjuvant 在 all-comer 未達 DFS（HR 1.02），dMMR 有趨勢。NCCN 仍列入考量。",
+          "reference": "Van Gorp T, et al. Ann Oncol 2024;35(11):968-980"
+        },
+        {
+          "name": "Doxorubicin + Cisplatin (AP)",
+          "drugs": [
+            {"name": "Doxorubicin", "dose": "60 mg/m²", "route": "IV (N/S 100 mL, 30 min)", "schedule": "D1"},
+            {"name": "Cisplatin", "dose": "50 mg/m²", "route": "IV (N/S 500 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle × 6 cycles",
+          "indication": "Advanced/recurrent endometrial cancer 歷史對照組",
+          "note": "已被 Pac + Carbo 取代（GOG-209 non-inferior + 較低毒性）",
+          "reference": "Randall ME, et al. J Clin Oncol 2006;24:36 (GOG-122 / 184)"
+        },
+        {
+          "name": "Carboplatin + Paclitaxel + Trastuzumab",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Carboplatin", "dose": "AUC 4-6", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Trastuzumab", "dose": "8 mg/kg loading → 6 mg/kg maintenance", "route": "IV (N/S 250 mL, 90 min)", "schedule": "D1, Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression 或不可耐受",
+          "indication": "**HER2-positive uterine serous carcinoma 或 carcinosarcoma** stage III-IV",
+          "note": "Fader 2018 Phase II 證實 OS 提升（serous subtype）",
+          "reference": "Fader AN, et al. Clin Cancer Res 2020;26(15):3928-3935"
+        },
+        {
+          "name": "Durvalumab + Carbo/Pac → Durva + Olaparib (DUO-E)",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Carboplatin", "dose": "AUC 5-6", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Durvalumab", "dose": "500-1120 mg", "route": "IV (N/S 250 mL, 60 min)", "schedule": "D1"},
+            {"name": "Olaparib (maintenance)", "dose": "300 mg BID PO", "route": "Oral", "schedule": "持續至 progression"}
+          ],
+          "cycle": "21-day cycle × 6 cycles → 維持 Durvalumab 500-1500mg Q4W ± Olaparib（pMMR 必加；dMMR 可選）",
+          "indication": "Advanced/recurrent endometrial cancer first-line",
+          "note": "**DUO-E**：Olaparib 加 Durvalumab maintenance 對 pMMR 益處顯著（dMMR IO 已夠）",
+          "reference": "Westin SN, et al. J Clin Oncol 2024;42(3):283-299"
+        }
+      ]
+    },
+
+    {
+      "id": "targeted_therapy",
+      "title": "Targeted / Immunotherapy",
+      "subtitle": "依分子分群選擇",
+      "regimens": [
+        {
+          "name": "Pembrolizumab 單藥",
+          "drugs": [
+            {"name": "Pembrolizumab", "dose": "200 mg", "route": "IV (N/S 100 mL, 30 min)", "schedule": "Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression / 不可耐受 / 24 月",
+          "indication": "**MSI-H / dMMR** endometrial cancer（後線或不適合 chemo）",
+          "note": "KEYNOTE-028 / KEYNOTE-158 證實 dMMR 高度敏感",
+          "reference": "Ott PA, et al. J Clin Oncol 2017;35:2535-2541"
+        },
+        {
+          "name": "Lenvatinib + Pembrolizumab (pMMR)",
+          "drugs": [
+            {"name": "Lenvatinib", "dose": "20 mg QD (10 mg QD 嚴重肝腎不全)", "route": "Oral", "schedule": "持續"},
+            {"name": "Pembrolizumab", "dose": "200 mg", "route": "IV (N/S 100 mL, 30 min)", "schedule": "Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression / 24 月",
+          "indication": "**pMMR** advanced/recurrent endometrial cancer 後線（platinum-failed）",
+          "note": "**KEYNOTE-775 confirmed Phase III**：pMMR OS 17.4 vs 12.0 月（HR 0.68）",
+          "reference": "Makker V, et al. NEJM 2022;386(5):437-448 (KEYNOTE-775)"
+        },
+        {
+          "name": "Trastuzumab Deruxtecan (Enhertu)",
+          "drugs": [
+            {"name": "Trastuzumab deruxtecan", "dose": "5.4 mg/kg", "route": "IV (D5W 100 mL, 90 min)", "schedule": "Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression / 不可耐受",
+          "indication": "**HER2-positive** uterine serous carcinoma 或 carcinosarcoma",
+          "note": "DESTINY-PanTumor02 Phase II：tumor-agnostic HER2 ADC indication（FDA 2024 加速批准）",
+          "reference": "Meric-Bernstam F, et al. J Clin Oncol 2024;42:47-58"
+        }
+      ]
+    },
+
+    {
+      "id": "hormone_therapy",
+      "title": "賀爾蒙治療（Hormone Therapy）",
+      "subtitle": "適合：fertility-sparing、低惡性、ER/PR positive、年長/不適合手術",
+      "regimens": [
+        {
+          "name": "Medroxyprogesterone Acetate (MPA)",
+          "drugs": [
+            {"name": "MPA", "dose": "400-600 mg QD PO", "route": "Oral", "schedule": "持續"}
+          ],
+          "cycle": "持續至 response 或 progression",
+          "indication": "Fertility-sparing（grade 1 + no invasion）或 advanced/recurrent ER/PR(+)",
+          "note": "Fertility-sparing 標準 regimen；CR 率 ~70%，需 D&C 每 3-6 月監測",
+          "reference": "Thigpen JT, et al. J Clin Oncol 1999;17:1736-1744"
+        },
+        {
+          "name": "Megestrol Acetate",
+          "drugs": [
+            {"name": "Megestrol", "dose": "80 mg BID PO", "route": "Oral", "schedule": "持續"}
+          ],
+          "cycle": "持續至 response 或 progression",
+          "indication": "Fertility-sparing 替代 MPA；advanced ER/PR(+)",
+          "note": "與 MPA 療效相當",
+          "reference": "GOG hormone therapy studies"
+        },
+        {
+          "name": "Tamoxifen",
+          "drugs": [
+            {"name": "Tamoxifen", "dose": "20 mg BID PO", "route": "Oral", "schedule": "持續"}
+          ],
+          "cycle": "持續至 progression",
+          "indication": "Advanced/recurrent endometrial cancer（progestin 失敗後）",
+          "note": "Selective ER modulator；單藥反應率低（~10%），常與 MPA 交替",
+          "reference": "Thigpen T, et al. J Clin Oncol 2001;19(2):364-7"
+        },
+        {
+          "name": "MPA + Tamoxifen 交替",
+          "drugs": [
+            {"name": "Tamoxifen", "dose": "20 mg BID PO", "route": "Oral", "schedule": "D1-28"},
+            {"name": "MPA", "dose": "100 mg BID PO", "route": "Oral", "schedule": "D8-14, D22-28"}
+          ],
+          "cycle": "28-day cycle 直到 progression",
+          "indication": "Advanced/recurrent ER/PR(+) endometrial cancer",
+          "note": "Phase II GOG：response rate 較單藥高",
+          "reference": "Whitney CW, et al. Gynecol Oncol 2004;92(1):4-9"
+        }
+      ]
+    },
+
+    {
+      "id": "second_line",
+      "title": "第二線：Recurrent / Salvage",
+      "subtitle": "第一線失敗後的後線治療",
+      "regimens": [
+        {
+          "name": "Docetaxel + Carboplatin",
+          "drugs": [
+            {"name": "Docetaxel", "dose": "75 mg/m²", "route": "IV (1 hr)", "schedule": "D1"},
+            {"name": "Carboplatin", "dose": "AUC 6", "route": "IV (1 hr)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle × 6 cycles",
+          "indication": "Recurrent endometrial cancer; paclitaxel 不耐受替代",
+          "note": "Sandwich method（chemo → RT → chemo）可用 stage III-IV",
+          "reference": "Phase II. Gynecol Oncol 2011;121(1):112-7"
+        },
+        {
+          "name": "Doxorubicin + Cisplatin + Paclitaxel (TAP)",
+          "drugs": [
+            {"name": "Doxorubicin", "dose": "45 mg/m²", "route": "IV push", "schedule": "D1"},
+            {"name": "Cisplatin", "dose": "50 mg/m²", "route": "IV (N/S 500 mL, 2 hrs)", "schedule": "D1"},
+            {"name": "Paclitaxel", "dose": "160 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D2"}
+          ],
+          "cycle": "21-day cycle × 6 cycles",
+          "indication": "Advanced/recurrent endometrial cancer 歷史 regimen",
+          "note": "GOG-184：TAP vs AP，TAP 較高 PFS 但毒性高；已被 Pac + Carbo 取代",
+          "reference": "Homesley HD, et al. Gynecol Oncol 2009;112(3):543-52"
+        }
+      ]
+    }
+  ],
+
+  "treatment_notes": [
+    {
+      "topic": "分子分群決定治療強度",
+      "detail": "POLEmut → 可降階；MMRd → IO 優先；p53abn → 升階 + HER2 testing；NSMP → 標準。FIGO 2023 起應 routine 做 4 分群 IHC（p53 + MMR）+ NGS（POLE）。"
+    },
+    {
+      "topic": "Doxorubicin 心毒性",
+      "detail": "累積劑量 > 450 mg/m² 心臟衰竭風險上升。Baseline echo / MUGA，每 100 mg/m² 重做。"
+    },
+    {
+      "topic": "Lenvatinib 副作用",
+      "detail": "高血壓（70%）、proteinuria、diarrhea、fatigue、體重下降。減量 14 mg → 10 mg → 8 mg → 4 mg。"
+    },
+    {
+      "topic": "Olaparib 注意事項",
+      "detail": "Myelosuppression（anemia、thrombocytopenia、neutropenia）、nausea、fatigue。長期 MDS / AML 風險（< 1.5%）。"
+    },
+    {
+      "topic": "HER2 IHC 判讀（endometrial serous 特異）",
+      "detail": "Endometrial serous HER2 判讀 cutoff 與 breast cancer 不同（更寬鬆）：IHC 3+ 或 IHC 2+ with ISH amplification 皆視為 HER2(+)。"
+    },
+    {
+      "topic": "Fertility-sparing 監測",
+      "detail": "MPA 6 個月 D&C 評估。CR → 計畫懷孕（不超過 6 個月，否則重新 progestin）。完成生育後 → definitive TAH + BSO。"
+    }
+  ]
+}

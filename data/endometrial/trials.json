@@ -1,0 +1,122 @@
+[
+  {
+    "name": "GOG-99",
+    "year": "2004",
+    "design": "Phase III RCT, 392 patients stage IB-II endometrial cancer",
+    "population": "FIGO 1988 IB / IC / II (occult) endometrioid endometrial cancer，定義 high-intermediate risk (HIR)：年齡 + grade 2-3 + outer 1/3 myometrium + LVSI 組合",
+    "intervention": "Adjuvant pelvic radiotherapy",
+    "control": "No further therapy (observation)",
+    "primary_endpoint": "Recurrence",
+    "key_result": "Adjuvant RT 降低 2-yr recurrence rate（12% → 3%）；HIR subgroup 益處最大；OS 差異不顯著",
+    "implication": "建立 high-intermediate risk (HIR) 概念，是 adjuvant RT 適應症的歷史基礎。後續 PORTEC-2 證實 vault brachy 即可達同等療效。",
+    "citation": "Keys HM, et al. Gynecol Oncol 2004;92(3):744-751. PMID 14984936"
+  },
+  {
+    "name": "PORTEC-1",
+    "year": "2000",
+    "design": "Phase III RCT, 715 patients stage I endometrioid",
+    "population": "FIGO 1988 IB G2-3 / IC G1-2（中度風險族群）",
+    "intervention": "Adjuvant pelvic radiotherapy",
+    "control": "Observation",
+    "primary_endpoint": "Loco-regional recurrence",
+    "key_result": "RT 降低 5-yr LRR（14% → 4%, p<0.001）；但 OS 無差異；RT 組長期 GI 毒性增加",
+    "implication": "確立 stage I 中度風險族群 adjuvant RT 降復發但不延命；推動之後 PORTEC-2 用 vault brachy 替代 pelvic RT。",
+    "citation": "Creutzberg CL, et al. Lancet 2000;355(9213):1404-1411. PMID 10791524"
+  },
+  {
+    "name": "PORTEC-2",
+    "year": "2010",
+    "design": "Phase III non-inferiority RCT, 427 patients high-intermediate risk",
+    "population": "HIR endometrial cancer（依年齡 + grade + invasion 篩選）",
+    "intervention": "Vaginal brachytherapy (VBT)",
+    "control": "External-beam pelvic radiotherapy (EBRT)",
+    "primary_endpoint": "Vaginal recurrence",
+    "key_result": "5-yr vaginal recurrence VBT 1.8% vs EBRT 1.6%（non-inferior）；GI / GU 毒性 VBT 顯著低",
+    "implication": "改寫指引：HIR 族群 vaginal brachy 取代 pelvic RT 為新標準。EBRT 副作用大幅減少。",
+    "citation": "Nout RA, et al. Lancet 2010;375(9717):816-823. PMID 20206777"
+  },
+  {
+    "name": "PORTEC-3",
+    "year": "2018",
+    "design": "Phase III RCT, 660 patients high-risk endometrial cancer",
+    "population": "High-risk：FIGO 2009 IA G3 + LVSI / IB G3 / II-III / serous-clear cell（任 stage）",
+    "intervention": "CCRT (cisplatin) + adjuvant carbo/paclitaxel × 4 cycles",
+    "control": "Pelvic RT alone",
+    "primary_endpoint": "Overall survival, failure-free survival",
+    "key_result": "5-yr OS 81% vs 76%（HR 0.70, p=0.034）；5-yr FFS 76% vs 69%（HR 0.70）。Serous + stage III subgroup 益處最大。",
+    "implication": "High-risk endometrial cancer 採用 CCRT + adjuvant chemo 為新標準（特別 serous & stage III）。",
+    "citation": "de Boer SM, et al. Lancet Oncol 2018;19(3):295-309. PMID 29449189"
+  },
+  {
+    "name": "GOG-249",
+    "year": "2019",
+    "design": "Phase III RCT non-inferiority, 601 patients HIR / high-risk early-stage",
+    "population": "HIR or high-risk stage I-II endometrioid + selected serous/clear cell",
+    "intervention": "Vaginal brachy + chemo（carbo/paclitaxel × 3）",
+    "control": "Pelvic RT alone",
+    "primary_endpoint": "Recurrence-free survival",
+    "key_result": "5-yr RFS 80% vs 84%（non-inferior 但未優於 pelvic RT）；遠端復發率相似；急性毒性 chemo arm 較高",
+    "implication": "Vaginal brachy + chemo 不優於 pelvic RT alone。HIR 仍以 PORTEC-2 brachy 為主流；想加 chemo 益處有限。",
+    "citation": "Randall ME, et al. J Clin Oncol 2019;37(21):1810-1818. PMID 31075339"
+  },
+  {
+    "name": "NRG-GY018 (KEYNOTE-868)",
+    "year": "2023",
+    "design": "Phase III RCT, 816 patients advanced/recurrent endometrial cancer",
+    "population": "Advanced (stage III-IVA with measurable disease) or recurrent endometrial cancer；分 dMMR / pMMR 子族群",
+    "intervention": "Pembrolizumab + carbo/paclitaxel × 6 → Pembrolizumab maintenance",
+    "control": "Placebo + carbo/paclitaxel → Placebo maintenance",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "**dMMR**: 12-mo PFS 74% vs 38%（HR 0.30, p<0.001）— 巨大療效；**pMMR**: median PFS 13.1 vs 8.7 月（HR 0.54）— 也顯著",
+    "implication": "改寫指引：advanced/recurrent endometrial cancer 第一線標準加入 Pembrolizumab（不論 MMR 狀態，dMMR 益處更大）",
+    "citation": "Eskander RN, et al. NEJM 2023;388(23):2159-2170. PMID 36972026"
+  },
+  {
+    "name": "RUBY (ENGOT-EN6/GOG-3031)",
+    "year": "2023",
+    "design": "Phase III RCT, 494 patients advanced/recurrent endometrial cancer",
+    "population": "Primary stage III-IV or first recurrent endometrial cancer；分 dMMR/MSI-H vs pMMR/MSS",
+    "intervention": "Dostarlimab + carbo/paclitaxel × 6 → Dostarlimab maintenance 3 yr",
+    "control": "Placebo + carbo/paclitaxel",
+    "primary_endpoint": "PFS in dMMR/MSI-H + OS in all patients",
+    "key_result": "**dMMR/MSI-H**: 24-mo PFS 61% vs 16%（HR 0.28）；**Overall**: 24-mo OS 71% vs 56%（HR 0.64, p<0.001）",
+    "implication": "Dostarlimab + chemo 第一線提升 PFS（dMMR 巨大）+ OS（全族群）。NCCN 已納入為 cat 1。與 NRG-GY018 並列為 paradigm shift。",
+    "citation": "Mirza MR, et al. NEJM 2023;388(23):2145-2158. PMID 36972021"
+  },
+  {
+    "name": "DUO-E (ENGOT-EN10)",
+    "year": "2024",
+    "design": "Phase III RCT, 718 patients advanced/recurrent endometrial cancer",
+    "population": "Primary stage III-IV or first recurrent endometrial cancer",
+    "intervention": "Durvalumab + carbo/paclitaxel × 6 → Durvalumab ± olaparib maintenance",
+    "control": "Placebo + carbo/paclitaxel → Placebo maintenance",
+    "primary_endpoint": "PFS",
+    "key_result": "Durva + olap maintenance: median PFS 15.1 vs 9.6 月（HR 0.55）；Durva alone: HR 0.71；dMMR 益處最大",
+    "implication": "Olaparib maintenance 加 Durvalumab 提升 pMMR 族群益處（dMMR IO 已夠強）。NCCN 列入 first-line option。",
+    "citation": "Westin SN, et al. J Clin Oncol 2024;42(3):283-299. PMID 37879048"
+  },
+  {
+    "name": "KEYNOTE-775 (Study 309)",
+    "year": "2022",
+    "design": "Phase III RCT, 827 patients advanced endometrial cancer post-platinum failure",
+    "population": "Advanced/recurrent endometrial cancer 後線（platinum-failed）；分 pMMR vs dMMR",
+    "intervention": "Lenvatinib 20mg PO QD + Pembrolizumab 200mg IV Q3W",
+    "control": "Investigator's choice chemo（doxorubicin or paclitaxel）",
+    "primary_endpoint": "PFS, OS",
+    "key_result": "**pMMR**: PFS 6.6 vs 3.8 月（HR 0.60）；OS 17.4 vs 12.0 月（HR 0.68）。**All patients** 也 positive。",
+    "implication": "Lenvatinib + Pembrolizumab 成為 pMMR endometrial cancer 後線新標準（FDA approved 2021）。dMMR 後線仍以 IO 單藥為主。",
+    "citation": "Makker V, et al. NEJM 2022;386(5):437-448. PMID 35045222"
+  },
+  {
+    "name": "KEYNOTE-B21 (ENGOT-en11/GOG-3053)",
+    "year": "2024",
+    "design": "Phase III RCT, 1095 patients high-risk endometrial cancer adjuvant setting",
+    "population": "Newly diagnosed high-risk endometrial cancer 術後 adjuvant setting：stage I-II aggressive histology, stage III-IVA endometrioid, IIIC1/IIIC2",
+    "intervention": "Pembrolizumab + adjuvant chemo (carbo/paclitaxel × 6) ± RT → Pembrolizumab maintenance",
+    "control": "Placebo + chemo ± RT → Placebo maintenance",
+    "primary_endpoint": "Disease-free survival",
+    "key_result": "Pembro arm **未達 DFS 主要終點**（HR 1.02, 不顯著）；dMMR subgroup 有趨勢（HR 0.31，但非預設分析）",
+    "implication": "**Negative trial 在 all-comer**：Pembrolizumab 加 adjuvant 在未篩選 high-risk 族群無 DFS 益處。提示 dMMR 篩選的重要性；adjuvant 與 advanced setting IO 益處不對等。",
+    "citation": "Van Gorp T, et al. Ann Oncol 2024;35(11):968-980. PMID 39284383"
+  }
+]

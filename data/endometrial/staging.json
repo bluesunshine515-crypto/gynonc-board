@@ -1,0 +1,294 @@
+{
+  "_metadata": {
+    "system": "FIGO Endometrial Cancer Staging",
+    "current_version": "FIGO 2023（重大改版，首次納入分子分類）",
+    "previous_version": "FIGO 2009",
+    "treatment_reference": "NCCN Uterine Neoplasms Guidelines v.1.2026",
+    "key_references": [
+      "Berek JS, et al. FIGO staging of endometrial cancer: 2023. Int J Gynaecol Obstet 2023;162(2):383-394.",
+      "Concin N, et al. ESGO/ESTRO/ESP guidelines for the management of patients with endometrial carcinoma. Int J Gynecol Cancer 2021;31(1):12-39.",
+      "NCCN Uterine Neoplasms Guidelines v.1.2026"
+    ],
+    "last_updated": "2026-05-14",
+    "review_status": "draft-pending-NotebookLM-review",
+    "review_notes": "FIGO 2023 大幅改版：(1) 首次納入 4 分子分群 (POLEmut/MMRd/p53abn/NSMP) (2) 將 histology + grade + LVSI 納入分期 (3) 重新切分 IA (IA1/IA2/IA3) 與 II (IIA/IIB/IIC)。臨床仍以 FIGO 2009 為輔助，但學界與專科考試已以 FIGO 2023 為主。"
+  },
+
+  "key_changes_2009_to_2023": [
+    {
+      "change": "首次納入 4 分子分群（TCGA-based）",
+      "before_2009": "純解剖分期（不考慮分子型態）",
+      "after_2023": "整合 POLEmut / MMRd / p53abn / NSMP 四群 → 預後與治療策略大不同",
+      "why": "TCGA 2013 起發現 endometrial cancer 預後高度受分子型態影響，FIGO 2023 首次正式整合"
+    },
+    {
+      "change": "Histology + Grade 直接影響分期",
+      "before_2009": "Grade 不影響 stage 編號（只附加描述）",
+      "after_2023": "Aggressive histology（serous, clear cell, undifferentiated, carcinosarcoma, mixed）即使局限於 endometrium 也升為 IC；Low-grade endometrioid 仍走 IA",
+      "why": "Aggressive histology 預後與一般 endometrioid 差異極大，分期應反映"
+    },
+    {
+      "change": "LVSI 納入分期（substantial LVSI 升期）",
+      "before_2009": "LVSI 不在 FIGO 分期內（雖然臨床決策考慮）",
+      "after_2023": "Substantial LVSI（≥ 5 LVSI 灶）為 stage IIB（即使無 cervical stroma 侵犯）",
+      "why": "Substantial LVSI 預後等同於 cervical stromal invasion"
+    },
+    {
+      "change": "IA 重新切為 IA1/IA2/IA3",
+      "before_2009": "IA = 侵犯 < 50% myometrium（單一分期）",
+      "after_2023": "IA1: low-grade endometrioid + <50% myometrium + no/focal LVSI；IA2: confined to polyp/endometrium；IA3: low-grade endometrioid with concurrent ovarian involvement（特定條件）",
+      "why": "細分讓 low-risk subgroup 可考慮 fertility-sparing 或 observation"
+    },
+    {
+      "change": "II 重新切為 IIA/IIB/IIC",
+      "before_2009": "II = 侵犯 cervical stroma",
+      "after_2023": "IIA: cervical stromal invasion（low-grade）；IIB: substantial LVSI（low-grade，無 cervical invasion 也算）；IIC: aggressive histology 加上任何 myometrial invasion",
+      "why": "把 'aggressive histology + myometrial invasion' 升上來，讓低分期高風險族群獲適當輔助治療"
+    }
+  ],
+
+  "molecular_subgroups": [
+    {
+      "name": "POLEmut（POLE-ultramutated）",
+      "prevalence": "約 7%",
+      "diagnostic": "POLE exonuclease domain mutations（POLE EDM）— 多由 NGS 偵測",
+      "prognosis": "**極佳**（5-yr OS > 95%，即使 stage III-IV）",
+      "treatment_implication": "可考慮**降階治療**（observation 或縮減輔助治療），特別 stage I-II",
+      "exam_pearl": "POLEmut 是『exception that proves the rule』— 即使解剖分期晚，預後極好"
+    },
+    {
+      "name": "MMRd / MSI-H（mismatch repair deficient）",
+      "prevalence": "約 25-30%",
+      "diagnostic": "IHC for MLH1/MSH2/MSH6/PMS2 損失，或 MSI testing",
+      "prognosis": "中等（介於 POLEmut 與 p53abn 之間）",
+      "treatment_implication": "**對 IO 反應極佳** — Pembrolizumab、Dostarlimab；常為 Lynch syndrome 篩檢起點",
+      "exam_pearl": "MMRd → 雙重意義：免疫治療優先 + 家族遺傳評估（Lynch）"
+    },
+    {
+      "name": "p53abn（copy-number high）",
+      "prevalence": "約 15%",
+      "diagnostic": "p53 IHC abnormal（complete absence 或 strong overexpression）；常見於 serous, carcinosarcoma",
+      "prognosis": "**最差**（5-yr OS ~50%）",
+      "treatment_implication": "**升階治療** — 即使 stage I 也考慮 adjuvant chemo + RT；HER2 testing 必做（serous）",
+      "exam_pearl": "p53abn 跨越 endometrioid / serous 分類，治療強度比預期高"
+    },
+    {
+      "name": "NSMP（no specific molecular profile / copy-number low）",
+      "prevalence": "約 50%",
+      "diagnostic": "排除上述三類 → 預設為 NSMP（傳統 endometrioid type I 多在此）",
+      "prognosis": "中等",
+      "treatment_implication": "依解剖分期 + LVSI 走標準路徑；hormone receptor status 影響預後與賀爾蒙治療反應",
+      "exam_pearl": "占大宗（~50%）；ER/PR 表現是其中一個 favorable 標記"
+    }
+  ],
+
+  "stages": [
+    {
+      "stage": "IA1",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮體",
+      "definition": "Low-grade endometrioid，侵犯 < 50% myometrium，無 / 局部 LVSI",
+      "criteria_detail": "Grade 1-2 endometrioid + 肌肉侵犯 < 50% + LVSI absent or focal (< 5 灶)",
+      "treatment_brief": "TAH + BSO ± SLN/LND。年輕 + 強烈希望保留生育 + grade 1 + 無 myometrial invasion → fertility-sparing（progestin therapy）。POLEmut 可 observation。",
+      "exam_pearl": "Stage 最低 + 預後最好；fertility-sparing 主要候選；POLEmut 可 observation"
+    },
+    {
+      "stage": "IA2",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮體",
+      "definition": "Low-grade endometrioid，局限於 polyp 或 endometrium（無 myometrial invasion）",
+      "criteria_detail": "Confined to polyp or endometrium，no myometrial invasion",
+      "treatment_brief": "TAH + BSO ± SLN。Fertility-sparing 候選（low-grade + no invasion）。",
+      "exam_pearl": "Confined to endometrium → 最適合 fertility-sparing（progestin）"
+    },
+    {
+      "stage": "IA3",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮體",
+      "definition": "Low-grade endometrioid + simultaneous ovarian involvement（特定條件下）",
+      "criteria_detail": "Low-grade endometrioid + 同時 ovarian endometrioid（限制：單側 < 5cm + no ovarian surface involvement + no LVSI）",
+      "treatment_brief": "TAH + BSO + staging。同步 ovarian 為良性表現，預後等同 Stage I。",
+      "exam_pearl": "FIGO 2023 新分類；過去這類同步 ovarian 會升 stage III，2023 認可為 stage I 因預後好"
+    },
+    {
+      "stage": "IB",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮體",
+      "definition": "Low-grade endometrioid + 侵犯 ≥ 50% myometrium + 無 / 局部 LVSI",
+      "criteria_detail": "Grade 1-2 endometrioid + ≥ 50% myometrial invasion + no/focal LVSI",
+      "treatment_brief": "TAH + BSO + SLN/LND。Adjuvant RT 視 GOG-99/PORTEC criteria（年齡、grade、LVSI、size）。Vault brachy 為主選（PORTEC-2 證實）",
+      "exam_pearl": "深層 myometrial invasion = adjuvant RT 主要適應症之一；vault brachy 副作用較低（PORTEC-2）"
+    },
+    {
+      "stage": "IC",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於子宮體",
+      "definition": "**Aggressive histology** 局限於 polyp 或 endometrium",
+      "criteria_detail": "Aggressive histology（serous, clear cell, undifferentiated, carcinosarcoma, mixed）局限於 polyp 或 endometrium，no myometrial invasion",
+      "treatment_brief": "TAH + BSO + 完整 surgical staging（含 omentectomy）。即使 confined 仍考慮 adjuvant chemo（pac/carbo）± RT。HER2 testing 必做（serous）",
+      "exam_pearl": "FIGO 2023 新增 IC；aggressive histology 即使最早期也走完整 staging + adjuvant chemo"
+    },
+    {
+      "stage": "IIA",
+      "group": "Stage II",
+      "group_definition": "腫瘤超出子宮體（cervical stroma / substantial LVSI / aggressive histology）",
+      "definition": "Cervical stromal invasion（low-grade endometrioid）",
+      "criteria_detail": "Low-grade endometrioid + cervical stromal invasion（不含 endocervical glandular involvement only）",
+      "treatment_brief": "TAH + BSO + LND ± parametrectomy（依侵犯深度）。Adjuvant pelvic RT 為主流",
+      "exam_pearl": "Cervical stroma 侵犯 = Stage II 主軸；不要混淆 endocervical glandular only（仍為 Stage I）"
+    },
+    {
+      "stage": "IIB",
+      "group": "Stage II",
+      "group_definition": "腫瘤超出子宮體",
+      "definition": "**Substantial LVSI**（low-grade endometrioid）",
+      "criteria_detail": "Low-grade endometrioid + substantial LVSI（≥ 5 LVSI 灶），不論有無 cervical invasion",
+      "treatment_brief": "TAH + BSO + LND。Adjuvant pelvic RT ± chemo 視 GOG-249/PORTEC 風險評估",
+      "exam_pearl": "FIGO 2023 新增 IIB；substantial LVSI 升期，反映 LVSI 對預後的獨立影響"
+    },
+    {
+      "stage": "IIC",
+      "group": "Stage II",
+      "group_definition": "腫瘤超出子宮體",
+      "definition": "**Aggressive histology** 合併任何 myometrial invasion",
+      "criteria_detail": "Aggressive histology + 任何深度 myometrial invasion",
+      "treatment_brief": "完整 surgical staging（含 omentectomy, peritoneal washing）+ adjuvant chemo（Pac/Carbo, 6 cycles）+ RT。HER2(+) serous → +trastuzumab",
+      "exam_pearl": "FIGO 2023 新增 IIC；aggressive histology 一旦肌肉侵犯即升至 II，治療強度近 III 期"
+    },
+    {
+      "stage": "IIIA",
+      "group": "Stage III",
+      "group_definition": "腫瘤侵犯子宮外組織 / 淋巴",
+      "definition": "侵犯 serosa, adnexa（卵巢/輸卵管），或 simultaneous ovarian（非 IA3 條件）",
+      "criteria_detail": "Tumor 侵犯 uterine serosa, adnexal structures, 或 ovarian involvement 不符 IA3 條件",
+      "treatment_brief": "完整 staging surgery + adjuvant chemo ± RT（PORTEC-3 standard）",
+      "exam_pearl": "IIIA 是 advanced 起點；PORTEC-3 證實 CCRT + adjuvant chemo 提升 OS（HR 0.7）"
+    },
+    {
+      "stage": "IIIB",
+      "group": "Stage III",
+      "group_definition": "腫瘤侵犯子宮外組織 / 淋巴",
+      "definition": "侵犯 vagina 或 parametrium",
+      "criteria_detail": "Vaginal involvement 或 parametrial invasion",
+      "treatment_brief": "Surgery + CCRT + adjuvant chemo（PORTEC-3 pattern）",
+      "exam_pearl": "Vaginal / parametrial 侵犯較少見；治療強度等同 IIIC"
+    },
+    {
+      "stage": "IIIC1",
+      "group": "Stage III",
+      "group_definition": "腫瘤侵犯子宮外組織 / 淋巴",
+      "definition": "**Pelvic lymph node 轉移**（不論其他擴散）",
+      "criteria_detail": "Pelvic LN(+) by imaging or pathology",
+      "treatment_brief": "Adjuvant chemo + RT（PORTEC-3）。Pembrolizumab + chemo 在 NRG-GY018 + RUBY 證實提升 PFS（特別 dMMR）",
+      "exam_pearl": "Pelvic LN+ = 全身性疾病；近年 IO + chemo 為標準（NRG-GY018, RUBY）"
+    },
+    {
+      "stage": "IIIC2",
+      "group": "Stage III",
+      "group_definition": "腫瘤侵犯子宮外組織 / 淋巴",
+      "definition": "**Para-aortic lymph node 轉移**（不論 pelvic LN 與否）",
+      "criteria_detail": "Para-aortic LN(+) by imaging or pathology",
+      "treatment_brief": "Extended-field RT + adjuvant chemo + IO（NRG-GY018, RUBY 適應症）",
+      "exam_pearl": "Para-aortic LN+ 預後最差的 Stage III；extended-field RT 取代 pelvic-only"
+    },
+    {
+      "stage": "IVA",
+      "group": "Stage IV",
+      "group_definition": "侵犯膀胱/腸黏膜或遠端轉移",
+      "definition": "侵犯**膀胱**或**腸黏膜**（biopsy 證實）",
+      "criteria_detail": "Mucosal invasion of bladder or bowel",
+      "treatment_brief": "Systemic chemo + RT；pelvic exenteration 在選擇性個案",
+      "exam_pearl": "Bladder/bowel 黏膜侵犯（biopsy 證實，不是壓迫即可）"
+    },
+    {
+      "stage": "IVB",
+      "group": "Stage IV",
+      "group_definition": "侵犯膀胱/腸黏膜或遠端轉移",
+      "definition": "**Abdominal peritoneal metastasis**（不含 adnexa）",
+      "criteria_detail": "Peritoneal spread outside pelvis（含 omentum 沉積）",
+      "treatment_brief": "Systemic chemo（Pac/Carbo ± Pembro/Dostarlimab，依分子分群）。Cytoreductive surgery 在精選個案",
+      "exam_pearl": "FIGO 2023 將腹腔內擴散 vs 遠端轉移分開（舊版未細分）；NRG-GY018 / RUBY 為第一線標準"
+    },
+    {
+      "stage": "IVC",
+      "group": "Stage IV",
+      "group_definition": "侵犯膀胱/腸黏膜或遠端轉移",
+      "definition": "**Distant metastasis**（lung, liver, bone, distant LN 等）",
+      "criteria_detail": "Spread to distant organs beyond peritoneum",
+      "treatment_brief": "Systemic therapy 為主：Pac/Carbo + Pembrolizumab（NRG-GY018）或 + Dostarlimab（RUBY）；後線 Lenvatinib + Pembro（KEYNOTE-775）",
+      "exam_pearl": "FIGO 2023 新增 IVC；遠端轉移為 systemic therapy 唯一適應症"
+    }
+  ],
+
+  "special_considerations": [
+    {
+      "topic": "Fertility-Sparing 適應症（保留生育）",
+      "source": "NCCN UTERINE-1",
+      "applies_to": ["IA1 grade 1 + no myometrial invasion", "IA2"],
+      "criteria": [
+        "Grade 1 endometrioid",
+        "無 myometrial invasion（MRI 確認）",
+        "無 lymphovascular space invasion (LVSI)",
+        "強烈希望保留生育能力",
+        "完成生育後仍需 definitive hysterectomy"
+      ],
+      "implication": "Progestin therapy（MPA 或 megestrol）+ 每 3-6 月 D&C 監測。完全 response 率 ~70%，復發率 ~30%。"
+    },
+    {
+      "topic": "Lynch Syndrome 篩檢（建議全部 endometrial cancer 都做）",
+      "source": "NCCN + universal screening recommendations",
+      "applies_to": ["All endometrial cancer"],
+      "criteria": [
+        "全部 endometrial cancer 病人做 MMR IHC（MLH1/MSH2/MSH6/PMS2）",
+        "MMR 缺損 → MLH1 methylation testing（甲基化 = 偶發；無甲基化 = 疑似 Lynch）",
+        "確認 Lynch → 家族基因諮詢 + 大腸/卵巢/泌尿等多癌篩檢"
+      ],
+      "implication": "Universal screening 已是標準；MSH6 與 PMS2 在 endometrial cancer 比大腸癌更常見"
+    },
+    {
+      "topic": "HER2 Testing for Serous / Carcinosarcoma",
+      "source": "NCCN UTERINE-D",
+      "applies_to": ["Serous carcinoma", "Carcinosarcoma with HER2 expression"],
+      "criteria": [
+        "Stage III-IV 或 recurrent serous / carcinosarcoma → HER2 IHC 必做",
+        "IHC 3+：直接 HER2-positive",
+        "IHC 2+：加 ISH 確認 amplification"
+      ],
+      "implication": "HER2(+) serous → Pac + Carbo + Trastuzumab（Fader 2018 Phase II 證實 OS 提升）"
+    },
+    {
+      "topic": "POLEmut 降階考量",
+      "source": "ESGO/ESTRO/ESP guidelines + FIGO 2023",
+      "applies_to": ["POLEmut at any stage I-II"],
+      "rules": [
+        "POLEmut + 解剖 stage I-II → 可考慮 observation 或極簡化輔助治療",
+        "EU 已有 trial（PORTEC-4a）證實 POLEmut 不需 adjuvant",
+        "POLEmut + stage III-IV 仍需治療，但預後遠優於其他分子型"
+      ],
+      "implication": "需 NGS 才能確認 POLE mutation；費用與可及性可能限制應用"
+    },
+    {
+      "topic": "p53abn 升階治療",
+      "source": "ESGO/ESTRO/ESP guidelines",
+      "applies_to": ["p53abn at any stage"],
+      "rules": [
+        "p53abn + stage I（甚至 IA）→ 考慮 adjuvant chemo + RT（不要僅 observation）",
+        "Serous 與 carcinosarcoma 預設為 p53abn",
+        "HER2 IHC 必做"
+      ],
+      "implication": "分子分群影響治療強度遠大於 anatomic stage；'low stage but p53abn' 視同 high-risk"
+    },
+    {
+      "topic": "Sentinel Lymph Node Mapping",
+      "source": "NCCN UTERINE-C",
+      "applies_to": ["Apparently uterus-confined endometrial cancer"],
+      "rules": [
+        "SLN mapping 取代 routine systematic pelvic LND（FIRES, SENTI-ENDO trials）",
+        "Indocyanine green (ICG) 為標準 tracer，cervical injection",
+        "Mapping failure 那一側 → side-specific pelvic LND",
+        "Ultrastaging（serial sectioning + IHC）發現 micrometastasis / ITC 影響 staging"
+      ],
+      "implication": "減少 lymphedema 等併發症；FIGO 2023 容忍 ultrastaging 偵測的 micromet（計入 IIIC）"
+    }
+  ]
+}
