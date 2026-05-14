@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>藥物 · 子宮頸癌 · gynonc-board</title>
+<link rel="stylesheet" href="../../shared/styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <h1><a href="../../index.html">← 婦癌專科準備</a> / <a href="index.html">子宮頸癌</a> / 藥物</h1>
+  <div class="site-sub">TSGH 處方 V1 結構化 cheatsheet</div>
+</header>
+
+<main class="container">
+
+  <nav class="tab-bar">
+    <a href="index.html">📑 概覽</a>
+    <a href="staging.html">📊 分期</a>
+    <a href="treatment.html">🌳 處置流程</a>
+    <a href="drugs.html" class="active">💊 藥物</a>
+    <a href="trials.html">📚 Trials</a>
+    <a href="questions.html">📝 練習題</a>
+  </nav>
+
+  <section class="section">
+    <h2>藥物 cheatsheet · TSGH 處方</h2>
+    <div id="drugsContainer">載入中…</div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div>處方參考自 TSGH 婦癌多專科團隊 V1（2026-01）· 為公開期刊 protocol 之臨床整理</div>
+</footer>
+
+<script src="../../shared/components.js"></script>
+<script>
+  (async () => {
+    try {
+      const res = await fetch('../../data/cervical/drugs.json');
+      const data = await res.json();
+      document.getElementById('drugsContainer').innerHTML = renderDrugs(data);
+    } catch (e) {
+      document.getElementById('drugsContainer').innerHTML =
+        '<div class="stub">drugs.json 載入失敗: ' + e.message + '</div>';
+    }
+  })();
+</script>
+
+</body>
+</html>
