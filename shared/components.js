@@ -53,6 +53,72 @@ function escapeHtml(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+// 渲染藥物 cheatsheet (drugs.json)
+function renderDrugs(data) {
+  let html = '';
+
+  if (data._metadata) {
+    html += `
+      <div class="staging-meta">
+        <div><b>來源</b>：${escapeHtml(data._metadata.source)}</div>
+        <div class="meta-small">${escapeHtml(data._metadata.external_basis || '')}</div>
+        <div class="meta-small">最後更新：${escapeHtml(data._metadata.last_updated || '—')} · review：${escapeHtml(data._metadata.review_status || '—')}</div>
+        ${data._metadata.note ? `<div class="meta-small" style="margin-top:6px;color:var(--rust);">⚠️ ${escapeHtml(data._metadata.note)}</div>` : ''}
+      </div>
+    `;
+  }
+
+  if (data.categories?.length) {
+    data.categories.forEach(cat => {
+      html += `
+        <h3 class="staging-h3">${escapeHtml(cat.title)}</h3>
+        ${cat.subtitle ? `<div class="staging-group-def">${escapeHtml(cat.subtitle)}</div>` : ''}
+      `;
+      cat.regimens.forEach(r => {
+        html += `
+          <div class="regimen-card">
+            <h4 class="regimen-name">${escapeHtml(r.name)}</h4>
+            <table class="regimen-drugs">
+              <thead><tr><th>藥物</th><th>劑量</th><th>給藥</th><th>時程</th></tr></thead>
+              <tbody>
+                ${r.drugs.map(d => `
+                  <tr>
+                    <td><b>${escapeHtml(d.name)}</b></td>
+                    <td>${escapeHtml(d.dose)}</td>
+                    <td>${escapeHtml(d.route)}</td>
+                    <td>${escapeHtml(d.schedule)}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+            <div class="regimen-meta">
+              <div><b>週期</b>：${escapeHtml(r.cycle)}</div>
+              <div><b>適應症</b>：${escapeHtml(r.indication)}</div>
+              ${r.note ? `<div><b>備註</b>：${escapeHtml(r.note)}</div>` : ''}
+              ${r.reference ? `<div class="meta-small"><b>引註</b>：${escapeHtml(r.reference)}</div>` : ''}
+            </div>
+          </div>
+        `;
+      });
+    });
+  }
+
+  if (data.treatment_notes?.length) {
+    html += `<h3 class="staging-h3">💡 給藥注意事項</h3><div class="pearls-grid">`;
+    data.treatment_notes.forEach(n => {
+      html += `
+        <div class="pearl-card">
+          <h4>${escapeHtml(n.topic)}</h4>
+          <div>${escapeHtml(n.detail)}</div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  }
+
+  return html;
+}
+
 // 渲染處置流程 (treatment.json)
 function renderTreatment(data) {
   let html = '';

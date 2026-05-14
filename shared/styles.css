@@ -336,6 +336,41 @@ table.staging-stages th { background: var(--ink); color: var(--paper); }
   font-size: 13px;
 }
 
+/* Drug regimen card */
+.regimen-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--moss);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+.regimen-name {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: var(--ink);
+}
+table.regimen-drugs {
+  font-size: 13px;
+  margin: 6px 0;
+}
+table.regimen-drugs th {
+  background: var(--paper);
+  font-size: 12px;
+}
+.regimen-meta {
+  font-size: 13px;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--line);
+}
+.regimen-meta > div { margin: 3px 0; }
+.regimen-meta .meta-small {
+  font-size: 11px;
+  color: var(--ink-mute);
+  margin-top: 4px;
+}
+
 footer.site-footer {
   margin-top: 40px;
   padding: 20px;

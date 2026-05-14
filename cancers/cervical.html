@@ -36,7 +36,7 @@
 
   <section class="section" id="drugs">
     <h2>藥物 cheatsheet · TSGH 處方</h2>
-    <div class="stub">TODO：填入 TSGH 各 regimen（cisplatin/paclitaxel/bevacizumab/pembrolizumab 等）</div>
+    <div id="drugsContainer">載入中…</div>
   </section>
 
   <section class="section" id="trials">
@@ -79,6 +79,18 @@
     } catch (e) {
       document.getElementById('stagingContainer').innerHTML =
         '<div class="stub">staging.json 載入失敗: ' + e.message + '</div>';
+    }
+  })();
+
+  // 載入 drugs.json 並渲染
+  (async () => {
+    try {
+      const res = await fetch('../data/cervical/drugs.json');
+      const data = await res.json();
+      document.getElementById('drugsContainer').innerHTML = renderDrugs(data);
+    } catch (e) {
+      document.getElementById('drugsContainer').innerHTML =
+        '<div class="stub">drugs.json 載入失敗: ' + e.message + '</div>';
     }
   })();
 

@@ -1,0 +1,231 @@
+{
+  "_metadata": {
+    "source": "TSGH 婦癌多專科團隊 - 癌症治療藥物處方修訂 V1（修訂日 2026-01-20）",
+    "external_basis": "NCCN Cervical Cancer Guidelines 2025 V1 + 各 trial 原始 protocol",
+    "last_updated": "2026-05-14",
+    "review_status": "extracted-from-tsgh-pdf-pending-review",
+    "note": "Regimen / dose / cycle 依 TSGH 處方 PDF v1 (2026-01-12 final)。原始 PDF 為院內文件未公開；本檔僅保留處方結構（藥物 + 劑量 + 週期），詳細 administration 細節（hydration protocol、配置溶液體積等）請參照 TSGH 內部 SOP。"
+  },
+
+  "categories": [
+    {
+      "id": "first_line_ccrt",
+      "title": "第一線：CCRT 與 Adjuvant chemotherapy",
+      "subtitle": "用於 IB3, IIA2, III, IV 或 radical hysterectomy 術後輔助治療",
+      "regimens": [
+        {
+          "name": "Weekly Cisplatin",
+          "drugs": [
+            {"name": "Cisplatin", "dose": "40 mg/m²", "route": "IV (N/S 500 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "7-day cycle × 6 週 + concurrent RT",
+          "indication": "Locally advanced cervical cancer + RT",
+          "note": "標準 CCRT regimen",
+          "reference": "GOG long-term follow-up. J Clin Oncol 2007;25(19):2804-10"
+        },
+        {
+          "name": "Weekly Carboplatin",
+          "drugs": [
+            {"name": "Carboplatin", "dose": "AUC 2", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "7-day cycle × 6 週 + concurrent RT",
+          "indication": "Cisplatin 不耐受者 (renal impairment 等)",
+          "note": "Alternative to weekly cisplatin",
+          "reference": "Katanyoo K, et al. Gynecol Oncol 2011;123(3):571-6"
+        },
+        {
+          "name": "Weekly Cisplatin + Pembrolizumab (KEYNOTE-A18)",
+          "drugs": [
+            {"name": "Cisplatin", "dose": "40 mg/m²", "route": "IV (N/S 500 mL, 2 hrs)", "schedule": "D1, 每週"},
+            {"name": "Pembrolizumab", "dose": "200 mg", "route": "IV (N/S 100 mL, 30 min)", "schedule": "Q3W"}
+          ],
+          "cycle": "CCRT 同步使用 + 維持治療：Pembrolizumab 200 mg Q3W × 30 cycles 或 400 mg Q6W × 15 cycles",
+          "indication": "FIGO 2014 IIIA-IVA (NCCN cat 1) / FIGO 2018 IIIC (cat 2B) locally advanced",
+          "note": "**KEYNOTE-A18 regimen**：IO 首次進入 locally advanced CCRT 場景",
+          "reference": "Lorusso D, et al. Lancet 2024;403(10434):1341-1350"
+        },
+        {
+          "name": "Weekly Carboplatin + Pembrolizumab",
+          "drugs": [
+            {"name": "Carboplatin", "dose": "AUC 2", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1, 每週"},
+            {"name": "Pembrolizumab", "dose": "200 mg", "route": "IV (N/S 100 mL, 30 min)", "schedule": "Q3W"}
+          ],
+          "cycle": "CCRT 同步 + 維持治療（如上）",
+          "indication": "KEYNOTE-A18 適應症 + cisplatin 不耐受",
+          "note": "KEYNOTE-A18 variant with carbo",
+          "reference": "NCCN Cervical Cancer 2025 V1; Lancet 2024"
+        },
+        {
+          "name": "INTERLACE Pattern：前導化療 + CCRT",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "80 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "每週 × 6 週"},
+            {"name": "Carboplatin", "dose": "AUC 2", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "每週 × 6 週"}
+          ],
+          "cycle": "前導化療 ≤ 6 週 → 接標準 CCRT",
+          "indication": "Locally advanced cervical cancer (IB3, IIA2, IIB-IVA)",
+          "note": "**INTERLACE regimen**：2024 改寫指引的 positive trial",
+          "reference": "McCormack M, et al. Lancet 2024;404(10462):1525-1535"
+        }
+      ]
+    },
+
+    {
+      "id": "second_line_recurrent",
+      "title": "第二線：Recurrent / Metastatic Disease",
+      "subtitle": "持續性 / 復發 / 轉移性子宮頸癌",
+      "regimens": [
+        {
+          "name": "Paclitaxel + Cisplatin ± Bevacizumab (GOG-240)",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Cisplatin", "dose": "50 mg/m²", "route": "IV (N/S 500 mL, 2 hrs)", "schedule": "D1"},
+            {"name": "Bevacizumab (optional)", "dose": "7.5-15 mg/kg", "route": "IV (N/S 100 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle 直到 progression 或不可耐受",
+          "indication": "First-line 持續/復發/轉移 cervical cancer",
+          "note": "**GOG-240 regimen**：bevacizumab 加入提升 OS 3.7 月",
+          "reference": "Tewari KS, et al. NEJM 2014;370(8):734-743"
+        },
+        {
+          "name": "Paclitaxel + Carboplatin ± Bevacizumab (JCOG-1311)",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Carboplatin", "dose": "AUC 4-6", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Bevacizumab (optional)", "dose": "7.5-15 mg/kg", "route": "IV (N/S 100 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle 直到 progression",
+          "indication": "First-line metastatic/recurrent, cisplatin 不耐者",
+          "note": "Carboplatin 取代 cisplatin（耐受性更佳）",
+          "reference": "JCOG-1311. Jpn J Clin Oncol 2018;48(12):1096-1100"
+        },
+        {
+          "name": "Pembrolizumab + Paclitaxel + Cisplatin ± Bevacizumab (KEYNOTE-826)",
+          "drugs": [
+            {"name": "Pembrolizumab", "dose": "200 mg", "route": "IV (N/S 100 mL, 30 min)", "schedule": "D1"},
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Cisplatin", "dose": "50 mg/m²", "route": "IV (N/S 500 mL, 2 hrs)", "schedule": "D1"},
+            {"name": "Bevacizumab (optional)", "dose": "7.5-15 mg/kg", "route": "IV (N/S 100 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle 直到 progression",
+          "indication": "**PD-L1 CPS ≥ 1** 或 MSI-H/dMMR，first-line metastatic/recurrent",
+          "note": "**KEYNOTE-826 first-line standard**：OS 24.4 vs 16.5 月 (HR 0.64)",
+          "reference": "Colombo N, et al. NEJM 2021;385(20):1856-1867; Monk BJ et al. Lancet Oncol 2023"
+        },
+        {
+          "name": "Pembrolizumab + Paclitaxel + Carboplatin ± Bevacizumab",
+          "drugs": [
+            {"name": "Pembrolizumab", "dose": "200 mg", "route": "IV (N/S 100 mL, 30 min)", "schedule": "D1"},
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Carboplatin", "dose": "AUC 4-6", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Bevacizumab", "dose": "7.5-15 mg/kg", "route": "IV (N/S 100 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle 直到 progression",
+          "indication": "KEYNOTE-826 適應症 + cisplatin 不耐",
+          "note": "KEYNOTE-826 carboplatin variant",
+          "reference": "Monk BJ et al. Lancet Oncol 2023;24(4):392-402"
+        },
+        {
+          "name": "Pembrolizumab 單藥 (KEYNOTE-158)",
+          "drugs": [
+            {"name": "Pembrolizumab", "dose": "200 mg", "route": "IV (N/S 100 mL, 30 min)", "schedule": "Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression / 不可耐受 / 最多 24 月",
+          "indication": "PD-L1(+) 或 MSI-H/dMMR previously treated advanced cervical cancer",
+          "note": "Second-line monotherapy for selected patients",
+          "reference": "KEYNOTE-158. J Clin Oncol 2019;37(17):1470-1478"
+        },
+        {
+          "name": "Tri-Weekly Cisplatin 單藥",
+          "drugs": [
+            {"name": "Cisplatin", "dose": "50 mg/m²", "route": "IV (N/S 500 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle 直到 progression",
+          "indication": "Recurrent disease, palliative",
+          "note": "單藥對照組（活性較低）",
+          "reference": "Lanciano R, et al. J Clin Oncol 2005;23:8289"
+        },
+        {
+          "name": "Cisplatin + Topotecan",
+          "drugs": [
+            {"name": "Cisplatin", "dose": "50 mg/m²", "route": "IV (N/S 500 mL, 2 hrs)", "schedule": "D1"},
+            {"name": "Topotecan", "dose": "0.75 mg/m²", "route": "IV (N/S 100 mL, 30 min)", "schedule": "D1-D3"}
+          ],
+          "cycle": "21-day cycle 直到 progression",
+          "indication": "Recurrent cervical cancer",
+          "note": "Cisplatin doublet 之一",
+          "reference": "Long HJ 3rd. J Clin Oncol 2005;23:4626-4633"
+        },
+        {
+          "name": "Cisplatin + Paclitaxel (Tri-weekly)",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "135 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1 (自費)"},
+            {"name": "Cisplatin", "dose": "50 mg/m²", "route": "IV (N/S 500 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle 直到 progression",
+          "indication": "Recurrent disease",
+          "note": "Paclitaxel 為健保未給付（自費）",
+          "reference": "GOG study. J Clin Oncol 2009;27(28):4649-55"
+        },
+        {
+          "name": "Weekly Topotecan",
+          "drugs": [
+            {"name": "Topotecan", "dose": "3-4 mg/m²", "route": "IV (N/S 100 mL)", "schedule": "D1, 8, 15"}
+          ],
+          "cycle": "28-day cycle 直到 progression",
+          "indication": "Recurrent disease，化療曾經接受",
+          "note": "Single-agent salvage",
+          "reference": "Lorusso D, et al. Oncology 2011;80(5-6):390-4"
+        },
+        {
+          "name": "Topotecan ± Paclitaxel ± Bevacizumab",
+          "drugs": [
+            {"name": "Topotecan", "dose": "0.75 mg/m²", "route": "IV (N/S 100 mL, 30 min)", "schedule": "D1-D3"},
+            {"name": "Paclitaxel (optional)", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Bevacizumab (optional)", "dose": "7.5-15 mg/kg", "route": "IV (N/S 100 mL, 2 hrs)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle 直到 progression",
+          "indication": "Recurrent disease (GOG-240 alternative arm)",
+          "note": "Non-platinum alternative",
+          "reference": "GOG-240. NEJM 2014;370:734-43"
+        },
+        {
+          "name": "Fam-trastuzumab deruxtecan (Enhertu)",
+          "drugs": [
+            {"name": "Trastuzumab deruxtecan", "dose": "5.4 mg/kg", "route": "IV (N/S 100 mL, 90 min)", "schedule": "Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression",
+          "indication": "**HER2-positive tumors (IHC 3+ or 2+)** advanced cervical cancer",
+          "note": "Tumor-agnostic HER2 ADC indication",
+          "reference": "GOG / Bookman MA et al. J Clin Oncol 2003;21(2):283-290"
+        }
+      ]
+    }
+  ],
+
+  "treatment_notes": [
+    {
+      "topic": "Cisplatin Hydration Protocol",
+      "detail": "前後 1000-3000 mL 0.9% N/S + 10 mEq KCl + 8 mEq (1 g) MgSO4 各 2 小時。預防腎毒性與電解質失衡。"
+    },
+    {
+      "topic": "Carboplatin 計算公式 (Calvert)",
+      "detail": "Dose (mg) = AUC × (CCr + 25)。AUC 4-6 為標準範圍；CCRT 同步時用 AUC 2。"
+    },
+    {
+      "topic": "Bevacizumab 注意事項",
+      "detail": "GU/GI fistula 風險上升（特別既往 RT 區域）。手術前後 28 天停用；高血壓 / 蛋白尿需監測。"
+    },
+    {
+      "topic": "Pembrolizumab 免疫相關 AE",
+      "detail": "Pneumonitis / hepatitis / colitis / endocrinopathy（甲狀腺、垂體、腎上腺）/ skin rash。需定期 LFT、TFT、cortisol、glucose。"
+    },
+    {
+      "topic": "Topotecan 骨髓抑制",
+      "detail": "嚴重 myelosuppression（neutropenia 為主，thrombocytopenia）。給藥前需 ANC ≥ 1500、PLT ≥ 100K。"
+    },
+    {
+      "topic": "HER2 IHC 判讀（IHC 3+ vs 2+）",
+      "detail": "IHC 3+：強烈完整膜染色 ≥ 10%。IHC 2+：中等完整膜染色 ≥ 10%，需 ISH (FISH/CISH) 確認 amplification 才視為 HER2-positive。"
+    }
+  ]
+}
