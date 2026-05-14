@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>子宮頸癌 · gynonc-board</title>
 <link rel="stylesheet" href="../shared/styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
 <body>
 
@@ -30,7 +31,7 @@
 
   <section class="section" id="treatment">
     <h2>處置流程 · NCCN 摘要</h2>
-    <div class="stub">TODO：填入 NCCN 各 stage 治療決策樹（含 Sedlis / Peters criteria）</div>
+    <div id="treatmentContainer">載入中…</div>
   </section>
 
   <section class="section" id="drugs">
@@ -78,6 +79,23 @@
     } catch (e) {
       document.getElementById('stagingContainer').innerHTML =
         '<div class="stub">staging.json 載入失敗: ' + e.message + '</div>';
+    }
+  })();
+
+  // 載入 treatment.json 並渲染（含 Mermaid 圖）
+  (async () => {
+    try {
+      const res = await fetch('../data/cervical/treatment.json');
+      const data = await res.json();
+      document.getElementById('treatmentContainer').innerHTML = renderTreatment(data);
+      // Init mermaid 並 render
+      if (window.mermaid) {
+        mermaid.initialize({ startOnLoad: false, theme: 'neutral', flowchart: { htmlLabels: true, curve: 'basis' } });
+        await mermaid.run({ querySelector: '.mermaid' });
+      }
+    } catch (e) {
+      document.getElementById('treatmentContainer').innerHTML =
+        '<div class="stub">treatment.json 載入失敗: ' + e.message + '</div>';
     }
   })();
 </script>

@@ -53,6 +53,97 @@ function escapeHtml(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+// 渲染處置流程 (treatment.json)
+function renderTreatment(data) {
+  let html = '';
+
+  if (data._metadata) {
+    html += `
+      <div class="staging-meta">
+        <div><b>來源：</b>${escapeHtml(data._metadata.source)}</div>
+        <div class="meta-small">最後更新：${escapeHtml(data._metadata.last_updated || '—')} · review：${escapeHtml(data._metadata.review_status || '—')}</div>
+      </div>
+    `;
+  }
+
+  // Mermaid 決策樹（多個）
+  if (data.diagrams?.length) {
+    data.diagrams.forEach(d => {
+      html += `
+        <h3 class="staging-h3">${escapeHtml(d.title)}</h3>
+        ${d.subtitle ? `<div class="staging-group-def">${escapeHtml(d.subtitle)}</div>` : ''}
+        <div class="mermaid-wrap">
+          <pre class="mermaid">${escapeHtml(d.mermaid)}</pre>
+        </div>
+      `;
+    });
+  }
+
+  // Sedlis criteria 表
+  if (data.sedlis_criteria) {
+    const s = data.sedlis_criteria;
+    html += `
+      <h3 class="staging-h3">📋 ${escapeHtml(s.name)} — 中度風險</h3>
+      <div class="criteria-meta">
+        <div><b>用途</b>：${escapeHtml(s.purpose)}</div>
+        <div><b>處置</b>：${escapeHtml(s.indication)}</div>
+        <div class="meta-small">${escapeHtml(s.evidence || '')}</div>
+      </div>
+      <table>
+        <thead><tr><th>LVSI</th><th>間質侵犯深度</th><th>腫瘤大小</th></tr></thead>
+        <tbody>
+          ${s.criteria_combinations.map(c => `
+            <tr>
+              <td>${escapeHtml(c.LVSI)}</td>
+              <td>${escapeHtml(c.stromal_invasion)}</td>
+              <td>${escapeHtml(c.tumor_size)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+      <div class="staging-special-impl"><b>結果</b>：${escapeHtml(s.result || '')}</div>
+      <div class="staging-special-impl"><b>意義</b>：${escapeHtml(s.implication)}</div>
+      ${s.exam_pearl ? `<div class="exam-pearl">💡 <b>考點</b>：${escapeHtml(s.exam_pearl)}</div>` : ''}
+    `;
+  }
+
+  // Peters criteria
+  if (data.peters_criteria) {
+    const p = data.peters_criteria;
+    html += `
+      <h3 class="staging-h3">📋 ${escapeHtml(p.name)} — 高度風險</h3>
+      <div class="criteria-meta">
+        <div><b>用途</b>：${escapeHtml(p.purpose)}</div>
+        <div><b>處置</b>：${escapeHtml(p.indication)}</div>
+        <div class="meta-small">${escapeHtml(p.evidence || '')}</div>
+      </div>
+      <ul class="staging-clarifications">
+        ${p.criteria_any_of.map(c => `<li>${escapeHtml(c)}</li>`).join('')}
+      </ul>
+      <div class="staging-special-impl"><b>結果</b>：${escapeHtml(p.result || '')}</div>
+      <div class="staging-special-impl"><b>意義</b>：${escapeHtml(p.implication)}</div>
+      ${p.exam_pearl ? `<div class="exam-pearl">💡 <b>考點</b>：${escapeHtml(p.exam_pearl)}</div>` : ''}
+    `;
+  }
+
+  // Treatment pearls
+  if (data.treatment_pearls?.length) {
+    html += `
+      <h3 class="staging-h3">💡 治療要點 (Treatment Pearls)</h3>
+      <div class="pearls-grid">
+        ${data.treatment_pearls.map(p => `
+          <div class="pearl-card">
+            <h4>${escapeHtml(p.topic)}</h4>
+            <div>${escapeHtml(p.detail)}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  return html;
+}
+
 // 渲染 FIGO 分期 (staging.json)
 function renderStaging(data) {
   let html = '';
