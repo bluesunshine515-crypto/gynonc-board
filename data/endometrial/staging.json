@@ -9,9 +9,11 @@
       "Concin N, et al. ESGO/ESTRO/ESP guidelines for the management of patients with endometrial carcinoma. Int J Gynecol Cancer 2021;31(1):12-39.",
       "NCCN Uterine Neoplasms Guidelines v.1.2026"
     ],
-    "last_updated": "2026-05-14",
-    "review_status": "draft-pending-NotebookLM-review",
-    "review_notes": "FIGO 2023 大幅改版：(1) 首次納入 4 分子分群 (POLEmut/MMRd/p53abn/NSMP) (2) 將 histology + grade + LVSI 納入分期 (3) 重新切分 IA (IA1/IA2/IA3) 與 II (IIA/IIB/IIC)。臨床仍以 FIGO 2009 為輔助，但學界與專科考試已以 FIGO 2023 為主。"
+    "last_updated": "2026-05-16",
+    "review_status": "v2 - 吃入 NotebookLM NCCN v.2.2026 review 5 大修正",
+    "review_notes": "FIGO 2023 大幅改版：(1) 首次納入 4 分子分群 (POLEmut/MMRd/p53abn/NSMP) (2) 將 histology + grade + LVSI 納入分期 (3) 重新切分 IA (IA1/IA2/IA3) 與 II (IIA/IIB/IIC)。臨床仍以 FIGO 2009 為輔助，但學界與專科考試已以 FIGO 2023 為主。",
+    "scope_note": "本模組只涵蓋 endometrial carcinoma（含 endometrioid / serous / clear cell / undifferentiated / carcinosarcoma / mixed）。**Endometrial stromal sarcoma (ESS) 與其他 uterine sarcoma 不在此** — 屬另一套 AJCC/FIGO sarcoma 分期，治療以 BSO + 抗雌激素賀爾蒙（AI）為首選，邏輯與此完全不同。",
+    "figo_2023_notation": "FIGO 2023 建議在羅馬數字分期後加小寫 'm' + 下標分子型態，例如：早期 POLEmut 寫為 IAm_POLEmut；高風險 p53abn 寫為 IICm_p53abn。本資料的 stage 欄為純解剖分期，搭配 molecular_subgroups 一同呈現完整 FIGO 2023 標示。"
   },
 
   "key_changes_2009_to_2023": [
@@ -36,8 +38,8 @@
     {
       "change": "IA 重新切為 IA1/IA2/IA3",
       "before_2009": "IA = 侵犯 < 50% myometrium（單一分期）",
-      "after_2023": "IA1: low-grade endometrioid + <50% myometrium + no/focal LVSI；IA2: confined to polyp/endometrium；IA3: low-grade endometrioid with concurrent ovarian involvement（特定條件）",
-      "why": "細分讓 low-risk subgroup 可考慮 fertility-sparing 或 observation"
+      "after_2023": "**IA1: confined to polyp/endometrium（無肌層侵犯）**；**IA2: low-grade endometrioid + <50% myometrium + no/focal LVSI**；IA3: low-grade endometrioid + concurrent ovarian involvement（特定條件）",
+      "why": "細分讓 low-risk subgroup 可考慮 fertility-sparing 或 observation；⚠️ IA1 = 無肌層侵犯（更早期），IA2 才是 <50% 肌層侵犯，切勿寫反"
     },
     {
       "change": "II 重新切為 IIA/IIB/IIC",
@@ -52,7 +54,7 @@
       "name": "POLEmut（POLE-ultramutated）",
       "prevalence": "約 7%",
       "diagnostic": "POLE exonuclease domain mutations（POLE EDM）— 多由 NGS 偵測",
-      "prognosis": "**極佳**（5-yr OS > 95%，即使 stage III-IV）",
+      "prognosis": "**極佳**（5-yr OS > 95%，即使 stage III-IV）｜⚠️ 數字為 TCGA / PORTEC 整合分析的約略值，非 FIGO 定義的絕對標準",
       "treatment_implication": "可考慮**降階治療**（observation 或縮減輔助治療），特別 stage I-II",
       "exam_pearl": "POLEmut 是『exception that proves the rule』— 即使解剖分期晚，預後極好"
     },
@@ -68,7 +70,7 @@
       "name": "p53abn（copy-number high）",
       "prevalence": "約 15%",
       "diagnostic": "p53 IHC abnormal（complete absence 或 strong overexpression）；常見於 serous, carcinosarcoma",
-      "prognosis": "**最差**（5-yr OS ~50%）",
+      "prognosis": "**最差**（5-yr OS ~50%）｜⚠️ 數字為 TCGA / PORTEC 整合分析的約略值，非 FIGO 定義的絕對標準",
       "treatment_implication": "**升階治療** — 即使 stage I 也考慮 adjuvant chemo + RT；HER2 testing 必做（serous）",
       "exam_pearl": "p53abn 跨越 endometrioid / serous 分類，治療強度比預期高"
     },
@@ -87,19 +89,19 @@
       "stage": "IA1",
       "group": "Stage I",
       "group_definition": "腫瘤局限於子宮體",
-      "definition": "Low-grade endometrioid，侵犯 < 50% myometrium，無 / 局部 LVSI",
-      "criteria_detail": "Grade 1-2 endometrioid + 肌肉侵犯 < 50% + LVSI absent or focal (< 5 灶)",
-      "treatment_brief": "TAH + BSO ± SLN/LND。年輕 + 強烈希望保留生育 + grade 1 + 無 myometrial invasion → fertility-sparing（progestin therapy）。POLEmut 可 observation。",
-      "exam_pearl": "Stage 最低 + 預後最好；fertility-sparing 主要候選；POLEmut 可 observation"
+      "definition": "Low-grade endometrioid，**侷限於子宮內膜瘜肉或子宮內膜**（confined to endometrium / polyp，no myometrial invasion）",
+      "criteria_detail": "Grade 1-2 endometrioid + confined to polyp or endometrium + 無肌層侵犯",
+      "treatment_brief": "TAH + BSO ± SLN。**Fertility-sparing 最佳候選**（grade 1 + no invasion + 強烈希望保留生育）。POLEmut 可 observation。",
+      "exam_pearl": "FIGO 2023：IA1 = confined to endometrium（無肌層侵犯）→ 預後最好 + fertility-sparing 首選；不要混淆 IA1 vs IA2"
     },
     {
       "stage": "IA2",
       "group": "Stage I",
       "group_definition": "腫瘤局限於子宮體",
-      "definition": "Low-grade endometrioid，局限於 polyp 或 endometrium（無 myometrial invasion）",
-      "criteria_detail": "Confined to polyp or endometrium，no myometrial invasion",
-      "treatment_brief": "TAH + BSO ± SLN。Fertility-sparing 候選（low-grade + no invasion）。",
-      "exam_pearl": "Confined to endometrium → 最適合 fertility-sparing（progestin）"
+      "definition": "Low-grade endometrioid，**侵犯 < 50% myometrium**，無或局部 LVSI（< 5 灶）",
+      "criteria_detail": "Grade 1-2 endometrioid + < 50% myometrial invasion + LVSI absent or focal (< 5 灶)",
+      "treatment_brief": "TAH + BSO ± SLN/LND。年齡輕 + 強烈希望保留生育 + grade 1 + 無 myometrial invasion 才符 fertility-sparing（progestin therapy）。POLEmut 可 observation。",
+      "exam_pearl": "FIGO 2023：IA2 = <50% myometrial invasion；IA1 才是 confined to endometrium（兩者切點容易混淆，請記牢）"
     },
     {
       "stage": "IA3",
@@ -123,10 +125,10 @@
       "stage": "IC",
       "group": "Stage I",
       "group_definition": "腫瘤局限於子宮體",
-      "definition": "**Aggressive histology** 局限於 polyp 或 endometrium",
-      "criteria_detail": "Aggressive histology（serous, clear cell, undifferentiated, carcinosarcoma, mixed）局限於 polyp 或 endometrium，no myometrial invasion",
-      "treatment_brief": "TAH + BSO + 完整 surgical staging（含 omentectomy）。即使 confined 仍考慮 adjuvant chemo（pac/carbo）± RT。HER2 testing 必做（serous）",
-      "exam_pearl": "FIGO 2023 新增 IC；aggressive histology 即使最早期也走完整 staging + adjuvant chemo"
+      "definition": "**Aggressive histology** 局限於 polyp 或 endometrium（無肌層侵犯）",
+      "criteria_detail": "Aggressive histology（serous, clear cell, undifferentiated, carcinosarcoma, mixed）局限於 polyp 或 endometrium，**no myometrial invasion**",
+      "treatment_brief": "TAH + BSO + 完整 surgical staging（含 omentectomy + peritoneal washing）。**Non-invasive 病灶可選 observation 或 vaginal brachy 單獨使用，不一定加全身化療**；一旦有肌層侵犯（即升 IIC）才必加 adjuvant chemo ± RT。HER2 testing 必做（serous / carcinosarcoma）",
+      "exam_pearl": "FIGO 2023 新增 IC；非侵入性 serous/clear cell 仍以完整 staging 為主，但輔助治療可由 observe → vault brachy → chemo 分層選擇（不要一律 chemo）"
     },
     {
       "stage": "IIA",
@@ -179,8 +181,8 @@
       "group_definition": "腫瘤侵犯子宮外組織 / 淋巴",
       "definition": "**Pelvic lymph node 轉移**（不論其他擴散）",
       "criteria_detail": "Pelvic LN(+) by imaging or pathology",
-      "treatment_brief": "Adjuvant chemo + RT（PORTEC-3）。Pembrolizumab + chemo 在 NRG-GY018 + RUBY 證實提升 PFS（特別 dMMR）",
-      "exam_pearl": "Pelvic LN+ = 全身性疾病；近年 IO + chemo 為標準（NRG-GY018, RUBY）"
+      "treatment_brief": "Staging surgery + adjuvant chemo + RT（PORTEC-3）。**Carbo/Pac + Pembrolizumab（NRG-GY018）或 + Dostarlimab（RUBY）= NCCN Category 1 首選**（primary 或 adjuvant），不限 advanced/recurrent",
+      "exam_pearl": "Pelvic LN+ = 全身性疾病；IO + chemo 為 NCCN Cat 1 首選；NRG-GY018 / RUBY 適用範圍含 stage III-IV primary，不只復發"
     },
     {
       "stage": "IIIC2",
@@ -188,8 +190,8 @@
       "group_definition": "腫瘤侵犯子宮外組織 / 淋巴",
       "definition": "**Para-aortic lymph node 轉移**（不論 pelvic LN 與否）",
       "criteria_detail": "Para-aortic LN(+) by imaging or pathology",
-      "treatment_brief": "Extended-field RT + adjuvant chemo + IO（NRG-GY018, RUBY 適應症）",
-      "exam_pearl": "Para-aortic LN+ 預後最差的 Stage III；extended-field RT 取代 pelvic-only"
+      "treatment_brief": "Extended-field RT + adjuvant chemo + **Carbo/Pac + Pembro/Dostarlimab（Cat 1）**",
+      "exam_pearl": "Para-aortic LN+ 預後最差的 Stage III；extended-field RT 取代 pelvic-only；IO+chemo Cat 1"
     },
     {
       "stage": "IVA",
@@ -206,8 +208,8 @@
       "group_definition": "侵犯膀胱/腸黏膜或遠端轉移",
       "definition": "**Abdominal peritoneal metastasis**（不含 adnexa）",
       "criteria_detail": "Peritoneal spread outside pelvis（含 omentum 沉積）",
-      "treatment_brief": "Systemic chemo（Pac/Carbo ± Pembro/Dostarlimab，依分子分群）。Cytoreductive surgery 在精選個案",
-      "exam_pearl": "FIGO 2023 將腹腔內擴散 vs 遠端轉移分開（舊版未細分）；NRG-GY018 / RUBY 為第一線標準"
+      "treatment_brief": "Systemic chemo：**Carbo/Pac + Pembro（NRG-GY018）或 + Dostarlimab（RUBY）= Cat 1**（依 MMR 狀態）。Cytoreductive surgery 在精選個案",
+      "exam_pearl": "FIGO 2023 將腹腔內擴散 vs 遠端轉移分開（舊版未細分）；NRG-GY018 / RUBY 第一線 Cat 1"
     },
     {
       "stage": "IVC",
@@ -215,8 +217,8 @@
       "group_definition": "侵犯膀胱/腸黏膜或遠端轉移",
       "definition": "**Distant metastasis**（lung, liver, bone, distant LN 等）",
       "criteria_detail": "Spread to distant organs beyond peritoneum",
-      "treatment_brief": "Systemic therapy 為主：Pac/Carbo + Pembrolizumab（NRG-GY018）或 + Dostarlimab（RUBY）；後線 Lenvatinib + Pembro（KEYNOTE-775）",
-      "exam_pearl": "FIGO 2023 新增 IVC；遠端轉移為 systemic therapy 唯一適應症"
+      "treatment_brief": "Systemic therapy 為主：**Carbo/Pac + Pembrolizumab（NRG-GY018）或 + Dostarlimab（RUBY）= Cat 1**（dMMR PFS HR ~0.30）；後線 pMMR Lenvatinib + Pembro（KEYNOTE-775, Cat 1，限 platinum-failed）",
+      "exam_pearl": "FIGO 2023 新增 IVC；遠端轉移為 systemic therapy 唯一適應症；IO+chemo Cat 1 首選"
     }
   ],
 

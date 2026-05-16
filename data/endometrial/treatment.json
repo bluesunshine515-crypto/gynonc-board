@@ -1,36 +1,36 @@
 {
   "_metadata": {
-    "source": "NCCN Uterine Neoplasms Guidelines v.1.2026 + FIGO 2023 + ESGO/ESTRO/ESP 2021",
-    "last_updated": "2026-05-14",
-    "review_status": "draft-pending-NotebookLM-review",
-    "review_notes": "endometrial cancer 處置因 FIGO 2023 分子分群整合而大幅改變。Mermaid 3 圖：1️⃣ 依分子分群 + stage 處置 2️⃣ 術後 adjuvant 決策 3️⃣ Advanced/recurrent 系統治療線。"
+    "source": "NCCN Uterine Neoplasms Guidelines v.2.2026 + FIGO 2023 + ESGO/ESTRO/ESP 2021",
+    "last_updated": "2026-05-16",
+    "review_status": "v2 - 吃入 NotebookLM NCCN v.2.2026 review 6 大修正",
+    "review_notes": "v2 修正：(1) 第 1 樹改以 histology/stage 為主幹，分子分群為分支（符合 NCCN ENDO-1/ENDO-11 邏輯，而非分子先於 stage）；(2) NRG-GY018/RUBY 擴大至 stage III-IV primary/adjuvant Cat 1，DUO-E 分級（dMMR Cat 1，pMMR Carbo/Pac/Durva + Durva/Olap maint Cat 2B）；(3) dMMR 後線 IO 順序釐清（一線已用 IO+chemo → IO 作為 maintenance；單藥 IO 保留給未用過 IO 病人）；(4) Lenva+Pembro 加 platinum-failed Cat 1 條件（含 neoadjuvant + adjuvant）；(5) HER2 testing 擴大至所有 p53abn + 所有轉移/復發 + T-DXd（一般 IHC 2+/3+，Carcinosarcoma IHC 1+/2+/3+）；(6) 加 Carcinosarcoma 例外（CS first-line Carbo/Pac alone，Pembro 不適用）+ ER+ recurrent hormone therapy 分支。"
   },
 
   "diagrams": [
     {
       "id": "primary",
-      "title": "1️⃣ 原發治療決策樹（依分子分群 + 分期）",
-      "subtitle": "FIGO 2023 整合分子分類後的處置路徑",
-      "mermaid": "flowchart TD\n  Start([新診斷子宮內膜癌]) --> MolTest{4 分子分群<br>POLE + MMR + p53 IHC}\n\n  MolTest -->|POLEmut| POLE[POLEmut track:<br>預後極佳<br>可考慮降階治療]\n  MolTest -->|MMRd/MSI-H| MMRd[MMRd track:<br>IO 高度敏感<br>Lynch screen]\n  MolTest -->|p53abn| p53[p53abn track:<br>預後最差<br>升階 + HER2 testing]\n  MolTest -->|NSMP| NSMP[NSMP 標準路徑]\n\n  POLE --> Stage1{Stage?}\n  MMRd --> Stage1\n  p53 --> Stage1\n  NSMP --> Stage1\n\n  Stage1 --> S_IA[IA1/IA2 endometrioid<br>低風險]\n  Stage1 --> S_IB[IB low-grade]\n  Stage1 --> S_IC[IC aggressive histology]\n  Stage1 --> S_II[Stage II]\n  Stage1 --> S_III[Stage III]\n  Stage1 --> S_IV[Stage IV]\n\n  S_IA --> Fertility{保留生育?}\n  Fertility -->|是 + grade 1| FS[Fertility-sparing<br>Progestin therapy<br>3-6 月 D&C 追蹤]\n  Fertility -->|否| SurgIA[TAH + BSO ± SLN<br>POLEmut: 可 observation<br>其他: adjuvant brachy 視 HIR]\n\n  S_IB --> SurgIB[TAH + BSO + SLN/LND<br>+ vault brachy<br>PORTEC-2 standard]\n\n  S_IC --> SurgIC[完整 staging<br>+ adjuvant chemo<br>HER2+: + Trastuzumab]\n\n  S_II --> SurgII[TAH + BSO + LND<br>+ adjuvant pelvic RT<br>p53abn: + chemo]\n\n  S_III --> SurgIII[Staging surgery<br>+ adjuvant chemo + RT<br>PORTEC-3 standard<br>NRG-GY018 / RUBY 加 IO]\n\n  S_IV --> Sys[Systemic therapy<br>Pac/Carbo + Pembro NRG-GY018<br>或 + Dostarlimab RUBY<br>HER2+: + Trastuzumab]\n\n  classDef pole fill:#d4edda,stroke:#27ae60,stroke-width:2px;\n  class POLE pole;\n  classDef mmrd fill:#fff3cd,stroke:#c89a3a,stroke-width:2px;\n  class MMRd mmrd;\n  classDef p53 fill:#f8d7da,stroke:#c0392b,stroke-width:2px;\n  class p53 p53;\n  classDef nsmp fill:#e8f0e0,stroke:#5a7a4a;\n  class NSMP nsmp;\n  classDef sysclass fill:#f0e8ff,stroke:#7a5aa8;\n  class Sys,FS sysclass;"
+      "title": "1️⃣ 原發治療決策樹（組織型態 + 分期為主幹）",
+      "subtitle": "v2 修正：依 NCCN ENDO-1/ENDO-11 邏輯，分子分群為分支不為主幹",
+      "mermaid": "flowchart TD\n  Start([新診斷子宮內膜癌]) --> Hist{組織型態}\n\n  Hist -->|Low-grade endometrioid<br>G1-2 endometrioid| LG_Stage{Stage?}\n  Hist -->|Aggressive histology<br>Serous / Clear cell /<br>Undifferentiated / Carcinosarcoma / Mixed| Agg_Stage{Stage?}\n\n  LG_Stage -->|IA1<br>confined to endometrium| IA1[TAH+BSO ± SLN<br>**Fertility-sparing 首選候選**<br>POLEmut: 可 observation]\n  LG_Stage -->|IA2<br><50% myo invasion| IA2[TAH+BSO ± SLN/LND<br>Fertility-sparing 嚴格挑<br>POLEmut: 可 observation]\n  LG_Stage -->|IA3<br>+ concurrent ovarian| IA3[TAH+BSO + staging]\n  LG_Stage -->|IB<br>≥50% myo invasion| IB[TAH+BSO+SLN<br>+ vault brachy<br>PORTEC-2]\n  LG_Stage -->|IIA-IIB| II_LG[TAH+BSO+LND<br>+ pelvic RT]\n  LG_Stage -->|III-IV| Sys_LG[Systemic therapy:<br>**Carbo/Pac + Pembro/Dostarlimab Cat 1**<br>+ RT per stage]\n\n  Agg_Stage -->|IC<br>non-invasive| IC[完整 staging + omentectomy<br>**Observe / Vault brachy / Chemo 分層選**<br>不一律 chemo<br>HER2 testing 必做]\n  Agg_Stage -->|IIC<br>+ myo invasion| IIC[完整 staging<br>+ adjuvant Carbo/Pac × 6 + RT<br>HER2+ → Trastuzumab]\n  Agg_Stage -->|III-IV<br>非 Carcinosarcoma| Sys_Agg[**Carbo/Pac + Pembro/Dostarlimab Cat 1**<br>HER2+ → +Trastuzumab]\n  Agg_Stage -->|III-IV<br>Carcinosarcoma 例外| Sys_CS[**Carbo/Pac alone**<br>± Trastuzumab if HER2+<br>**Pembro 不適用 CS first-line**]\n\n  classDef low fill:#d4edda,stroke:#27ae60;\n  class IA1,IA2,IA3,IB low;\n  classDef med fill:#fff3cd,stroke:#c89a3a;\n  class II_LG,IC,IIC med;\n  classDef high fill:#f8d7da,stroke:#c0392b;\n  class Sys_LG,Sys_Agg high;\n  classDef cs fill:#fde2e4,stroke:#7a3a3a;\n  class Sys_CS cs;"
     },
     {
       "id": "adjuvant",
-      "title": "2️⃣ 術後輔助治療決策（依風險群）",
-      "subtitle": "綜合 stage + grade + LVSI + 分子分群",
-      "mermaid": "flowchart TD\n  Surgery([TAH + BSO 術後病理]) --> Mol{分子分群}\n\n  Mol -->|POLEmut + stage I-II| POLE_low[**Observation**<br>PORTEC-4a 等試驗支持]\n\n  Mol -->|p53abn 任何 stage| p53_high[**升階治療**:<br>Adjuvant chemo + RT<br>不論 anatomic stage]\n\n  Mol -->|MMRd / NSMP| Risk{解剖風險分群}\n\n  Risk -->|Low risk<br>IA G1-2 no LVSI| LowRisk[Observation]\n\n  Risk -->|HIR<br>GOG-99 criteria| HIR[**Vaginal brachy**<br>PORTEC-2 證實 = pelvic RT]\n\n  Risk -->|High risk<br>IB G3 / II-III / serous| HighRisk[**CCRT + adjuvant chemo**<br>PORTEC-3 standard<br>OS HR 0.70]\n\n  Risk -->|Stage III dMMR| Pembro_adj[考慮 Pembro 加 adjuvant<br>但 KEYNOTE-B21 negative<br>NCCN 列為選項]\n\n  classDef low fill:#d4edda,stroke:#27ae60;\n  class POLE_low,LowRisk low;\n  classDef med fill:#fff3cd,stroke:#c89a3a;\n  class HIR med;\n  classDef high fill:#f8d7da,stroke:#c0392b;\n  class p53_high,HighRisk,Pembro_adj high;"
+      "title": "2️⃣ 術後輔助治療決策（解剖風險 + 分子分群 modifier）",
+      "subtitle": "Histology + Stage 先決定大方向，分子分群為升降階 modifier",
+      "mermaid": "flowchart TD\n  Surgery([TAH+BSO 術後病理]) --> Risk{解剖風險分群}\n\n  Risk -->|Low risk<br>IA G1-2 no LVSI| LowRisk[Observation]\n  Risk -->|HIR<br>GOG-99 criteria| HIR[**Vaginal brachy**<br>PORTEC-2 = pelvic RT<br>GI/GU 毒性低]\n  Risk -->|High risk<br>IB G3 / II-III / serous| HighRisk[**CCRT + adjuvant chemo**<br>PORTEC-3 OS HR 0.70<br>5-yr 81% vs 76%]\n  Risk -->|Stage III-IVA| Sys_Adj[**Adjuvant Carbo/Pac<br>+ Pembro / Dostarlimab**<br>NRG-GY018 / RUBY Cat 1<br>含 stage III-IV primary]\n\n  LowRisk --> MolMod{分子分群 modifier}\n  HIR --> MolMod\n  HighRisk --> MolMod\n  Sys_Adj --> MolMod\n\n  MolMod -->|POLEmut I-II| POLE_low[**可降階 / observation**<br>PORTEC-4a 支持]\n  MolMod -->|p53abn 任何 stage| p53_high[**升階 chemo + RT**<br>即使 anatomic stage 低]\n  MolMod -->|MMRd / NSMP| Std[依解剖風險走標準]\n\n  Note[**KEYNOTE-B21 negative**<br>Pembro 加 adjuvant 在 high-risk all-comer<br>未達 DFS（dMMR 有趨勢）<br>NCCN 列為選項非首選]\n\n  classDef low fill:#d4edda,stroke:#27ae60;\n  class LowRisk,POLE_low low;\n  classDef med fill:#fff3cd,stroke:#c89a3a;\n  class HIR,Std med;\n  classDef high fill:#f8d7da,stroke:#c0392b;\n  class HighRisk,Sys_Adj,p53_high high;"
     },
     {
       "id": "recurrent",
-      "title": "3️⃣ Advanced / Recurrent 系統治療線",
-      "subtitle": "MMR 狀態決定 first-line 走 IO 與否",
-      "mermaid": "flowchart TD\n  Start([Advanced/recurrent endometrial cancer]) --> MMR{MMR / MSI status}\n\n  MMR -->|dMMR / MSI-H| L1_dMMR[第一線首選:<br>Dostarlimab + Pac/Carbo RUBY<br>OR Pembro + Pac/Carbo NRG-GY018<br>**dMMR PFS HR 0.28-0.30**]\n\n  MMR -->|pMMR / MSS| L1_pMMR[第一線:<br>Pembro + Pac/Carbo<br>OR Durva + Pac/Carbo + Olap DUO-E<br>OR Pac/Carbo ± Bev]\n\n  L1_dMMR -->|progression| L2_dMMR[後線:<br>Pembrolizumab 單藥<br>或 Dostarlimab 單藥]\n\n  L1_pMMR -->|progression| L2_pMMR[後線:<br>**Lenvatinib + Pembrolizumab**<br>KEYNOTE-775<br>OS 17.4 vs 12.0 月]\n\n  L2_dMMR -->|progression| Salvage[後線 salvage:<br>Docetaxel/Carbo<br>Doxorubicin/Cis<br>Hormone therapy ER/PR+]\n  L2_pMMR -->|progression| Salvage\n\n  Salvage --> HER2{HER2 status}\n  HER2 -->|HER2+ serous/CS| Tras[Trastuzumab 加組合<br>或 Trastuzumab deruxtecan]\n  HER2 -->|HER2-| Hormone[Hormone therapy:<br>MPA / Megestrol<br>± Tamoxifen 交替]\n\n  classDef dmmr fill:#d4edda,stroke:#27ae60;\n  class L1_dMMR,L2_dMMR dmmr;\n  classDef pmmr fill:#fff3cd,stroke:#c89a3a;\n  class L1_pMMR,L2_pMMR pmmr;\n  classDef her2 fill:#f0e8ff,stroke:#7a5aa8;\n  class Tras her2;"
+      "title": "3️⃣ Advanced / Recurrent 系統治療線（v2：含 ER+ hormone + CS 例外）",
+      "subtitle": "Histology 先分流，MMR 決定一線 IO；ER+ 低惡性度低瘤量可選 hormone first",
+      "mermaid": "flowchart TD\n  Start([Advanced/recurrent endometrial cancer]) --> Hist{Histology?}\n\n  Hist -->|Carcinosarcoma| CS_L1[**第一線: Carbo/Pac alone**<br>± Trastuzumab if HER2+<br>**Pembro 不適用 CS first-line**]\n  Hist -->|Non-CS| MMR{MMR / MSI status}\n\n  MMR -->|dMMR / MSI-H| L1_dMMR[**第一線 Cat 1**:<br>Dostarlimab + Carbo/Pac RUBY<br>OR Pembro + Carbo/Pac NRG-GY018<br>OR Durva + Carbo/Pac DUO-E<br>dMMR PFS HR 0.28-0.30]\n\n  MMR -->|pMMR / MSS| pMMR_branch{ER+ 低惡性度<br>低瘤量緩慢?}\n\n  pMMR_branch -->|是| Horm_L1[**Hormone therapy first**:<br>Megestrol / MPA / Tamoxifen<br>OR Letrozole + Palbociclib<br>低惡性度 ER+ 緩慢病程適用]\n\n  pMMR_branch -->|否| L1_pMMR[**第一線**:<br>Pembro + Carbo/Pac NRG-GY018 Cat 1<br>OR Carbo/Pac/Durva + Durva/Olap maint<br>DUO-E pMMR **Cat 2B**<br>OR Carbo/Pac ± Bev]\n\n  L1_dMMR -->|response| IO_Maint[**IO maintenance**<br>持續至 progression<br>不換單藥 IO]\n  IO_Maint -->|progression| L2_dMMR_post[後線 salvage:<br>Doxorubicin/Cis<br>HER2+ → Trastuzumab / T-DXd<br>Hormone if ER/PR+]\n\n  L1_pMMR -->|progression after platinum<br>(neoadjuvant / adjuvant 也算)| L2_pMMR[**Lenvatinib + Pembrolizumab Cat 1**<br>KEYNOTE-775<br>**限 platinum-failed**<br>OS 17.4 vs 12.0 月]\n\n  Horm_L1 -->|progression| L1_pMMR\n\n  CS_L1 -->|progression| CS_L2[後線:<br>**T-DXd if HER2 IHC 1+/2+/3+**<br>（CS 特殊：IHC 1+ 也適用）]\n\n  L2_pMMR -->|progression| Salvage[後線 salvage:<br>Docetaxel/Carbo<br>Doxorubicin/Cis<br>HER2+ → T-DXd 2+/3+<br>Hormone if ER/PR+]\n\n  classDef dmmr fill:#d4edda,stroke:#27ae60;\n  class L1_dMMR,IO_Maint dmmr;\n  classDef pmmr fill:#fff3cd,stroke:#c89a3a;\n  class L1_pMMR,L2_pMMR pmmr;\n  classDef cs fill:#fde2e4,stroke:#7a3a3a;\n  class CS_L1,CS_L2 cs;\n  classDef horm fill:#f0e8ff,stroke:#7a5aa8;\n  class Horm_L1 horm;"
     }
   ],
 
   "treatment_pearls": [
     {
       "topic": "分子分群檢測時機",
-      "detail": "**所有新診斷 endometrial cancer 都應做**：MMR IHC + p53 IHC（routine）+ POLE NGS（高度懷疑 POLEmut 或 stage I-II 想降階時）。台灣健保已給付 MMR IHC。"
+      "detail": "**所有新診斷 endometrial cancer 都應做**：MMR IHC + p53 IHC（routine）+ POLE NGS（懷疑 POLEmut 或 stage I-II 想降階）。台灣健保已給付 MMR IHC。"
     },
     {
       "topic": "Sentinel Lymph Node Mapping",
@@ -38,7 +38,7 @@
     },
     {
       "topic": "Fertility-sparing 嚴格條件",
-      "detail": "Grade 1 endometrioid + no myometrial invasion（MRI 確認）+ no LVSI + 強烈希望保留生育 + 完成生育後 definitive hyst。MPA 400-600 mg QD，6 月 D&C，CR 率 ~70%、復發 ~30%。"
+      "detail": "Grade 1 endometrioid + no myometrial invasion（MRI 確認）+ no LVSI + 強烈希望保留生育 + 完成生育後 definitive hyst。MPA 400-600 mg QD，6 月 D&C，CR 率 ~70%、復發 ~30%。⚠️ 對應分期：**IA1**（confined to endometrium）為首選；**IA2**（<50% myo invasion）需更嚴格挑選含 'no invasion' 影像佐證。"
     },
     {
       "topic": "PORTEC-2 改寫 HIR 標準",
@@ -49,16 +49,36 @@
       "detail": "Serous / stage III / IB G3 / II-III 收益最大。OS HR 0.70（5-yr 81% vs 76%）。NCCN 列為 high-risk 標準。"
     },
     {
-      "topic": "NRG-GY018 vs RUBY 對比",
-      "detail": "兩者都是 IO + chemo first-line for advanced/recurrent。NRG-GY018 = Pembrolizumab（FDA 2024 批准）。RUBY = Dostarlimab（FDA 2023 加速 + 2024 完全批准）。dMMR 兩者 PFS HR 都 ~0.30，pMMR Pembro 較強（HR 0.54）。"
+      "topic": "NRG-GY018 vs RUBY — Cat 1 適應症擴大",
+      "detail": "兩者皆為 **Carbo/Pac + IO 第一線 NCCN Category 1**，**適應症含 stage III-IV primary 或 adjuvant**（不只 advanced/recurrent）。NRG-GY018 = Pembrolizumab（FDA 2024）；RUBY = Dostarlimab（FDA 2023 加速 + 2024 完全批准）。dMMR 兩者 PFS HR 都 ~0.30；pMMR Pembro 較強（HR 0.54）。"
     },
     {
-      "topic": "KEYNOTE-775 Lenva+Pembro 後線",
-      "detail": "Lenvatinib 20 mg PO QD + Pembrolizumab 200 mg Q3W。pMMR endometrial cancer 後線標準。注意 lenvatinib 高血壓 + proteinuria，常需減量。"
+      "topic": "DUO-E (Durva + Olap) — Cat 分級",
+      "detail": "**dMMR**：Carbo/Pac + Durvalumab 為 **Category 1**（與 Pembro/Dostarlimab 並列）。**pMMR**：Carbo/Pac + Durvalumab 加 Durvalumab/Olaparib **maintenance** 為 **Category 2B**（pMMR 也獲益但等級較低）。"
     },
     {
-      "topic": "HER2(+) Serous Trastuzumab",
-      "detail": "Fader 2018 Phase II：Pac/Carbo + Trastuzumab vs Pac/Carbo alone，OS 顯著提升。HER2 IHC cutoff 比 breast cancer 寬鬆。Stage III-IV serous 必做 HER2 testing。"
+      "topic": "KEYNOTE-775 Lenva+Pembro — pMMR Cat 1 後線",
+      "detail": "**Cat 1 適應症明確**：pMMR 腫瘤、**曾接受過含鉑金化療之後**（含 neoadjuvant 與 adjuvant 都算）。Lenvatinib 20 mg PO QD + Pembro 200 mg Q3W。OS 17.4 vs 12.0 月。⚠️ 注意 Lenva 高血壓 + proteinuria 常需減量。"
+    },
+    {
+      "topic": "dMMR 後線 IO — Maintenance vs 單藥順序",
+      "detail": "若一線已用 **IO + chemo**（NRG-GY018 / RUBY），**IO 作為 maintenance therapy 繼續**直到 progression，不換單藥。**Pembro / Dostarlimab 單藥**保留給「**前線未曾用過 IO**」的患者（例如已先接受 platinum 一線、進展後才開始 IO）。"
+    },
+    {
+      "topic": "HER2 Testing — NCCN v.2.2026 擴大",
+      "detail": "**新版適用範圍**：(1) 所有 **p53abn**（不論組織學）、(2) 所有 **轉移或復發性疾病**。**舊版**僅限 stage III-IV / recurrent serous / carcinosarcoma。判讀：IHC 3+ → HER2+；IHC 2+ → 加 ISH 確認。HER2(+) serous → Pac/Carbo + Trastuzumab（Fader 2018 OS 顯著提升）。"
+    },
+    {
+      "topic": "Trastuzumab deruxtecan (T-DXd) — Carcinosarcoma 特殊",
+      "detail": "**一般 endometrial cancer**：T-DXd 適用 HER2 IHC **2+ 或 3+**（後線 HER2-directed）。**Carcinosarcoma 例外**：T-DXd 適用 IHC **1+、2+、3+ 皆可**（DESTINY-PanTumor02 等試驗支持）。"
+    },
+    {
+      "topic": "Carcinosarcoma 例外（first-line 不加 Pembro）",
+      "detail": "雖然 carcinosarcoma 病理上歸 high-grade epithelial（依 endometrial cancer 路徑），但 NCCN 明確標示 **Stage III-IV first-line Carbo/Pac + Pembrolizumab 適用範圍除 Carcinosarcoma 外**（except for carcinosarcoma）。CS first-line 仍以 Carbo/Pac alone ± Trastuzumab（HER2+）為主；後線 T-DXd IHC 1+ 起即可。"
+    },
+    {
+      "topic": "ER+ Advanced Endometrial — Hormone Therapy 一線/後線選項",
+      "detail": "ER 陽性復發/轉移性 endometrial cancer，**特別低惡性度、生長緩慢或低瘤量**的患者，**Hormone therapy 可作為一線或後線重要選項**：Megestrol acetate、MPA、Tamoxifen（與 progestin 交替）、Letrozole + Palbociclib（CDK4/6 inhibitor 組合）。NCCN 列為「特定情況下有用」(useful in certain circumstances) 的一線選項。"
     }
   ]
 }
