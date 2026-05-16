@@ -1,0 +1,122 @@
+[
+  {
+    "name": "GOG-218",
+    "year": "2011",
+    "design": "Phase III RCT 3-arm, 1873 patients newly diagnosed advanced epithelial ovarian cancer",
+    "population": "Stage III incompletely resected (residual >1 cm) 或 stage IV advanced epithelial ovarian cancer",
+    "intervention": "Carbo/Pac × 6 + Bev during chemo + Bev maintenance × 16 cycles（total 22）",
+    "control": "Carbo/Pac × 6 alone（或 Carbo/Pac + Bev concurrent only without maintenance）",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "**PFS 14.1 vs 10.3 月（HR 0.72, p<0.001）** — Bev throughout (concurrent + maintenance) arm；OS 無顯著差異（HR 0.88）",
+    "implication": "建立 Bevacizumab 加入 1L ovarian cancer 化療 + maintenance 的證據基礎；PFS 益處明確但 OS 較弱。NCCN 列為高風險 III suboptimal / IV 選項。",
+    "citation": "Burger RA, et al. NEJM 2011;365:2473. PMID 22204724"
+  },
+  {
+    "name": "ICON7",
+    "year": "2011",
+    "design": "Phase III RCT, 1528 patients advanced ovarian cancer",
+    "population": "Stage I high-risk to stage IV epithelial ovarian cancer（含 optimally debulked III）",
+    "intervention": "Carbo/Pac × 6 + Bev 7.5 mg/kg during chemo + maintenance × 12 cycles",
+    "control": "Carbo/Pac × 6 alone",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "PFS 19.0 vs 17.3 月（HR 0.81）；**OS 主要在 high-risk subgroup**（stage IV、suboptimal III、inoperable）：39.7 vs 30.2 月（HR 0.78）",
+    "implication": "與 GOG-218 互補 — Bev 在 high-risk 族群 OS 益處最明顯；推動 NCCN 對 high-risk advanced 加 Bev 為選項。歐洲較常用 lower-dose Bev 7.5 mg/kg。",
+    "citation": "Perren TJ, et al. NEJM 2011;365:2484. PMID 22204725"
+  },
+  {
+    "name": "JGOG-3016",
+    "year": "2009",
+    "design": "Phase III RCT, 631 Japanese patients stage II-IV ovarian cancer",
+    "population": "亞洲族群 stage II-IV epithelial ovarian cancer first-line",
+    "intervention": "Dose-dense weekly paclitaxel 80 mg/m² D1, D8, D15 + Q3W carboplatin AUC 6",
+    "control": "Q3W paclitaxel 180 mg/m² + Q3W carboplatin AUC 6",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "**PFS 28.0 vs 17.2 月（HR 0.71, p=0.0015）**；**OS 100.5 vs 62.2 月（HR 0.79）** — 巨大 OS 益處",
+    "implication": "亞洲族群 dose-dense weekly Pac 為強烈選項；但 **GOG-262 / ICON8 西方族群未複製**，目前 NCCN 列為選項。台灣患者可考慮（藥物動力學差異？）。",
+    "citation": "Katsumata N, et al. Lancet 2009;374:1331-1338. PMID 19767092"
+  },
+  {
+    "name": "SOLO-1",
+    "year": "2018",
+    "design": "Phase III RCT, 391 patients newly diagnosed advanced ovarian cancer with BRCA mutation",
+    "population": "Newly diagnosed FIGO III-IV high-grade serous or endometrioid ovarian cancer + **BRCA1/2 mutation**（germline 或 somatic）+ 1L platinum chemo response (CR/PR)",
+    "intervention": "Olaparib 300 mg BID PO maintenance × 2 yr",
+    "control": "Placebo × 2 yr",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "**3-yr PFS 60% vs 27%（HR 0.30, p<0.001）**；7-yr OS update 67% vs 47%（HR 0.55）— 持續 OS 益處",
+    "implication": "改寫指引：**BRCA-mut advanced ovarian cancer 1L 標準加 Olaparib maintenance**（NCCN Cat 1）。確立 PARPi 在 1L setting 的角色。",
+    "citation": "Moore K, et al. NEJM 2018;379:2495. PMID 30345884 / DiSilvestro P, JCO 2023 (OS update)"
+  },
+  {
+    "name": "PAOLA-1",
+    "year": "2019",
+    "design": "Phase III RCT, 806 patients newly diagnosed advanced ovarian cancer",
+    "population": "Newly diagnosed FIGO III-IV high-grade serous or endometrioid ovarian cancer + 1L Carbo/Pac/Bev response（不限 BRCA status）",
+    "intervention": "Olaparib 300 mg BID + Bevacizumab 15 mg/kg maintenance × 24 月",
+    "control": "Placebo + Bevacizumab maintenance",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "**HRD+（含 BRCA）PFS 37.2 vs 17.7 月（HR 0.33）**；BRCA-mut subgroup PFS 41.6 vs 22.4 月；**HRD+ non-BRCA** subgroup PFS 28.1 vs 16.6 月（HR 0.43）；HRD- 族群無顯著益處",
+    "implication": "確立 **HRD+ non-BRCA → Olaparib + Bev maintenance** 為 Cat 1 標準。為 BRCA-wt 但 HRD+ 病人提供 PARPi 選項。",
+    "citation": "Ray-Coquard I, et al. NEJM 2019;381:2416. PMID 31851799"
+  },
+  {
+    "name": "PRIMA (ENGOT-OV26)",
+    "year": "2019",
+    "design": "Phase III RCT, 733 patients newly diagnosed advanced ovarian cancer",
+    "population": "Newly diagnosed FIGO III-IV ovarian cancer + 1L platinum response **不論 biomarker**（含 HRD+ 與 HRP）",
+    "intervention": "Niraparib 200/300 mg QD maintenance × 3 yr",
+    "control": "Placebo × 3 yr",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "**Overall PFS 13.8 vs 8.2 月（HR 0.62）**；**HRD+ PFS 21.9 vs 10.4 月（HR 0.43）**；**HRP/HRD- PFS 8.1 vs 5.4 月（HR 0.68）** — HRP subgroup 益處較弱但顯著",
+    "implication": "Niraparib 唯一 **不論 biomarker** 都獲益的 1L maintenance PARPi（NCCN Cat 1）。為 HRP/BRCA-wt 病人提供 PARPi 選項，但 HRP 益處遠不及 BRCA/HRD+。",
+    "citation": "González-Martín A, et al. NEJM 2019;381:2391. PMID 31562799"
+  },
+  {
+    "name": "ARIEL3",
+    "year": "2017",
+    "design": "Phase III RCT, 564 patients platinum-sensitive recurrent ovarian cancer",
+    "population": "Platinum-sensitive recurrent ovarian cancer（PFI >6 月，≥2 previous platinum regimens）+ recent platinum response（CR/PR）",
+    "intervention": "Rucaparib 600 mg BID PO maintenance",
+    "control": "Placebo",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "**BRCA mut PFS 16.6 vs 5.4 月（HR 0.23）**；**HRD+（含 BRCA）13.6 vs 5.4 月（HR 0.32）**；**all-comer 10.8 vs 5.4 月（HR 0.36）** — 益處遞減但全族群 positive",
+    "implication": "Rucaparib 為 recurrent ovarian cancer maintenance 標準（NCCN）。BRCA/HRD 標記預測益處強度。",
+    "citation": "Coleman RL, et al. Lancet 2017;390:1949. PMID 28916367"
+  },
+  {
+    "name": "SOLO-2",
+    "year": "2017",
+    "design": "Phase III RCT, 295 patients platinum-sensitive recurrent ovarian cancer with BRCA mutation",
+    "population": "Platinum-sensitive recurrent ovarian cancer + **BRCA1/2 mut** + ≥2 previous platinum regimens + platinum response",
+    "intervention": "Olaparib 300 mg BID PO maintenance",
+    "control": "Placebo",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "**PFS 19.1 vs 5.5 月（HR 0.30, p<0.001）**；OS update（2020）51.7 vs 38.8 月（HR 0.74，p=0.054 未達顯著但 trend）",
+    "implication": "**BRCA mut platinum-sensitive recurrent 標準 maintenance** = Olaparib（NCCN Cat 1）。PFS 益處巨大；OS trend 但未達顯著（與 crossover 設計有關）。",
+    "citation": "Pujade-Lauraine E, et al. Lancet Oncol 2017;18:1274. PMID 28754483 / Poveda A, JCO 2020 OS update"
+  },
+  {
+    "name": "ATHENA-MONO (GOG-3020)",
+    "year": "2022",
+    "design": "Phase III RCT, 538 patients newly diagnosed advanced ovarian cancer",
+    "population": "Newly diagnosed FIGO III-IV high-grade ovarian cancer + 1L platinum response（不限 biomarker）",
+    "intervention": "Rucaparib 600 mg BID PO maintenance × 2 yr",
+    "control": "Placebo",
+    "primary_endpoint": "Progression-free survival",
+    "key_result": "**HRD+ PFS 28.7 vs 11.3 月（HR 0.47）**；**all-comer PFS 20.2 vs 9.2 月（HR 0.52）** — 不論 biomarker 全 positive",
+    "implication": "Rucaparib 加入 1L maintenance armamentarium（NCCN Cat 2A），與 Niraparib（PRIMA）並列為 all-comer 選項。",
+    "citation": "Monk BJ, et al. JCO 2022;40:3952. PMID 35862873"
+  },
+  {
+    "name": "MIRASOL",
+    "year": "2024",
+    "design": "Phase III RCT, 453 patients platinum-resistant ovarian cancer with FRα-high expression",
+    "population": "**FRα-high (IHC PS2+, VENTANA assay)** platinum-resistant ovarian cancer（PFI ≤6 月）+ 1-3 previous regimens",
+    "intervention": "Mirvetuximab soravtansine-gynx 6 mg/kg Q3W",
+    "control": "Investigator's choice chemo（PLD / Topotecan / Weekly Pac）",
+    "primary_endpoint": "Progression-free survival; key secondary: Overall survival",
+    "key_result": "**PFS 5.6 vs 4.0 月（HR 0.65, p<0.001）**；**OS 16.5 vs 12.8 月（HR 0.67, p=0.005）** — first ADC OS+ in platinum-resistant ovarian cancer",
+    "implication": "改寫平台耐藥後線：**FRα-high platinum-resistant → Mirvetuximab 為新標準**（FDA 2024 完全批准）。提醒 FRα IHC testing 流程。眼毒性管理為實務挑戰。",
+    "citation": "Moore KN, et al. NEJM 2024;390:1191. PMID 38507753"
+  }
+]

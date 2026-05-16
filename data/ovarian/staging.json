@@ -1,0 +1,239 @@
+{
+  "_metadata": {
+    "system": "FIGO Ovarian, Fallopian Tube, and Peritoneal Cancer Staging",
+    "current_version": "FIGO 2014（卵巢/輸卵管/腹膜統一分期）+ 2023 微調",
+    "previous_version": "FIGO 1988",
+    "treatment_reference": "NCCN Ovarian Cancer Guidelines v.2.2026",
+    "key_references": [
+      "Prat J, FIGO Committee on Gynecologic Oncology. Staging classification for cancer of the ovary, fallopian tube, and peritoneum. Int J Gynaecol Obstet 2014;124(1):1-5.",
+      "Berek JS, et al. FIGO Cancer Report 2021 — Ovarian Cancer. Int J Gynaecol Obstet 2021;155 Suppl 1:61-85.",
+      "NCCN Ovarian Cancer Guidelines v.2.2026"
+    ],
+    "last_updated": "2026-05-17",
+    "review_status": "v1 draft - pending NotebookLM review",
+    "review_notes": "FIGO 2014 為當前主流。重點：(1) 卵巢/輸卵管/腹膜統一分期（過去三種獨立）；(2) IC 細分為 IC1（術中破裂）/ IC2（術前破裂或表面）/ IC3（washing+）；(3) III 期重整：IIIA1 改為純 LN+，IIIA2 為 microscopic extrapelvic peritoneal；(4) IV 細分 IVA（pleural cytology+）/ IVB（parenchymal mets）。2023 微調主要為 IIIA1 切點與 cytology 要求語句澄清，非重大改版。"
+  },
+
+  "clarifications_2023": [
+    {"topic": "FIGO 2014 統一分期", "detail": "卵巢、輸卵管、腹膜癌（high-grade serous 三者起源常同源）統一為單一分期系統。報告時須註明 primary site（ovary / fallopian tube / peritoneum）。"},
+    {"topic": "IC 三類細分（FIGO 2014 重要改革）", "detail": "**IC1 = 術中囊腫破裂（surgical spill）**；**IC2 = 術前破裂或腫瘤在卵巢表面**；**IC3 = 腹腔細胞學/腹水陽性**。IC1 預後最好（接近 IA-IB），IC2/IC3 較差。"},
+    {"topic": "IIIA1 純淋巴結+（FIGO 2014）", "detail": "IIIA1 = **只有腹膜後淋巴結轉移**（細胞學或組織學證實）。**IIIA1(i)** ≤10 mm；**IIIA1(ii)** >10 mm。預後相對較好，OS 接近 IIIA2/B。"},
+    {"topic": "IIIA2 microscopic extrapelvic（FIGO 2014）", "detail": "IIIA2 = **微觀骨盆腔外腹膜侵犯**（顯微鏡才看到，肉眼正常）± 淋巴結+。需要病理切片確認。"},
+    {"topic": "IVA vs IVB（FIGO 2014）", "detail": "**IVA = 胸水細胞學陽性**（必須 cytology 證實）；**IVB = 肝/脾實質、腹腔外器官、腹腔外淋巴結（含腹股溝）、腸壁全層侵犯**。注意：肝/脾包膜侵犯仍為 III 期，不是 IV。"},
+    {"topic": "2023 FIGO 微調", "detail": "FIGO 2023 (Berek/Prat update) 對卵巢癌部分主要為語句澄清，非重大改版：(1) IIIA1 必須細胞學或組織學證實 LN+，不能只靠影像；(2) Microscopic vs macroscopic 切點以 nodule 是否 >2 cm 為主（沿用 2014 原則）。整體 stages 不變。"}
+  ],
+
+  "histology_subtypes": [
+    {
+      "name": "Epithelial (90% — high-grade serous 主導)",
+      "subtypes": "High-grade serous (HGSC, 70%) / Low-grade serous (LGSC, 5%) / Endometrioid (10%) / Clear cell (10%) / Mucinous (3%) / Brenner / Mixed",
+      "molecular": "HGSC: 幾乎都 TP53 mut + 50% BRCA/HRD；LGSC: KRAS/BRAF mut；Clear cell: ARID1A/PIK3CA mut；Mucinous: KRAS/HER2",
+      "treatment_implication": "HGSC 對 platinum 與 PARPi 敏感（特別 BRCA/HRD+）；Clear cell/mucinous platinum 反應差，需考慮替代 regimen"
+    },
+    {
+      "name": "Sex Cord-Stromal (5%)",
+      "subtypes": "Granulosa cell tumor (adult 95% / juvenile)、Sertoli-Leydig、Steroid cell、Fibroma、Thecoma",
+      "molecular": "Adult granulosa: FOXL2 c.402C>G mut（>97% 特異）；Sertoli-Leydig: DICER1 mut",
+      "treatment_implication": "Granulosa cell：surgery + 觀察為主；recurrent 可 BEP / hormone（AI）；endocrine active（estrogen 多分泌）→ 子宮內膜增生風險"
+    },
+    {
+      "name": "Germ Cell (3%)",
+      "subtypes": "Dysgerminoma、Yolk sac (endodermal sinus)、Immature teratoma、Embryonal、Choriocarcinoma、Mixed",
+      "molecular": "標誌物：Dysgerminoma → LDH ± hCG；Yolk sac → AFP；Choriocarcinoma → hCG；Immature teratoma → 多陰",
+      "treatment_implication": "年輕女性（<30 歲）多見；fertility-sparing surgery（單側 USO + staging）+ BEP × 3-4 cycles；化療反應極佳，治癒率 >85%"
+    }
+  ],
+
+  "stages": [
+    {
+      "stage": "IA",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於卵巢/輸卵管",
+      "definition": "腫瘤局限於**一側**卵巢/輸卵管，**包膜完整、無表面侵犯、腹腔細胞學陰性**",
+      "criteria_detail": "Tumor limited to one ovary or fallopian tube; capsule intact; no tumor on ovarian or fallopian tube surface; no malignant cells in ascites or peritoneal washings",
+      "treatment_brief": "Comprehensive staging surgery（TAH + BSO + omentectomy + peritoneal washing + LN sampling）。**Low-risk**（high-grade IA, clear cell IA, mucinous expansile IA）→ observation 或 adjuvant chemo × 3-6；fertility-sparing 可行（單側 USO + staging，限 IA epithelial）",
+      "exam_pearl": "IA 必須三條件齊備：單側 + 包膜完整 + washing 陰性；缺一即升 IC"
+    },
+    {
+      "stage": "IB",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於卵巢/輸卵管",
+      "definition": "腫瘤局限於**兩側**卵巢/輸卵管，**包膜完整、無表面、washing 陰性**",
+      "criteria_detail": "Tumor limited to both ovaries; capsules intact; no tumor on surface; negative washings",
+      "treatment_brief": "Comprehensive staging surgery；low-grade IB observe；high-grade/serous IB adjuvant Pac/Carbo × 3-6",
+      "exam_pearl": "雙側但包膜完整 + washing 陰性 = IB（不是 IC）；fertility-sparing 通常不適用 IB"
+    },
+    {
+      "stage": "IC1",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於卵巢/輸卵管",
+      "definition": "**Surgical spill**（術中囊腫破裂）",
+      "criteria_detail": "Surgical spill intraoperative — 腹腔鏡或開腹過程腫瘤囊腫破裂",
+      "treatment_brief": "Comprehensive staging + adjuvant Pac/Carbo × 6（high-grade 必加；low-grade 可選）",
+      "exam_pearl": "IC1 為「醫師造成的」破裂，預後接近 IA-IB；報告需明確記載破裂時間點"
+    },
+    {
+      "stage": "IC2",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於卵巢/輸卵管",
+      "definition": "**術前包膜破裂或腫瘤在卵巢/輸卵管表面**",
+      "criteria_detail": "Capsule ruptured before surgery, or tumor on ovarian / fallopian tube surface",
+      "treatment_brief": "Comprehensive staging + adjuvant Pac/Carbo × 6",
+      "exam_pearl": "IC2 預後較 IC1 差；surface 侵犯 = 腫瘤已可能擴散到腹腔"
+    },
+    {
+      "stage": "IC3",
+      "group": "Stage I",
+      "group_definition": "腫瘤局限於卵巢/輸卵管",
+      "definition": "**腹腔細胞學或腹水陽性**（malignant cells in washings/ascites）",
+      "criteria_detail": "Malignant cells in peritoneal washings or ascites",
+      "treatment_brief": "Comprehensive staging + adjuvant Pac/Carbo × 6",
+      "exam_pearl": "IC3 預後較 IC1/2 差；強調 staging 時必做 washing"
+    },
+    {
+      "stage": "IIA",
+      "group": "Stage II",
+      "group_definition": "腫瘤侵犯骨盆腔（含子宮、輸卵管）",
+      "definition": "侵犯**子宮和/或輸卵管和/或卵巢**（pelvic extension within reproductive organs）",
+      "criteria_detail": "Extension and/or implants on uterus and/or fallopian tubes and/or ovaries",
+      "treatment_brief": "Cytoreductive surgery + Pac/Carbo × 6",
+      "exam_pearl": "侵犯生殖系統相連器官（子宮/輸卵管）→ IIA；其他 pelvic tissue 則 IIB"
+    },
+    {
+      "stage": "IIB",
+      "group": "Stage II",
+      "group_definition": "腫瘤侵犯骨盆腔（含子宮、輸卵管）",
+      "definition": "侵犯**其他骨盆腔內腹膜組織**（other pelvic intraperitoneal tissues）",
+      "criteria_detail": "Extension to other pelvic intraperitoneal tissues（如膀胱、直腸、骨盆腹膜）",
+      "treatment_brief": "Cytoreductive surgery + Pac/Carbo × 6 ± IP chemo（GOG-172 in optimally debulked III）",
+      "exam_pearl": "IIB 為 pelvic intraperitoneal 但不限於生殖系統；IP chemo 適應症主要 III optimally debulked"
+    },
+    {
+      "stage": "IIIA1",
+      "group": "Stage III",
+      "group_definition": "腫瘤侵犯骨盆腔外（含淋巴結轉移）",
+      "definition": "**只有腹膜後淋巴結轉移**（retroperitoneal LN+ only），細胞學或組織學證實",
+      "criteria_detail": "**IIIA1(i)** LN ≤10 mm；**IIIA1(ii)** LN >10 mm（greatest dimension）",
+      "treatment_brief": "Cytoreductive surgery（含 retroperitoneal LND）+ Pac/Carbo × 6 + maintenance（BRCA/HRD-driven）",
+      "exam_pearl": "FIGO 2014 重大改革：IIIA1 是**純 LN+**（無 extrapelvic peritoneal）。預後接近 IIA-IIB，比 IIIA2 / IIIB / IIIC 好"
+    },
+    {
+      "stage": "IIIA2",
+      "group": "Stage III",
+      "group_definition": "腫瘤侵犯骨盆腔外（含淋巴結轉移）",
+      "definition": "**Microscopic extrapelvic peritoneal involvement** ± LN+",
+      "criteria_detail": "Microscopic extrapelvic（above pelvic brim）peritoneal involvement ± positive retroperitoneal LN",
+      "treatment_brief": "Cytoreductive surgery + Pac/Carbo × 6 ± Bev maintenance（GOG-218）+ PARPi maintenance（依 BRCA/HRD）",
+      "exam_pearl": "Microscopic = 肉眼正常，顯微鏡才看到；必須病理切片確認（peritoneal biopsies）"
+    },
+    {
+      "stage": "IIIB",
+      "group": "Stage III",
+      "group_definition": "腫瘤侵犯骨盆腔外（含淋巴結轉移）",
+      "definition": "**Macroscopic extrapelvic peritoneal ≤2 cm** ± LN+",
+      "criteria_detail": "Macroscopic peritoneal metastasis beyond pelvis ≤2 cm in greatest dimension ± LN+",
+      "treatment_brief": "Primary cytoreduction（達 R0 為首選）→ Pac/Carbo × 6 + maintenance；若 unresectable → NACT × 3 + IDS + chemo × 3",
+      "exam_pearl": "肉眼可見、骨盆腔外、≤2 cm = IIIB；>2 cm = IIIC"
+    },
+    {
+      "stage": "IIIC",
+      "group": "Stage III",
+      "group_definition": "腫瘤侵犯骨盆腔外（含淋巴結轉移）",
+      "definition": "**Macroscopic extrapelvic peritoneal >2 cm** ± LN+（含 capsular liver / splenic mets）",
+      "criteria_detail": "Macroscopic peritoneal metastasis >2 cm beyond pelvis ± LN+；capsular liver or splenic surface involvement（不是 parenchymal）",
+      "treatment_brief": "Primary cytoreduction（R0 目標）或 NACT-IDS（依瘤量、PS、CT 評估）+ Pac/Carbo × 6 ± Bev + PARPi maintenance",
+      "exam_pearl": "肝/脾**包膜**侵犯仍為 IIIC；**實質**侵犯升為 IVB；CA125 + CT 預測 R0 可行性是 NACT 決策關鍵"
+    },
+    {
+      "stage": "IVA",
+      "group": "Stage IV",
+      "group_definition": "遠端轉移",
+      "definition": "**胸水細胞學陽性**（pleural effusion with positive cytology）",
+      "criteria_detail": "Pleural effusion with positive cytology — cytology 必須陽性才升 IVA；單純有胸水不夠",
+      "treatment_brief": "NACT × 3-6 → 視 response 決定 IDS；後續 maintenance（BRCA/HRD-driven）",
+      "exam_pearl": "IVA 必須 cytology 證實，不能只靠影像；單純胸水陰性 cytology 仍為 III 期"
+    },
+    {
+      "stage": "IVB",
+      "group": "Stage IV",
+      "group_definition": "遠端轉移",
+      "definition": "**Parenchymal mets**（肝/脾實質）、腹腔外器官、腹腔外淋巴結（含腹股溝）、腸壁全層侵犯",
+      "criteria_detail": "Parenchymal metastases (liver, splenic), metastases to extra-abdominal organs (including inguinal LN, extra-abdominal LN), or transmural intestinal involvement",
+      "treatment_brief": "Systemic chemo（Pac/Carbo × 6）+ Bev maintenance（GOG-218）+ PARPi（BRCA/HRD）；surgery 限選擇性 oligometastatic",
+      "exam_pearl": "**肝實質、脾實質、腸壁全層 = IVB**；肝包膜、脾包膜、腸漿膜面 = IIIC（容易混淆）"
+    }
+  ],
+
+  "special_considerations": [
+    {
+      "topic": "Primary Surgery vs NACT 決策（重要）",
+      "source": "NCCN OV-A / ESMO-ESGO consensus 2019",
+      "applies_to": ["Stage IIIC-IV epithelial ovarian cancer"],
+      "criteria": [
+        "**Primary cytoreductive surgery 首選**：若可達 R0（no residual disease）— 經 high-volume center 評估",
+        "**NACT × 3 → interval debulking (IDS) → chemo × 3** 適應症：(1) PS 差不耐手術；(2) 大瘤量/廣泛上腹疾病（CT/laparoscopy 評估）；(3) CA125/CT ratio 預測無法 R0",
+        "EORTC 55971 / CHORUS：NACT-IDS 與 primary 結果相當（非劣性），但 NACT 對 high-tumor-burden 預後較好",
+        "PCI score (Peritoneal Cancer Index) / Fagotti score（laparoscopy）可預測 resectability"
+      ],
+      "implication": "Center expertise + tumor burden + PS 三者決定。R0 是 OS 最強預後因子。"
+    },
+    {
+      "topic": "BRCA1/2 + HRD Testing — 必做（NCCN universal）",
+      "source": "NCCN OV-B / SOLO-1, PAOLA-1, PRIMA",
+      "applies_to": ["All epithelial ovarian cancer, especially HGSC"],
+      "criteria": [
+        "**所有 epithelial ovarian cancer 都應做 germline BRCA1/2 testing**（不論年齡、家族史）",
+        "**Somatic BRCA + HRD score** 應於 stage II-IV HGSC 加做（Myriad myChoice CDx / FoundationOne CDx）",
+        "BRCA mut（germline + somatic）約 15-20% HGSC；HRD+ 約 50%（含 BRCA mut + BRCAness）",
+        "**PARPi maintenance 選擇邏輯**：BRCA mut → SOLO-1 Olaparib 單藥；HRD+ non-BRCA → PAOLA-1 Olap+Bev；HRP / 不論 biomarker → PRIMA Niraparib"
+      ],
+      "implication": "BRCA 不只決定 PARPi 適應症，也提示家族遺傳評估與 Lynch / HBOC 篩檢"
+    },
+    {
+      "topic": "Fertility-Sparing 適應症",
+      "source": "NCCN OV-1",
+      "applies_to": ["Stage IA epithelial low-grade (selected)", "Germ cell tumors", "Sex cord-stromal (selected)"],
+      "criteria": [
+        "**Epithelial**：限 stage IA + low-grade（grade 1 endometrioid, mucinous expansile，serous LGSC 個案）+ comprehensive staging（含對側卵巢仔細評估）",
+        "**Germ cell**：年輕女性首選 fertility-sparing — 單側 USO + 完整 staging；對側卵巢通常正常",
+        "**Sex cord-stromal**（granulosa）：單側 USO + endometrial sampling（排除 estrogen-induced 子宮內膜病變）",
+        "完成生育後考慮 completion surgery（individualized）"
+      ],
+      "implication": "Germ cell 與 sex cord 為主要 fertility-sparing 候選；epithelial 限制較嚴"
+    },
+    {
+      "topic": "IP Chemotherapy（GOG-172）— 適應症與限制",
+      "source": "GOG-172, NCCN OV-C",
+      "applies_to": ["Optimally debulked stage III ovarian cancer"],
+      "criteria": [
+        "**GOG-172**：Optimally debulked stage III（residual ≤1 cm）IP cisplatin + IP/IV paclitaxel vs IV chemo，OS 65.6 vs 49.7 月（HR 0.75）",
+        "毒性顯著（catheter 併發症、神經毒性、腎毒性）— 完成率僅 ~40%",
+        "GOG-252 後續：IV bev + chemo vs IP regimens，無差異 — IP 角色受挑戰",
+        "目前 NCCN 列為選項而非標準；HIPEC（heated IP chemo at IDS）在 OVHIPEC-1 顯示 OS 益處"
+      ],
+      "implication": "IP chemo 對 optimally debulked III 有歷史依據，但毒性高 + 後續 trials 削弱地位；HIPEC at IDS 為新興選項"
+    },
+    {
+      "topic": "HIPEC（Heated IP Chemo）at Interval Debulking",
+      "source": "OVHIPEC-1（van Driel 2018, NEJM）",
+      "applies_to": ["Stage III ovarian cancer undergoing NACT-IDS"],
+      "criteria": [
+        "OVHIPEC-1：NACT-IDS 時加 HIPEC（cisplatin 100 mg/m² 42°C × 90 分鐘），RFS 14.2 vs 10.7 月，OS 45.7 vs 33.9 月（HR 0.67）",
+        "適應症：Stage III ovarian cancer、NACT 後 IDS、residual ≤2.5 mm",
+        "NCCN 列為 category 2A 選項；台灣部分中心已導入"
+      ],
+      "implication": "HIPEC at IDS 為近年新標準選項，特別 NACT 反應好的 stage III"
+    },
+    {
+      "topic": "Tumor Markers 鑑別",
+      "source": "NCCN OV-A",
+      "applies_to": ["Initial workup of suspected ovarian mass"],
+      "criteria": [
+        "**Epithelial**：CA125（HGSC 主標）；CA19-9（mucinous）；CEA（mucinous，需鑑別 GI primary）；HE4（與 CA125 合用 ROMA score）",
+        "**Germ cell**：AFP（yolk sac, embryonal）；hCG（choriocarcinoma, embryonal）；LDH（dysgerminoma）",
+        "**Sex cord-stromal**：Inhibin A/B（granulosa）；AMH（granulosa）；testosterone / estradiol（依 hormone profile）"
+      ],
+      "implication": "正確 marker panel 可在術前推測 histology，影響手術策略（含 fertility-sparing 決策）"
+    }
+  ]
+}

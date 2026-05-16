@@ -1,0 +1,287 @@
+{
+  "_metadata": {
+    "source": "TSGH 婦癌多專科團隊 - 癌症治療藥物處方修訂 V1（修訂日 2026-01-20）",
+    "external_basis": "NCCN Ovarian Cancer Guidelines v.2.2026 + 各 trial 原始 protocol（GOG-218 / SOLO-1 / PAOLA-1 / PRIMA / MIRASOL）",
+    "last_updated": "2026-05-17",
+    "review_status": "v1 draft - pending TSGH PDF 對齊 + NotebookLM review",
+    "note": "Regimen / dose / cycle 依 NCCN OV-C + landmark trials 原始 protocol。TSGH PDF 部分 ovarian-specific 處方待對齊。"
+  },
+
+  "categories": [
+    {
+      "id": "first_line_chemo",
+      "title": "第一線：Primary / Adjuvant Chemotherapy",
+      "subtitle": "用於 stage IC-IV 術後輔助或晚期 ovarian cancer 第一線",
+      "regimens": [
+        {
+          "name": "Carboplatin + Paclitaxel (Q3W) — 化療骨幹",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Carboplatin", "dose": "AUC 5-6", "route": "IV (N/S 500 mL, 1 hr)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle × 6 cycles（NACT: 3-3 split with IDS）",
+          "indication": "Stage IC-IV epithelial ovarian cancer first-line 或 adjuvant",
+          "note": "**化療骨幹**；可加 Bev（GOG-218 / ICON7 high-risk）或進入 SOLO-1/PAOLA-1/PRIMA maintenance。",
+          "reference": "McGuire WP, et al. NEJM 1996;334:1 (GOG-111 cisplatin) / Ozols RF, GOG-158 carboplatin equivalence"
+        },
+        {
+          "name": "Dose-Dense Weekly Paclitaxel + Q3W Carboplatin (JGOG-3016)",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "80 mg/m²", "route": "IV (N/S 250 mL, 1 hr)", "schedule": "D1, D8, D15"},
+            {"name": "Carboplatin", "dose": "AUC 6", "route": "IV (1 hr)", "schedule": "D1"}
+          ],
+          "cycle": "21-day cycle × 6 cycles",
+          "indication": "Stage II-IV ovarian cancer first-line（**亞洲族群數據較強**）",
+          "note": "**JGOG-3016**（亞洲）PFS 28 vs 17 月、OS 100 vs 62 月；GOG-262 / ICON8 西方族群未複製。",
+          "reference": "Katsumata N, et al. Lancet 2009;374:1331 (JGOG-3016)"
+        },
+        {
+          "name": "Carboplatin + Paclitaxel + Bevacizumab → Bev maintenance (GOG-218)",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "175 mg/m²", "route": "IV (N/S 500 mL, 3 hrs)", "schedule": "D1"},
+            {"name": "Carboplatin", "dose": "AUC 6", "route": "IV (1 hr)", "schedule": "D1"},
+            {"name": "Bevacizumab", "dose": "15 mg/kg", "route": "IV (N/S 100 mL, 1.5 hr first, then 30 min)", "schedule": "D1 (從 C2 開始加 Bev，總共 22 cycles 含 maintenance)"}
+          ],
+          "cycle": "21-day cycle × 6（chemo）+ Bev maintenance 至總 22 cycles",
+          "indication": "Stage III suboptimal residual 或 Stage IV ovarian cancer first-line",
+          "note": "**GOG-218**：PFS 14.1 vs 10.3 月（HR 0.72）；OS 主要在 ICON7 high-risk subgroup（+9 月）。",
+          "reference": "Burger RA, et al. NEJM 2011;365:2473 (GOG-218) / Perren TJ, NEJM 2011;365:2484 (ICON7)"
+        },
+        {
+          "name": "IP Cisplatin + IP/IV Paclitaxel (GOG-172)",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "135 mg/m²", "route": "IV 24-hr infusion", "schedule": "D1"},
+            {"name": "Cisplatin", "dose": "100 mg/m²", "route": "IP", "schedule": "D2"},
+            {"name": "Paclitaxel", "dose": "60 mg/m²", "route": "IP", "schedule": "D8"}
+          ],
+          "cycle": "21-day cycle × 6 cycles",
+          "indication": "**Optimally debulked stage III** (residual ≤1 cm) ovarian cancer",
+          "note": "**GOG-172**：IP OS 65.6 vs IV 49.7 月（HR 0.75），但毒性高（catheter、神經、腎），完成率 ~40%。後續 GOG-252 含 Bev 未複製優勢；現多被 HIPEC at IDS 取代。",
+          "reference": "Armstrong DK, et al. NEJM 2006;354:34 (GOG-172)"
+        },
+        {
+          "name": "HIPEC at Interval Debulking (OVHIPEC-1)",
+          "drugs": [
+            {"name": "Cisplatin", "dose": "100 mg/m²", "route": "IP 42°C × 90 min", "schedule": "Intraop at IDS"}
+          ],
+          "cycle": "單次（at IDS）+ 後續 chemo × 3 Carbo/Pac",
+          "indication": "Stage III ovarian cancer 接受 NACT-IDS，residual ≤2.5 mm",
+          "note": "**OVHIPEC-1**：RFS 14.2 vs 10.7 月；OS 45.7 vs 33.9 月（HR 0.67）。NCCN cat 2A 選項；台灣部分中心已導入。",
+          "reference": "van Driel WJ, et al. NEJM 2018;378:230"
+        }
+      ]
+    },
+
+    {
+      "id": "parp_maintenance",
+      "title": "PARP Inhibitor Maintenance — 1L 與 Recurrent",
+      "subtitle": "依 BRCA / HRD / response 選擇 PARPi",
+      "regimens": [
+        {
+          "name": "Olaparib 單藥 1L Maintenance (SOLO-1)",
+          "drugs": [
+            {"name": "Olaparib", "dose": "300 mg BID PO", "route": "Oral", "schedule": "持續 × 2 yr 或至 progression"}
+          ],
+          "cycle": "Continuous × 24 月（CR）/ 至 progression（PR 可繼續）",
+          "indication": "**BRCA1/2 mut**（germline 或 somatic）advanced ovarian cancer，1L platinum response（CR/PR）",
+          "note": "**SOLO-1 Cat 1**：5-yr PFS 48% vs 21%（HR 0.33）；OS 7-yr 67% vs 47%。骨髓抑制（anemia 38%）、N/V、fatigue 為主。",
+          "reference": "Moore K, et al. NEJM 2018;379:2495 (SOLO-1) / DiSilvestro P, JCO 2023 OS update"
+        },
+        {
+          "name": "Olaparib + Bevacizumab 1L Maintenance (PAOLA-1)",
+          "drugs": [
+            {"name": "Olaparib", "dose": "300 mg BID PO", "route": "Oral", "schedule": "持續 × 2 yr"},
+            {"name": "Bevacizumab", "dose": "15 mg/kg", "route": "IV", "schedule": "Q3W × 共 22 cycles（含一線 6 + maint 16）"}
+          ],
+          "cycle": "Olap × 24 月 + Bev × 22 cycles",
+          "indication": "**HRD+**（含 BRCA mut，但主要益處在 BRCA wt HRD+）advanced ovarian cancer，1L chemo + Bev response",
+          "note": "**PAOLA-1 Cat 1 for HRD+**：PFS 37.2 vs 17.7 月（HR 0.33）；HRD+ subgroup 益處最大，HRD- 無顯著益處。",
+          "reference": "Ray-Coquard I, et al. NEJM 2019;381:2416 (PAOLA-1)"
+        },
+        {
+          "name": "Niraparib 1L Maintenance (PRIMA)",
+          "drugs": [
+            {"name": "Niraparib", "dose": "200 mg QD PO（baseline 體重 <77kg 或 platelet <150K）或 300 mg QD（其他）", "route": "Oral", "schedule": "持續 × 3 yr 或至 progression"}
+          ],
+          "cycle": "Continuous × 36 月",
+          "indication": "**不論 biomarker** advanced ovarian cancer，1L platinum response（CR/PR）",
+          "note": "**PRIMA Cat 1**：HRD+ PFS 21.9 vs 10.4 月（HR 0.43）；HRP subgroup PFS 8.1 vs 5.4 月（HR 0.68，較弱）。Thrombocytopenia 需個別化 dose。",
+          "reference": "González-Martín A, et al. NEJM 2019;381:2391 (PRIMA)"
+        },
+        {
+          "name": "Olaparib Recurrent Maintenance (SOLO-2)",
+          "drugs": [
+            {"name": "Olaparib", "dose": "300 mg BID PO", "route": "Oral", "schedule": "持續至 progression"}
+          ],
+          "cycle": "Continuous",
+          "indication": "**BRCA mut** platinum-sensitive recurrent ovarian cancer，platinum re-treatment response（CR/PR）",
+          "note": "**SOLO-2 Cat 1**：PFS 19.1 vs 5.5 月（HR 0.30）；OS update（2020）BRCA mut 51.7 vs 38.8 月（未達顯著但有 trend）。",
+          "reference": "Pujade-Lauraine E, et al. Lancet Oncol 2017;18:1274 (SOLO-2)"
+        },
+        {
+          "name": "Rucaparib Maintenance (ARIEL3)",
+          "drugs": [
+            {"name": "Rucaparib", "dose": "600 mg BID PO", "route": "Oral", "schedule": "持續至 progression"}
+          ],
+          "cycle": "Continuous",
+          "indication": "Platinum-sensitive recurrent ovarian cancer，platinum response — BRCA mut > HRD+ > all-comer 益處遞減",
+          "note": "**ARIEL3**：BRCA mut PFS 16.6 vs 5.4 月（HR 0.23）；HRD+ 13.6 vs 5.4（HR 0.32）；all-comer 10.8 vs 5.4（HR 0.36）。LFT 異常需監測。",
+          "reference": "Coleman RL, et al. Lancet 2017;390:1949 (ARIEL3)"
+        }
+      ]
+    },
+
+    {
+      "id": "bevacizumab_targeted",
+      "title": "Bevacizumab 與 Targeted Therapy",
+      "subtitle": "Anti-VEGF + 其他標靶",
+      "regimens": [
+        {
+          "name": "Bevacizumab + Chemo Recurrent (OCEANS / GOG-213 / AURELIA)",
+          "drugs": [
+            {"name": "Bevacizumab", "dose": "10-15 mg/kg", "route": "IV", "schedule": "Q3W 或 Q2W（依組合）"}
+          ],
+          "cycle": "Q3W 直到 progression",
+          "indication": "Platinum-sensitive (OCEANS, GOG-213) 或 platinum-resistant (AURELIA) recurrent ovarian cancer",
+          "note": "**OCEANS** Carbo/Gem + Bev、**GOG-213** Carbo/Pac + Bev、**AURELIA** weekly Pac/PLD/Topo + Bev（resistant）。PFS 益處明確，OS 局部正面。",
+          "reference": "Aghajanian C, JCO 2012 (OCEANS) / Coleman RL, Lancet 2017 (GOG-213) / Pujade-Lauraine E, JCO 2014 (AURELIA)"
+        }
+      ]
+    },
+
+    {
+      "id": "platinum_resistant",
+      "title": "Platinum-Resistant Recurrent — 後線 + FRα ADC",
+      "subtitle": "PFI ≤6 月，non-platinum 後線",
+      "regimens": [
+        {
+          "name": "Mirvetuximab Soravtansine (MIRASOL)",
+          "drugs": [
+            {"name": "Mirvetuximab soravtansine-gynx", "dose": "6 mg/kg (adjusted ideal body weight)", "route": "IV (30 min)", "schedule": "Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression / 不可耐受",
+          "indication": "**FRα-high (IHC PS2+, VENTANA assay)** platinum-resistant ovarian cancer 後線（≤3 previous regimens）",
+          "note": "**MIRASOL 2024**：**OS 16.5 vs 12.8 月（HR 0.67）**；FDA 2024 完全批准（2022 加速批准升級）。**眼毒性（keratopathy）需密切監測**，配合眼科。",
+          "reference": "Moore KN, et al. NEJM 2024;390:1191 (MIRASOL)"
+        },
+        {
+          "name": "Pegylated Liposomal Doxorubicin (PLD) 單藥",
+          "drugs": [
+            {"name": "PLD (Doxil/Caelyx)", "dose": "40-50 mg/m²", "route": "IV (1 hr)", "schedule": "Q4W"}
+          ],
+          "cycle": "28-day cycle 直到 progression",
+          "indication": "Platinum-resistant recurrent ovarian cancer 單藥後線",
+          "note": "Hand-foot syndrome 顯著 — 預防 cool packs + dose modify。心毒性遠低於 conventional doxorubicin。",
+          "reference": "Gordon AN, JCO 2001;19:3312"
+        },
+        {
+          "name": "Topotecan",
+          "drugs": [
+            {"name": "Topotecan", "dose": "1.5 mg/m²", "route": "IV (30 min)", "schedule": "D1-5 Q3W"},
+            {"name": "Topotecan (weekly)", "dose": "4 mg/m²", "route": "IV (30 min)", "schedule": "D1, D8, D15 Q4W"}
+          ],
+          "cycle": "21-day or 28-day cycle 直到 progression",
+          "indication": "Platinum-resistant ovarian cancer 後線",
+          "note": "Myelosuppression（neutropenia 主要），weekly schedule 毒性較低。",
+          "reference": "ten Bokkel Huinink W, JCO 1997 / Sehouli J, Eur J Cancer 2011 (weekly)"
+        },
+        {
+          "name": "Weekly Paclitaxel",
+          "drugs": [
+            {"name": "Paclitaxel", "dose": "80 mg/m²", "route": "IV (1 hr)", "schedule": "D1, D8, D15 Q4W"}
+          ],
+          "cycle": "28-day cycle 直到 progression",
+          "indication": "Platinum-resistant ovarian cancer 後線（單藥或 + Bev AURELIA）",
+          "note": "周邊神經病變累積；可加 Bev 提升 PFS。",
+          "reference": "Markman M, JCO 2006"
+        },
+        {
+          "name": "Gemcitabine",
+          "drugs": [
+            {"name": "Gemcitabine", "dose": "1000 mg/m²", "route": "IV (30 min)", "schedule": "D1, D8, D15 Q4W"}
+          ],
+          "cycle": "28-day cycle 直到 progression",
+          "indication": "Platinum-resistant ovarian cancer 後線",
+          "note": "Myelosuppression、flu-like syndrome；可與 PLD 或 Carbo 合用（platinum-sensitive setting）。",
+          "reference": "Mutch DG, JCO 2007"
+        },
+        {
+          "name": "Trabectedin + PLD (OVA-301)",
+          "drugs": [
+            {"name": "Trabectedin", "dose": "1.1 mg/m²", "route": "IV (3 hr CVC)", "schedule": "D1 Q3W"},
+            {"name": "PLD", "dose": "30 mg/m²", "route": "IV (1 hr)", "schedule": "D1 Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression",
+          "indication": "Partially platinum-sensitive (PFI 6-12 月) recurrent ovarian cancer",
+          "note": "**OVA-301**：PFS 7.3 vs 5.8 月（HR 0.79）。Trabectedin 肝毒性、骨髓抑制；CVC 必要。",
+          "reference": "Monk BJ, JCO 2010 (OVA-301)"
+        }
+      ]
+    },
+
+    {
+      "id": "germ_cell_sex_cord",
+      "title": "Germ Cell / Sex Cord-Stromal — 特殊組織型",
+      "subtitle": "BEP 與 hormone therapy",
+      "regimens": [
+        {
+          "name": "BEP — Bleomycin + Etoposide + Cisplatin",
+          "drugs": [
+            {"name": "Bleomycin", "dose": "30 units", "route": "IV bolus", "schedule": "D1, D8, D15"},
+            {"name": "Etoposide", "dose": "100 mg/m²", "route": "IV (1 hr)", "schedule": "D1-5"},
+            {"name": "Cisplatin", "dose": "20 mg/m²", "route": "IV (1 hr)", "schedule": "D1-5"}
+          ],
+          "cycle": "21-day cycle × 3-4 cycles",
+          "indication": "Germ cell tumor（yolk sac, immature teratoma, mixed, embryonal）術後 adjuvant 或 advanced；recurrent granulosa cell tumor",
+          "note": "**治癒率 >85%**。**Bleomycin 肺毒性**需 PFT baseline + 每 2 cycles 監測；累積劑量 <360 units。",
+          "reference": "Williams S, et al. JCO 1994;12:701 (GOG-45)"
+        },
+        {
+          "name": "Letrozole — Granulosa Cell Recurrent",
+          "drugs": [
+            {"name": "Letrozole", "dose": "2.5 mg QD PO", "route": "Oral", "schedule": "持續"}
+          ],
+          "cycle": "Continuous until progression",
+          "indication": "Recurrent adult granulosa cell tumor（aromatase inhibitor，新興 hormone option）",
+          "note": "Phase II 證實 RR ~25-35%，PFS 較長。耐受性遠優於 chemo。",
+          "reference": "van Meurs HS, et al. Gynecol Oncol 2014"
+        }
+      ]
+    }
+  ],
+
+  "treatment_notes": [
+    {
+      "topic": "Carboplatin AUC 計算（Calvert formula）",
+      "detail": "Dose (mg) = AUC × (GFR + 25)。GFR 用 Cockcroft-Gault（**Cap at 125 mL/min** for newer recommendations）。AUC 5 為老年 / 高毒性 setting；AUC 6 為標準。"
+    },
+    {
+      "topic": "Olaparib 注意事項",
+      "detail": "Myelosuppression（anemia 38%, thrombocytopenia, neutropenia）、N/V、fatigue。**MDS/AML 長期風險 <1.5%**。Drug interaction：強 CYP3A4 inhibitor（azole、erythromycin）→ 減量；inducer 避免合用。"
+    },
+    {
+      "topic": "Niraparib Thrombocytopenia",
+      "detail": "Thrombocytopenia 為最大顧慮（grade 3+ ~34%）。**Baseline 體重 <77kg 或 platelet <150K** → 起始 200 mg QD；其他 300 mg QD。需 weekly CBC × 1 月，之後 monthly。"
+    },
+    {
+      "topic": "Rucaparib LFT 監測",
+      "detail": "Transaminitis 常見（ALT/AST up）— baseline + monthly LFT。CYP1A2/2D6 inhibitor — 注意藥物交互作用。"
+    },
+    {
+      "topic": "Bevacizumab 禁忌與不良事件",
+      "detail": "**禁忌**：腸穿孔史、近 4-6 週手術、未控制高血壓、明顯蛋白尿（UPC >2.0）。**主要 AE**：高血壓、proteinuria、出血、傷口癒合延遲、腸穿孔（rare 但致命）。Stop Bev ≥4 週後再行手術。"
+    },
+    {
+      "topic": "Mirvetuximab — 眼毒性管理",
+      "detail": "**Keratopathy / 角膜上皮病變 grade 1-3 ~40%**。**Baseline 眼科 + 每 cycle 評估**。預防：steroid eye drops、人工淚液、avoid contacts。Grade ≥2 → hold + 減量。"
+    },
+    {
+      "topic": "Cisplatin 神經 / 腎毒性 vs Carboplatin",
+      "detail": "**Cisplatin** 神經毒性、腎毒性、N/V 顯著（IP 路徑更甚）；**Carboplatin** 骨髓抑制為主、副作用較輕。除 IP setting 與 BEP（germ cell）外，ovarian first-line 主要用 carboplatin。"
+    },
+    {
+      "topic": "Bleomycin 肺毒性",
+      "detail": "**累積劑量 <360 units**；**baseline PFT + DLCO**，每 2 cycles 重做。任何 DLCO 下降 ≥40% 或新呼吸症狀 → 停藥。氧氣治療可加劇肺毒性 — 麻醉時告知 FiO2 ≤30%。"
+    }
+  ]
+}

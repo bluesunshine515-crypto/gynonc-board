@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>分期 · 卵巢癌 · gynonc-board</title>
+<link rel="stylesheet" href="../../shared/styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <h1><a href="../../index.html">← 婦癌專科準備</a> / <a href="index.html">卵巢癌</a> / 分期</h1>
+  <div class="site-sub">FIGO 2014 卵巢/輸卵管/腹膜 統一分期（2023 IIIA 微調）</div>
+</header>
+
+<main class="container">
+
+  <nav class="tab-bar">
+    <a href="index.html">📑 概覽</a>
+    <a href="staging.html" class="active">📊 分期</a>
+    <a href="treatment.html">🌳 處置流程</a>
+    <a href="drugs.html">💊 藥物</a>
+    <a href="trials.html">📚 Trials</a>
+    <a href="questions.html">📝 練習題</a>
+  </nav>
+
+  <section class="section">
+    <h2>分期速查 · FIGO 2014</h2>
+    <div id="stagingContainer">載入中…</div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div>內容為自行整理摘要 · 引註 Prat J FIGO 2014 / NCCN Ovarian Cancer / ESMO-ESGO consensus</div>
+</footer>
+
+<script src="../../shared/components.js"></script>
+<script>
+  (async () => {
+    try {
+      const res = await fetch('../../data/ovarian/staging.json');
+      const data = await res.json();
+      document.getElementById('stagingContainer').innerHTML = renderStaging(data);
+    } catch (e) {
+      document.getElementById('stagingContainer').innerHTML =
+        '<div class="stub">staging.json 載入失敗: ' + e.message + '</div>';
+    }
+  })();
+</script>
+
+</body>
+</html>
