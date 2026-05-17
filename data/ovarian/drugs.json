@@ -3,8 +3,8 @@
     "source": "TSGH 婦癌多專科團隊 - 癌症治療藥物處方修訂 V1（修訂日 2026-01-20）",
     "external_basis": "NCCN Ovarian Cancer Guidelines v.2.2026 + 各 trial 原始 protocol（GOG-218 / SOLO-1 / PAOLA-1 / PRIMA / MIRASOL）",
     "last_updated": "2026-05-17",
-    "review_status": "v1 draft - pending TSGH PDF 對齊 + NotebookLM review",
-    "note": "Regimen / dose / cycle 依 NCCN OV-C + landmark trials 原始 protocol。TSGH PDF 部分 ovarian-specific 處方待對齊。"
+    "review_status": "v2 - 加入 NotebookLM NCCN v.3.2025 review 新 regimens（T-DXd / FOLFIRI / MEKi / Avutometinib）",
+    "note": "Regimen / dose / cycle 依 NCCN OV-C v.3.2025 + landmark trials 原始 protocol + 台灣婦癌處方修訂 (20260112)。"
   },
 
   "categories": [
@@ -215,6 +215,107 @@
           "indication": "Partially platinum-sensitive (PFI 6-12 月) recurrent ovarian cancer",
           "note": "**OVA-301**：PFS 7.3 vs 5.8 月（HR 0.79）。Trabectedin 肝毒性、骨髓抑制；CVC 必要。",
           "reference": "Monk BJ, JCO 2010 (OVA-301)"
+        },
+        {
+          "name": "Mirvetuximab + Bevacizumab（FRα ≥25-50% 中度表現）",
+          "drugs": [
+            {"name": "Mirvetuximab soravtansine-gynx", "dose": "6 mg/kg (adjusted ideal body weight)", "route": "IV (30 min)", "schedule": "Q3W"},
+            {"name": "Bevacizumab", "dose": "15 mg/kg", "route": "IV", "schedule": "Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression / 不可耐受",
+          "indication": "**FRα ≥50% 或 ≥25%（中度表現）** platinum-resistant ovarian cancer — **Cat 2B（NCCN v.3.2025 新增）**",
+          "note": "對 FRα-high (≥75%) 用 Mirvetuximab 單藥；中度 (≥25-50%) 加 Bev 擴大適應。眼毒性與 Bev 禁忌雙重監測。",
+          "reference": "NCCN Ovarian Cancer v.3.2025 / FORWARD II trial"
+        }
+      ]
+    },
+
+    {
+      "id": "her2_biomarker",
+      "title": "HER2-positive 後線（v.3.2025 新增）",
+      "subtitle": "Tumor-agnostic HER2 ADC",
+      "regimens": [
+        {
+          "name": "Fam-trastuzumab Deruxtecan-nxki (T-DXd / Enhertu)",
+          "drugs": [
+            {"name": "Trastuzumab deruxtecan", "dose": "5.4 mg/kg", "route": "IV (D5W 100 mL, 90 min first dose, 30 min subsequent)", "schedule": "Q3W"}
+          ],
+          "cycle": "21-day cycle 直到 progression / 不可耐受",
+          "indication": "**HER2 IHC 3+ 或 2+** platinum-resistant ovarian cancer（NCCN v.3.2025 新納入）",
+          "note": "**Tumor-agnostic HER2 ADC**（DESTINY-PanTumor02 等支持）。⚠️ **ILD / pneumonitis 嚴重不良事件**（grade ≥2 約 12%），需 baseline + 監測 CT；任何呼吸症狀立即停藥 + 高劑量 steroid。心毒性需 baseline LVEF。",
+          "reference": "Meric-Bernstam F, JCO 2024;42:47 (DESTINY-PanTumor02) / NCCN Ovarian Cancer v.3.2025"
+        }
+      ]
+    },
+
+    {
+      "id": "mucinous_special",
+      "title": "Mucinous 後線 — 採大腸直腸路徑（v.3.2025 新增）",
+      "subtitle": "Mucinous ovarian 分子型與 GI tract 相似，借用大腸直腸 regimen",
+      "regimens": [
+        {
+          "name": "FOLFIRI ± Bevacizumab",
+          "drugs": [
+            {"name": "Irinotecan", "dose": "180 mg/m²", "route": "IV (90 min)", "schedule": "D1"},
+            {"name": "Leucovorin", "dose": "400 mg/m²", "route": "IV (2 hr)", "schedule": "D1"},
+            {"name": "5-FU bolus", "dose": "400 mg/m²", "route": "IV push", "schedule": "D1"},
+            {"name": "5-FU continuous", "dose": "2400 mg/m²", "route": "IV (46-hr continuous infusion)", "schedule": "D1-D2"},
+            {"name": "Bevacizumab (optional)", "dose": "5-10 mg/kg", "route": "IV", "schedule": "Q2W"}
+          ],
+          "cycle": "14-day cycle 直到 progression",
+          "indication": "**Recurrent mucinous ovarian carcinoma**（NCCN v.3.2025 新增，**Cat 2B**）",
+          "note": "採大腸直腸癌處方路徑（KRAS-driven 共享機制）。需嚴格排除 GI primary（CK7/CK20/CDX2/SATB2）。CVC / port 必要。",
+          "reference": "NCCN Ovarian Cancer v.3.2025"
+        }
+      ]
+    },
+
+    {
+      "id": "lgsc_targeted",
+      "title": "LGSC 標靶 — MEKi + KRAS 抑制（v.3.2025 新核准）",
+      "subtitle": "Low-grade serous carcinoma 與 G1 Endometrioid 共享 MAPK pathway",
+      "regimens": [
+        {
+          "name": "Trametinib（MEK inhibitor）— GOG-281",
+          "drugs": [
+            {"name": "Trametinib", "dose": "2 mg QD PO", "route": "Oral", "schedule": "持續至 progression / 不可耐受"}
+          ],
+          "cycle": "Continuous",
+          "indication": "Recurrent low-grade serous carcinoma（LGSC）",
+          "note": "**GOG-281 / ENGOT-ov50**：PFS 13.0 vs 7.2 月（HR 0.48），證實 MEKi 在 LGSC 益處。注意：rash、diarrhea、心臟毒性（LVEF 監測）、retinal vein occlusion 風險。",
+          "reference": "Gershenson DM, et al. Lancet 2022;399:541 (GOG-281)"
+        },
+        {
+          "name": "Binimetinib（MEK inhibitor）",
+          "drugs": [
+            {"name": "Binimetinib", "dose": "45 mg BID PO", "route": "Oral", "schedule": "持續"}
+          ],
+          "cycle": "Continuous",
+          "indication": "Recurrent LGSC（Trametinib 替代）",
+          "note": "MILO trial 主要終點未達，但臨床仍視為 MEKi 選項；副作用類似 Trametinib。",
+          "reference": "Monk BJ, JCO 2020;38:3753 (MILO)"
+        },
+        {
+          "name": "Avutometinib + Defactinib（v.3.2025 新核准）",
+          "drugs": [
+            {"name": "Avutometinib (RAF/MEK clamp)", "dose": "3.2 mg PO twice weekly", "route": "Oral", "schedule": "D1, D4 of each week × 3 weeks ON / 1 week OFF"},
+            {"name": "Defactinib (FAK inhibitor)", "dose": "200 mg BID PO", "route": "Oral", "schedule": "D1-21 of 28-day cycle"}
+          ],
+          "cycle": "28-day cycle",
+          "indication": "**KRAS-mutated recurrent low-grade serous carcinoma**（v.3.2025 新增）",
+          "note": "**RAMP 201 / FAKtor-FRAME-1**：combo 較 single-agent MEKi 在 KRAS-mut LGSC 反應率更高。建議 recurrent LGSC routine 做 KRAS testing。",
+          "reference": "Banerjee S, et al. Lancet Oncol 2024 (RAMP 201) / FDA approval 2024"
+        },
+        {
+          "name": "Letrozole / Anastrozole（Aromatase Inhibitor）— LGSC Hormone Therapy",
+          "drugs": [
+            {"name": "Letrozole", "dose": "2.5 mg QD PO", "route": "Oral", "schedule": "持續"},
+            {"name": "Anastrozole (alt)", "dose": "1 mg QD PO", "route": "Oral", "schedule": "持續"}
+          ],
+          "cycle": "Continuous until progression",
+          "indication": "Recurrent ER/PR+ LGSC（低惡性度、緩慢病程適用）",
+          "note": "LGSC 高 ER/PR 表現率（~80%）；hormone 反應率約 14%，但 PFS 較長且耐受性遠優於 chemo。",
+          "reference": "Gershenson DM, JCO 2017;35:1103"
         }
       ]
     },
@@ -282,6 +383,22 @@
     {
       "topic": "Bleomycin 肺毒性",
       "detail": "**累積劑量 <360 units**；**baseline PFT + DLCO**，每 2 cycles 重做。任何 DLCO 下降 ≥40% 或新呼吸症狀 → 停藥。氧氣治療可加劇肺毒性 — 麻醉時告知 FiO2 ≤30%。"
+    },
+    {
+      "topic": "T-DXd (Trastuzumab deruxtecan) — ILD 監測",
+      "detail": "**ILD/pneumonitis grade ≥2 約 12%、grade ≥5 約 1%**。**Baseline CT + 監測**：任何新呼吸症狀（咳嗽、呼吸困難、缺氧）立即停藥 + 高劑量 corticosteroid（prednisone 1 mg/kg）。心毒性：baseline LVEF + 監測（與 trastuzumab 類似）。"
+    },
+    {
+      "topic": "Trametinib / MEKi — 心毒性 + 眼科監測",
+      "detail": "**LVEF 下降**：baseline + 每 3 月。**Retinal vein occlusion / serous retinopathy**：眼科 baseline + 任何視力變化即評估。Rash 與 diarrhea 為主要 GI/皮膚 AE。"
+    },
+    {
+      "topic": "Avutometinib + Defactinib — 用法特殊（3 ON / 1 OFF）",
+      "detail": "**Avutometinib** 為 RAF/MEK clamp，週給藥 D1, D4 × 3 weeks ON / 1 week OFF（避免毒性累積）。**Defactinib** 為 FAK inhibitor，D1-21 daily。需 baseline 心臟 / 眼科 / LFT 監測。KRAS testing 為適應症前提。"
+    },
+    {
+      "topic": "Mucinous FOLFIRI 借大腸路徑",
+      "detail": "Mucinous ovarian 對 platinum 反應差。**FOLFIRI 採大腸直腸標準 14-day cycle**（Irinotecan + LV + 5-FU bolus + 46-hr continuous infusion）。Bev 可加（5-10 mg/kg Q2W）。CVC/port 必要。"
     }
   ]
 }

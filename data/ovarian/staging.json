@@ -10,8 +10,8 @@
       "NCCN Ovarian Cancer Guidelines v.2.2026"
     ],
     "last_updated": "2026-05-17",
-    "review_status": "v1 draft - pending NotebookLM review",
-    "review_notes": "FIGO 2014 為當前主流。重點：(1) 卵巢/輸卵管/腹膜統一分期（過去三種獨立）；(2) IC 細分為 IC1（術中破裂）/ IC2（術前破裂或表面）/ IC3（washing+）；(3) III 期重整：IIIA1 改為純 LN+，IIIA2 為 microscopic extrapelvic peritoneal；(4) IV 細分 IVA（pleural cytology+）/ IVB（parenchymal mets）。2023 微調主要為 IIIA1 切點與 cytology 要求語句澄清，非重大改版。"
+    "review_status": "v2 - 吃入 NotebookLM NCCN v.3.2025 review 3 大修正",
+    "review_notes": "v2 修正：(1) Endometrioid 必須依 Grade 拆分 — G1 走 low-grade 路徑（等同 LGSC）/ G2-3 走 high-grade（等同 HGSC）；(2) Mucinous 加 Expansile vs Infiltrative pattern — Expansile 預後極佳 Stage I 可觀察 / Infiltrative IB/IC 也加 chemo；(3) 補 Less Common Ovarian Cancers (LCOC) — Borderline 化療無益處純手術 + Carcinosarcoma 視同 high-grade epithelial + Clear cell IC 必加化療 + Mucinous 後線 FOLFIRI ± Bev。基礎結構（IA-IVB FIGO 2014 切點 / IC 三類 / IIIA1(i)(ii) / 肝脾包膜 vs 實質）NotebookLM 已確認準確。"
   },
 
   "clarifications_2023": [
@@ -26,9 +26,9 @@
   "histology_subtypes": [
     {
       "name": "Epithelial (90% — high-grade serous 主導)",
-      "subtypes": "High-grade serous (HGSC, 70%) / Low-grade serous (LGSC, 5%) / Endometrioid (10%) / Clear cell (10%) / Mucinous (3%) / Brenner / Mixed",
-      "molecular": "HGSC: 幾乎都 TP53 mut + 50% BRCA/HRD；LGSC: KRAS/BRAF mut；Clear cell: ARID1A/PIK3CA mut；Mucinous: KRAS/HER2",
-      "treatment_implication": "HGSC 對 platinum 與 PARPi 敏感（特別 BRCA/HRD+）；Clear cell/mucinous platinum 反應差，需考慮替代 regimen"
+      "subtypes": "**High-grade serous (HGSC, 70%)** / **Low-grade serous (LGSC, 5%)** / **Endometrioid 依 Grade 拆**：**Grade 1 Endometrioid → 歸 low-grade 路徑（等同 LGSC 處置）**；**Grade 2-3 Endometrioid → 歸 high-grade 路徑（等同 HGSC 處置）** / Clear cell (10%) / **Mucinous (3%)** 依 pattern：**Expansile 預後極佳 vs Infiltrative 高度破壞性** / Brenner / Mixed",
+      "molecular": "HGSC: 幾乎都 TP53 mut + 50% BRCA/HRD；LGSC + G1 Endometrioid: KRAS/BRAF mut（共享 low-grade molecular signature）；Clear cell: ARID1A/PIK3CA mut；Mucinous: KRAS/HER2",
+      "treatment_implication": "**HGSC + G2-3 Endometrioid** 對 platinum + PARPi 敏感（特別 BRCA/HRD+）；**LGSC + G1 Endometrioid** platinum 反應差，但 hormone + MEKi (trametinib/binimetinib)、KRAS-mut 用 avutometinib/defactinib；**Clear cell** platinum 差、Stage IC 必加 chemo；**Mucinous expansile** Stage I 可 observe，**infiltrative** IB/IC 也加 chemo"
     },
     {
       "name": "Sex Cord-Stromal (5%)",
@@ -234,6 +234,55 @@
         "**Sex cord-stromal**：Inhibin A/B（granulosa）；AMH（granulosa）；testosterone / estradiol（依 hormone profile）"
       ],
       "implication": "正確 marker panel 可在術前推測 histology，影響手術策略（含 fertility-sparing 決策）"
+    },
+    {
+      "topic": "Borderline Ovarian Tumor (LMP) — 化療無益處",
+      "source": "NCCN OV-1 / 卵巢交界性腫瘤特別章節",
+      "applies_to": ["Serous LMP / Mucinous LMP / 其他 borderline ovarian tumor"],
+      "rules": [
+        "**化學治療（含 IV 與 IP）對 borderline ovarian tumor 沒有益處（not been shown to be beneficial）**",
+        "唯一標準處置 = 完整手術切除（comprehensive staging surgery，含 omentectomy + peritoneal biopsies）",
+        "術後僅需 observe（不論是否有 implants）",
+        "Serous LMP 含 invasive implants 預後較差，仍以手術 + 觀察為主，必要時針對 invasive implants 個案處理",
+        "**NACT 不適用於 borderline / 非侵入性癌症** — 第 1 樹治療決策需排除此類"
+      ],
+      "implication": "Borderline 與 invasive epithelial ovarian cancer 治療策略完全不同；不要把 borderline 當 low-grade 給化療"
+    },
+    {
+      "topic": "Carcinosarcoma (MMMT) — 視同高惡性度上皮癌",
+      "source": "NCCN OV-1 / Carcinosarcoma footnote",
+      "applies_to": ["Carcinosarcoma of ovary (MMMT)"],
+      "rules": [
+        "雖然組織學特殊（含 epithelial + sarcomatous 兩成分），**NCCN 建議視同 high-grade epithelial ovarian cancer 處理**",
+        "輔助化療首選為 **IV Paclitaxel + Carboplatin**（與 HGSC 同骨幹）",
+        "Maintenance PARPi / Bev 依 BRCA/HRD 與其他適應症評估"
+      ],
+      "implication": "勿沿用過去 uterine carcinosarcoma 的 ifosfamide 等 sarcoma 路徑；目前 ovarian CS 走 epithelial 路徑"
+    },
+    {
+      "topic": "Clear Cell Carcinoma — Stage I 化療閾值",
+      "source": "NCCN OV-1 / Clear cell histology",
+      "applies_to": ["Clear cell ovarian carcinoma any stage I"],
+      "rules": [
+        "Clear cell 對 platinum 反應較差，但仍以 Pac/Carbo 為一線化療骨幹",
+        "**Stage IA Clear Cell**：可選化療 × 6 或 observation（個案化）",
+        "**Stage IC Clear Cell（任 subtype IC1/IC2/IC3）= 必加化療絕對適應症**（不論其他低風險因子）",
+        "Stage II 以上必加化療；HER2 testing 可考慮（少部分 HER2+）"
+      ],
+      "implication": "Clear cell IC 不能 observe；化療閾值較其他組織型低"
+    },
+    {
+      "topic": "Mucinous — Expansile vs Infiltrative Pattern",
+      "source": "NCCN OV-1 / Mucinous histology footnote",
+      "applies_to": ["Mucinous ovarian carcinoma any stage"],
+      "rules": [
+        "**Expansile pattern**：腫瘤推擠式生長（confluent / pushing border）— **預後極佳**，**Stage I 多可 observation 不加化療**",
+        "**Infiltrative pattern**：腫瘤浸潤式生長 — **高度破壞性**，**Stage IB/IC 也建議加化療**（不能只觀察）",
+        "報告必須明確標示 pattern；混合 pattern 以 infiltrative 為主",
+        "Mucinous 治療反應差，**復發後可考慮 FOLFIRI ± Bevacizumab（Cat 2B，採大腸直腸癌路徑）**",
+        "鑑別：須排除 GI primary（appendiceal / colorectal primary metastatic to ovary）— CEA / CA19-9 / 影像 / 組織學 IHC（CK7/CK20/CDX2/SATB2）"
+      ],
+      "implication": "Mucinous 不是均質族群；pattern 決定觀察 vs 化療閾值，FOLFIRI 為 epithelial ovarian 中獨特的後線"
     }
   ]
 }

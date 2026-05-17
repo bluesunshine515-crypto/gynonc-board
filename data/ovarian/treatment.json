@@ -1,29 +1,29 @@
 {
   "_metadata": {
-    "source": "NCCN Ovarian Cancer Guidelines v.2.2026 + ESMO-ESGO Consensus 2019 + FIGO 2014",
+    "source": "NCCN Ovarian Cancer Guidelines v.3.2025 + ESMO-ESGO Consensus 2019 + FIGO 2014 + 台灣婦癌藥物處方修訂 (20260112)",
     "last_updated": "2026-05-17",
-    "review_status": "v1 draft - pending NotebookLM review",
-    "review_notes": "Ovarian cancer 處置 3 個 Mermaid：1️⃣ 原發治療（primary vs NACT 決策 + 一線 chemo）2️⃣ Maintenance therapy（BRCA / HRD / HRP 分支 PARPi ± Bev）3️⃣ Recurrent disease（platinum-sensitive vs resistant 後線）。"
+    "review_status": "v2 - 吃入 NotebookLM NCCN v.3.2025 review 9 大修正",
+    "review_notes": "v2 修正：(4) NACT 排除 Borderline / 非侵入性；(5) Fertility-sparing 嚴格化（限單側 low-risk histology，Clear cell / high-grade 不建議）；(6) **PARPi v.3.2025 邏輯更新**：BRCA mut 未用 Bev 首選 Olap/Niraparib Cat 1，已用 Bev 首選 Olap+Bev Cat 1；HRD+ non-BRCA 未用 Bev 首選 Niraparib/Rucaparib + **新 Olap 單藥 Cat 2B**，已用 Bev 首選 Olap+Bev Cat 1；HRP/Unknown 首選 Niraparib（或 Rucaparib）不論 Bev；(7) Bev 劑量 ICON-7 7.5 vs GOG-218 15 mg/kg，up to 22 cycles，Biosimilar 可替代；(8) **MIRASOL FRα ≥75% 單藥、≥50% 或 ≥25% 可 +Bev Cat 2B（新）**；(9) **HER2+ T-DXd 新分支**（IHC 3+ 或 2+ platinum-resistant）；(10) Mucinous 後線 FOLFIRI ± Bev Cat 2B；(11) **LGSC MEKi（trametinib/binimetinib）+ KRAS-mut 用 avutometinib/defactinib（v.3.2025 新）**；(12) HIPEC 升主流程（NACT 後 IDS 可加，cisplatin 100 mg/m²）。"
   },
 
   "diagrams": [
     {
       "id": "primary",
       "title": "1️⃣ 原發治療決策樹（Primary Cytoreduction vs NACT-IDS）",
-      "subtitle": "Stage + tumor burden + PS 三者決定路徑",
-      "mermaid": "flowchart TD\n  Start([新診斷 Epithelial Ovarian Cancer]) --> Imaging[CT abdomen/pelvis<br>CA125 / HE4<br>biopsy or paracentesis cytology]\n\n  Imaging --> Stage{Stage 評估}\n\n  Stage -->|Stage I 局限| Surg_I[Primary staging surgery<br>TAH+BSO+omentectomy<br>+ peritoneal washing + LN sampling<br>Fertility-sparing 可選 IA low-grade]\n\n  Stage -->|Stage II-IV| Resectable{可達 R0?<br>PS / 瘤量 / CT 預測}\n\n  Resectable -->|是| PDS[**Primary Debulking Surgery (PDS)**<br>目標 R0<br>切除腹膜瘤、omentum、bowel<br>含 retroperitoneal LND]\n\n  Resectable -->|否| NACT[**Neoadjuvant Chemo × 3 cycles**<br>Carbo AUC 5-6 + Pac 175 mg/m²<br>Q3W]\n\n  NACT --> IDS[**Interval Debulking Surgery (IDS)**<br>± HIPEC (OVHIPEC-1)<br>cisplatin 100 mg/m² 42°C × 90 分]\n\n  IDS --> Chemo3[再 chemo × 3 cycles]\n\n  PDS --> Adj_Chemo[Adjuvant Pac/Carbo × 6 cycles<br>Q3W<br>Stage IC-IV high-grade 必加]\n\n  Surg_I --> Risk_I{Risk?}\n  Risk_I -->|IA low-grade| Obs[Observation 或<br>adjuvant chemo × 3]\n  Risk_I -->|IC / IB-II high-grade| Adj_Chemo\n\n  Adj_Chemo --> Mol_Test[BRCA + HRD testing<br>+ tumor markers monitor]\n  Chemo3 --> Mol_Test\n\n  Mol_Test --> Maint([前往 2️⃣ Maintenance 樹])\n\n  classDef early fill:#d4edda,stroke:#27ae60;\n  class Surg_I,Obs early;\n  classDef mid fill:#fff3cd,stroke:#c89a3a;\n  class PDS,NACT,IDS mid;\n  classDef sys fill:#f8d7da,stroke:#c0392b;\n  class Adj_Chemo,Chemo3 sys;"
+      "subtitle": "Stage + tumor burden + PS 決定路徑；NACT 不適用於 Borderline / 非侵入性",
+      "mermaid": "flowchart TD\n  Start([新診斷 Ovarian Mass]) --> Biopsy{病理確認}\n\n  Biopsy -->|Borderline LMP<br>非侵入性| LMP[**Borderline path**:<br>**化療無益處 — 純手術切除**<br>Comprehensive staging + Observe<br>**NACT 不適用**]\n  Biopsy -->|Invasive Epithelial OC| Imaging[CT abdomen/pelvis<br>CA125 / HE4<br>biopsy or paracentesis cytology]\n\n  Imaging --> Stage{Stage 評估}\n\n  Stage -->|Stage I 局限| Surg_I[Primary staging surgery<br>TAH+BSO+omentectomy<br>+ washing + LN sampling]\n\n  Stage -->|Stage II-IV| Resectable{可達 R0?<br>PS / 瘤量 / CT 預測}\n\n  Resectable -->|是| PDS[**Primary Debulking Surgery PDS**<br>目標 R0<br>+ retroperitoneal LND]\n\n  Resectable -->|否| NACT[**Neoadjuvant Chemo × 3 cycles**<br>Carbo AUC 5-6 + Pac 175 mg/m²<br>Q3W<br>⚠️ 不適用 Borderline / 非侵入性]\n\n  NACT --> IDS[**Interval Debulking Surgery IDS**<br>**HIPEC 可加（主流程）**<br>Cisplatin 100 mg/m² 42°C × 90 分鐘<br>OVHIPEC-1 OS HR 0.67]\n\n  IDS --> Chemo3[再 chemo × 3 cycles]\n\n  Surg_I --> Histology{Histology + Risk}\n  Histology -->|IA G1 Endometrioid<br>IA LGSC<br>IA Mucinous Expansile| FertOption{Fertility-sparing 候選?<br>**僅 low-risk histology + 單側**}\n  Histology -->|IC 任何 / IB high-grade /<br>IC Clear Cell / Mucinous Infiltrative| Adj_Chemo[Adjuvant Pac/Carbo × 6 cycles Q3W]\n  Histology -->|IA Clear Cell / IA high-grade serous| Adj_Option[化療 × 6 或 observation 個案化<br>**Clear cell + High-grade 不建議 fertility-sparing**<br>除非 IA + 充分告知風險]\n\n  FertOption -->|是 + 強烈希望| FS[**Fertility-sparing**:<br>單側 USO + comprehensive staging<br>限 Grade 1 Endometrioid / LGSC /<br>Mucinous Expansile 等 low-risk histology]\n  FertOption -->|否| Adj_Option\n\n  PDS --> Adj_Chemo\n  Chemo3 --> Mol_Test[BRCA + HRD testing<br>+ tumor markers monitor]\n  Adj_Chemo --> Mol_Test\n\n  Mol_Test --> Maint([前往 2️⃣ Maintenance 樹])\n\n  classDef lmp fill:#e8e8f0,stroke:#5a5a8a;\n  class LMP lmp;\n  classDef early fill:#d4edda,stroke:#27ae60;\n  class Surg_I,FS early;\n  classDef mid fill:#fff3cd,stroke:#c89a3a;\n  class PDS,NACT,IDS mid;\n  classDef sys fill:#f8d7da,stroke:#c0392b;\n  class Adj_Chemo,Chemo3 sys;"
     },
     {
       "id": "maintenance",
-      "title": "2️⃣ Front-line Maintenance — BRCA / HRD / HRP 三分支",
-      "subtitle": "Response to platinum + biomarker 決定 PARPi ± Bev 選擇",
-      "mermaid": "flowchart TD\n  Start([完成 1L Pac/Carbo × 6<br>CR / PR]) --> BRCA{BRCA1/2 mutation<br>germline + somatic}\n\n  BRCA -->|BRCA mut<br>~15-20% HGSC| BRCA_path[**SOLO-1 path**<br>Olaparib 300 mg BID × 2 yr<br>5-yr PFS 48% vs 21%<br>Cat 1]\n\n  BRCA -->|BRCA wild-type| HRD{HRD status<br>Myriad myChoice / FoundationOne}\n\n  HRD -->|HRD+<br>non-BRCA<br>~30%| HRD_path[**PAOLA-1 path**<br>Olaparib + Bevacizumab<br>Bev 15 mg/kg Q3W × 22 cycles<br>+ Olap 300mg BID × 2 yr<br>PFS 37.2 vs 17.7 月]\n\n  HRD -->|HRP / HRD-<br>~50%| HRP_path[**PRIMA path** 或<br>**Bev maintenance only**]\n\n  HRP_path --> Choice{選擇}\n  Choice -->|不論 biomarker| Nira[**PRIMA**<br>Niraparib 200-300 mg QD × 3 yr<br>PFS 13.8 vs 8.2 月<br>HRP subgroup HR 0.68]\n  Choice -->|Bev 起家 1L| Bev_alone[**Bev maintenance**<br>GOG-218 / ICON7<br>15 mg/kg Q3W × 22 cycles<br>high-risk subgroup OS+]\n\n  BRCA_path --> FollowUp[追蹤<br>CA125 + CT Q3M × 2yr<br>之後 Q6M]\n  HRD_path --> FollowUp\n  Nira --> FollowUp\n  Bev_alone --> FollowUp\n\n  classDef brca fill:#d4edda,stroke:#27ae60;\n  class BRCA_path brca;\n  classDef hrd fill:#fff3cd,stroke:#c89a3a;\n  class HRD_path hrd;\n  classDef hrp fill:#f0e8ff,stroke:#7a5aa8;\n  class Nira,Bev_alone hrp;"
+      "title": "2️⃣ Front-line PARPi Maintenance — NCCN v.3.2025 更新邏輯",
+      "subtitle": "BRCA / HRD / HRP × Bev 使用狀態決定 PARPi 選擇",
+      "mermaid": "flowchart TD\n  Start([完成 1L Pac/Carbo × 6<br>CR / PR]) --> BevUsed{1L 是否有用 Bev?}\n\n  BevUsed -->|有用 Bev| BevYes{BRCA / HRD status?}\n  BevUsed -->|未用 Bev| BevNo{BRCA / HRD status?}\n\n  BevNo -->|BRCA mut| BNo_BRCA[**首選 Cat 1**:<br>Olaparib 單藥 (SOLO-1)<br>OR Niraparib (PRIMA)<br>OR Rucaparib]\n\n  BevNo -->|HRD+ non-BRCA| BNo_HRD[**首選**:<br>Niraparib (PRIMA HRD+ HR 0.43)<br>OR Rucaparib<br>**⭐ Olaparib 單藥 Cat 2B（v.3.2025 新增）**]\n\n  BevNo -->|HRP / Unknown| BNo_HRP[**首選**:<br>Niraparib (PRIMA HRP HR 0.68)<br>OR Rucaparib<br>**不選 Olaparib 單藥**]\n\n  BevYes -->|BRCA mut| BYes_BRCA[**首選 Cat 1**:<br>Olaparib + Bevacizumab (PAOLA-1)<br>continue Bev to 22 cycles total]\n\n  BevYes -->|HRD+ non-BRCA| BYes_HRD[**首選 Cat 1**:<br>Olaparib + Bevacizumab (PAOLA-1)<br>HRD+ subgroup PFS 28.1 vs 16.6 月]\n\n  BevYes -->|HRP / Unknown| BYes_HRP[**首選**:<br>Niraparib (或 Rucaparib)<br>OR Bevacizumab maintenance only<br>**PAOLA-1 在 HRD- 無顯著益處**]\n\n  BNo_BRCA --> FollowUp[追蹤<br>CA125 + CT Q3M × 2yr<br>之後 Q6M]\n  BNo_HRD --> FollowUp\n  BNo_HRP --> FollowUp\n  BYes_BRCA --> FollowUp\n  BYes_HRD --> FollowUp\n  BYes_HRP --> FollowUp\n\n  classDef brca fill:#d4edda,stroke:#27ae60;\n  class BNo_BRCA,BYes_BRCA brca;\n  classDef hrd fill:#fff3cd,stroke:#c89a3a;\n  class BNo_HRD,BYes_HRD hrd;\n  classDef hrp fill:#f0e8ff,stroke:#7a5aa8;\n  class BNo_HRP,BYes_HRP hrp;"
     },
     {
       "id": "recurrent",
-      "title": "3️⃣ Recurrent Disease — Platinum-Sensitive vs Resistant",
-      "subtitle": "Platinum-free interval (PFI) 決定後線路徑",
-      "mermaid": "flowchart TD\n  Start([Recurrent ovarian cancer]) --> PFI{Platinum-Free Interval}\n\n  PFI -->|>6 月<br>Platinum-Sensitive| PS_path[**Platinum-Sensitive 重新挑戰 platinum**]\n  PFI -->|≤6 月<br>Platinum-Resistant| PR_path[**Platinum-Resistant 換 non-platinum 後線**]\n\n  PS_path --> PS_choice{Regimen 選擇}\n  PS_choice --> PS_PldCarbo[**Carboplatin + PLD**<br>CALYPSO<br>較 Carbo/Pac 副作用低]\n  PS_choice --> PS_GemCarbo[**Carboplatin + Gemcitabine** ± Bev<br>OCEANS / GOG-213]\n  PS_choice --> PS_CarboPac[**Carbo + Paclitaxel** ± Bev<br>AGO-OVAR-2.5]\n\n  PS_PldCarbo --> PS_Maint{Response + BRCA?}\n  PS_GemCarbo --> PS_Maint\n  PS_CarboPac --> PS_Maint\n\n  PS_Maint -->|BRCA mut| SOLO2[**SOLO-2** Olaparib maintenance<br>PFS 19.1 vs 5.5 月]\n  PS_Maint -->|HRD+ / 不論| ARIEL3[**ARIEL3** Rucaparib<br>或 **NOVA** Niraparib<br>maintenance]\n\n  PR_path --> PR_choice{FRα status?}\n  PR_choice -->|FRα-high IHC PS2+| MIRASOL[**Mirvetuximab soravtansine**<br>MIRASOL trial<br>OS 16.5 vs 12.8 月 HR 0.67<br>FDA 2024 完全批准]\n  PR_choice -->|FRα low / 不適合| PR_chemo[**單藥化療**:<br>PLD 40-50 mg/m² Q4W<br>Topotecan 4 mg/m² weekly<br>Weekly paclitaxel 80 mg/m²<br>Gemcitabine ± Bev AURELIA]\n\n  PR_chemo --> Salvage[後線 salvage:<br>Trabectedin + PLD<br>Etoposide PO<br>Hormone if ER+<br>Clinical trial]\n  MIRASOL --> Salvage\n\n  classDef ps fill:#d4edda,stroke:#27ae60;\n  class PS_path,PS_PldCarbo,PS_GemCarbo,PS_CarboPac ps;\n  classDef pr fill:#fff3cd,stroke:#c89a3a;\n  class PR_path,PR_chemo pr;\n  classDef adc fill:#f0e8ff,stroke:#7a5aa8;\n  class MIRASOL adc;"
+      "title": "3️⃣ Recurrent Disease — Platinum-Sensitive vs Resistant（v2：HER2 + Histology branches）",
+      "subtitle": "PFI + histology + biomarker（HER2 / FRα / KRAS）三軸決定後線",
+      "mermaid": "flowchart TD\n  Start([Recurrent ovarian cancer]) --> Histology{Histology?}\n\n  Histology -->|LGSC / G1 Endometrioid| LGSC_path[**LGSC path**：詳見下方]\n  Histology -->|Mucinous| Muc_path[**Mucinous path**：詳見下方]\n  Histology -->|HGSC / G2-3 Endo /<br>Carcinosarcoma| PFI_check{Platinum-Free Interval}\n  Histology -->|Clear cell| PFI_check\n\n  PFI_check -->|>6 月| PS_path[**Platinum-Sensitive**<br>重新挑戰 platinum]\n  PFI_check -->|≤6 月| PR_path[**Platinum-Resistant**]\n\n  PS_path --> PS_choice{Regimen 選擇}\n  PS_choice --> PS_PldCarbo[Carboplatin + PLD CALYPSO]\n  PS_choice --> PS_GemCarbo[Carbo + Gemcitabine ± Bev OCEANS / GOG-213]\n  PS_choice --> PS_CarboPac[Carbo + Paclitaxel ± Bev AGO-OVAR-2.5]\n\n  PS_PldCarbo --> PS_Maint{Response + BRCA?}\n  PS_GemCarbo --> PS_Maint\n  PS_CarboPac --> PS_Maint\n  PS_Maint -->|BRCA mut| SOLO2[**SOLO-2** Olaparib maint<br>PFS 19.1 vs 5.5 月]\n  PS_Maint -->|HRD+| ARIEL3[**ARIEL3** Rucaparib<br>OR NOVA Niraparib]\n\n  PR_path --> HER2_test{HER2 IHC<br>**v.3.2025 新加分支**}\n  HER2_test -->|IHC 3+ 或 2+| TDXd[**Fam-trastuzumab deruxtecan-nxki<br>(Enhertu, T-DXd)**<br>5.4 mg/kg IV Q3W<br>NCCN v.3.2025 新增]\n\n  HER2_test -->|HER2-| FRa_test{FRα IHC<br>VENTANA assay}\n\n  FRa_test -->|FRα ≥75% High| MIRASOL_mono[**Mirvetuximab 單藥**<br>MIRASOL OS 16.5 vs 12.8 月 HR 0.67<br>FDA 2024 完全批准]\n  FRa_test -->|FRα ≥50% 或 ≥25%| MIRASOL_combo[**Mirvetuximab + Bevacizumab Cat 2B**<br>v.3.2025 新增<br>對中度表現病人擴大適應]\n  FRa_test -->|FRα 低 / 不適合| PR_chemo[單藥化療:<br>PLD 40-50 mg/m² Q4W<br>Topotecan 4 mg/m² weekly<br>Weekly paclitaxel 80 mg/m²<br>Gemcitabine ± Bev AURELIA]\n\n  PR_chemo --> Salvage[後線 salvage:<br>Trabectedin + PLD<br>Etoposide PO<br>Clinical trial]\n  TDXd --> Salvage\n  MIRASOL_mono --> Salvage\n  MIRASOL_combo --> Salvage\n\n  LGSC_path --> LGSC_branch{KRAS mut?}\n  LGSC_branch -->|KRAS mut| Avu[**Avutometinib + Defactinib**<br>v.3.2025 新核准<br>KRAS-mutated recurrent LGSC]\n  LGSC_branch -->|KRAS wt 或 unknown| LGSC_other[**MEK inhibitor**：<br>Trametinib / Binimetinib<br>OR Hormone：Letrozole / Anastrozole<br>OR Carbo + Pac]\n\n  Muc_path --> Muc_choice{Choice}\n  Muc_choice -->|採大腸直腸路徑| FOLFIRI[**FOLFIRI ± Bevacizumab Cat 2B**<br>NCCN 新增選項]\n  Muc_choice -->|standard| Muc_std[Carbo + Pac<br>或 PLD / weekly Pac]\n\n  classDef ps fill:#d4edda,stroke:#27ae60;\n  class PS_path,PS_PldCarbo,PS_GemCarbo,PS_CarboPac ps;\n  classDef pr fill:#fff3cd,stroke:#c89a3a;\n  class PR_path,PR_chemo pr;\n  classDef her2 fill:#fde2e4,stroke:#7a3a3a;\n  class TDXd her2;\n  classDef adc fill:#f0e8ff,stroke:#7a5aa8;\n  class MIRASOL_mono,MIRASOL_combo adc;\n  classDef lgsc fill:#e8f0e0,stroke:#5a7a4a;\n  class LGSC_path,Avu,LGSC_other lgsc;\n  classDef muc fill:#fff0e0,stroke:#a8783a;\n  class Muc_path,FOLFIRI,Muc_std muc;"
     }
   ],
 
@@ -33,40 +33,64 @@
       "detail": "Bristow 2002 meta-analysis：每 10% optimal cytoreduction 增加，median OS 提升 5.5%。**R0 (no visible residual) > R1 (≤1 cm) >> R2 (>1 cm)**。Center expertise（high-volume gynecologic oncologist）顯著影響 R0 達成率。"
     },
     {
-      "topic": "NACT-IDS 適應症（EORTC 55971 / CHORUS）",
-      "detail": "NACT × 3 → IDS → chemo × 3 與 primary debulking **OS 相當**（non-inferiority）。NACT 適應症：(1) PS 差不耐手術；(2) 大瘤量、廣泛上腹疾病；(3) 預測無法 R0（CT、laparoscopy、CA125/CEA ratio）。NACT 較 primary 圍術期併發症少。"
+      "topic": "NACT-IDS 適應症 — 排除 Borderline / 非侵入性",
+      "detail": "NACT × 3 → IDS → chemo × 3 與 primary debulking **OS 相當**（EORTC 55971 / CHORUS non-inferiority）。NACT 適應症：(1) PS 差不耐手術；(2) 大瘤量、廣泛上腹疾病；(3) 預測無法 R0。**⚠️ NACT 不適用於 Borderline (LMP) 或其他非侵入性癌症** — 這類純手術 + observe。"
+    },
+    {
+      "topic": "Fertility-Sparing — 嚴格的 histology + 單側條件",
+      "detail": "**僅限單側 + low-risk histology**：Grade 1 Endometrioid / LGSC / Mucinous expansile / IA epithelial low-grade。**Clear cell 與 high-grade（包括 HGSC、G2-3 Endometrioid）不建議 fertility-sparing**，除極少數 IA + 充分告知風險。Germ cell 與 sex cord-stromal 為主要 fertility-sparing 候選。"
+    },
+    {
+      "topic": "HIPEC at IDS — v.3.2025 升至主流程",
+      "detail": "**OVHIPEC-1**：NACT-IDS 時加 HIPEC（cisplatin 100 mg/m² 42°C × 90 分鐘），**RFS 14.2 vs 10.7 月，OS 45.7 vs 33.9 月（HR 0.67）**。NCCN v.3.2025 將 HIPEC 從腳註移至主流程，明確指出 **Stage III NACT 後 IDS 可考慮加 HIPEC**。台灣部分中心已導入。"
     },
     {
       "topic": "BRCA / HRD Testing — 必做",
-      "detail": "**所有 epithelial ovarian cancer（特別 HGSC）都應做 germline + somatic BRCA1/2**；stage II-IV 加 HRD score（Myriad myChoice / FoundationOne CDx）。BRCA mut ~15-20% HGSC；HRD+ 含 BRCAness 約 50%；HRP/HRD- 約 50%。決定 PARPi 選擇與家族遺傳評估。"
+      "detail": "**所有 epithelial ovarian cancer（特別 HGSC）做 germline + somatic BRCA1/2**；stage II-IV 加 HRD score（Myriad myChoice CDx / FoundationOne CDx）。BRCA mut ~15-20% HGSC；HRD+ 含 BRCAness 約 50%；HRP/HRD- 約 50%。決定 PARPi 選擇與家族遺傳評估。"
     },
     {
-      "topic": "Front-line PARPi 選擇邏輯（記三句話）",
-      "detail": "**BRCA mut → SOLO-1 Olaparib 單藥**（5-yr PFS 48% vs 21%）。**HRD+ non-BRCA → PAOLA-1 Olap + Bev**（PFS 37.2 vs 17.7 月）。**HRP / 不論 biomarker → PRIMA Niraparib**（PFS 13.8 vs 8.2 月；HRP subgroup HR 0.68）。三者前提皆為 1L platinum response（CR/PR）。"
+      "topic": "Front-line PARPi v.3.2025 邏輯（記 Bev 用否 × BRCA/HRD/HRP）",
+      "detail": "**未用 Bev**：BRCA mut → Olaparib / Niraparib / Rucaparib 任一 Cat 1；HRD+ non-BRCA → Niraparib / Rucaparib 首選，**Olaparib 單藥 Cat 2B（v.3.2025 新增）**；HRP/Unknown → Niraparib / Rucaparib。**已用 Bev**：BRCA mut 或 HRD+ → Olaparib + Bev Cat 1（PAOLA-1 path）；HRP/Unknown → Niraparib 或 Bev maintenance only（PAOLA-1 在 HRD- 無顯著益處）。"
     },
     {
-      "topic": "Bevacizumab 適應症（GOG-218 / ICON7）",
-      "detail": "**GOG-218**：Bev + chemo + Bev maintenance vs chemo alone，PFS 14.1 vs 10.3 月（HR 0.72），OS 無差異。**ICON7**：high-risk subgroup（stage IV、suboptimal）OS +9 月。Bev 15 mg/kg Q3W × 22 cycles。適應症：stage III suboptimal / IV 高風險，或 PAOLA-1（與 Olap 合用）。"
+      "topic": "Bevacizumab — 劑量、療程、Biosimilar",
+      "detail": "**ICON-7 7.5 mg/kg Q3W vs GOG-218 15 mg/kg Q3W**（劑量差兩倍，依研究與健保/自費考量選擇）。療程 **up to 22 cycles**（含 chemo + maintenance 共 ~15 個月）。**NCCN v.3.2025 新增：FDA 核准的 Biosimilar 為 Bevacizumab 合理替代品**。禁忌：腸穿孔史、近 4-6 週手術、未控制高血壓、proteinuria UPC>2.0。"
     },
     {
       "topic": "Dose-Dense Weekly Paclitaxel（JGOG-3016）",
-      "detail": "**JGOG-3016**（亞洲族群）：Weekly paclitaxel 80 mg/m² + Q3W carbo vs Q3W Pac/Carbo，PFS 28 vs 17 月（HR 0.71），OS 100.5 vs 62.2 月。但 **GOG-262 / ICON8**（西方族群）未複製。NCCN 列為選項，亞洲 patient 可考慮。"
+      "detail": "**JGOG-3016**（亞洲）：Weekly Pac 80 mg/m² + Q3W carbo vs Q3W Pac/Carbo，PFS 28 vs 17 月（HR 0.71），OS 100.5 vs 62.2 月。但 **GOG-262 / ICON8**（西方）未複製。亞洲 patient 可考慮（藥動學差異？）。"
     },
     {
-      "topic": "IP Chemotherapy — 歷史與現況",
-      "detail": "**GOG-172** optimally debulked stage III：IP cisplatin + IP/IV paclitaxel vs IV，OS 65.6 vs 49.7 月（HR 0.75）。但毒性高 + GOG-252（後續含 Bev）未複製。目前 NCCN 列選項而非標準。HIPEC at IDS（OVHIPEC-1 OS 45.7 vs 33.9 月，HR 0.67）為新興替代。"
+      "topic": "IP Chemotherapy — Stage II-IV optimally debulked 仍為選項",
+      "detail": "**GOG-172** optimally debulked III：IP cisplatin + IP/IV pac vs IV，OS 65.6 vs 49.7 月（HR 0.75）。毒性高 + GOG-252（後續含 Bev）未複製。NCCN v.3.2025 仍列為 Stage II-IV (optimally debulked) 的合理選項；目前實務上多由 HIPEC at IDS 取代。"
     },
     {
-      "topic": "Platinum-Resistant Recurrent 後線新標準 — MIRASOL",
-      "detail": "**MIRASOL (2024)**：Mirvetuximab soravtansine（FRα-targeted ADC, DM4 payload）vs investigator's choice chemo（PLD/Topotecan/Weekly Pac），**OS 16.5 vs 12.8 月（HR 0.67）**。適應症：FRα-high（IHC PS2+，VENTANA assay）platinum-resistant。FDA 2024 完全批准（先前 2022 加速批准）。"
+      "topic": "Platinum-Resistant 後線新標準 — MIRASOL（FRα 三段切點）",
+      "detail": "**MIRASOL 2024**：Mirvetuximab soravtansine vs investigator's choice，**OS 16.5 vs 12.8 月（HR 0.67）**。**NCCN v.3.2025 FRα 切點與適應症**：(1) **FRα ≥75% (High)** → Mirvetuximab **單藥**；(2) **FRα ≥50% 或 ≥25%** → Mirvetuximab **+ Bevacizumab（Cat 2B 新增）** — 對中度 FRα 表現病人擴大適應。眼毒性（keratopathy ~40%）需 baseline 眼科 + 每 cycle 評估。"
+    },
+    {
+      "topic": "HER2+ Ovarian Cancer — T-DXd（v.3.2025 重大新增）",
+      "detail": "**HER2 IHC 3+ 或 2+** 的 platinum-resistant ovarian cancer：**Fam-trastuzumab deruxtecan-nxki (Enhertu, T-DXd) 5.4 mg/kg IV Q3W**。為 NCCN v.3.2025 與台灣處方指引新納入的 tumor-agnostic HER2 ADC 適應症（DESTINY-PanTumor02 等試驗支持）。**注意 ILD/pneumonitis 嚴重不良事件**，需 baseline 與監測 CT。"
+    },
+    {
+      "topic": "Mucinous Ovarian Cancer — FOLFIRI ± Bev Cat 2B",
+      "detail": "Mucinous 對 platinum 反應差且復發後選擇有限。**NCCN v.3.2025 新增 FOLFIRI ± Bevacizumab 為 Cat 2B 選項**（採大腸直腸癌處方路徑）— 反映 mucinous 分子型與 GI tract 相似（KRAS 主導）。診斷時需嚴格排除 GI primary（CK7/CK20/CDX2/SATB2 IHC）。"
+    },
+    {
+      "topic": "LGSC 特殊處置 — MEKi + KRAS 標靶（v.3.2025 新核准）",
+      "detail": "LGSC 與 G1 Endometrioid 共享 low-grade 路徑：(1) **Hormone**：Letrozole / Anastrozole（aromatase inhibitor）— ER/PR+ recurrent；(2) **MEK inhibitor**：Trametinib（GOG-281）/ Binimetinib — KRAS/BRAF pathway 主導；(3) **v.3.2025 新核准 Avutometinib + Defactinib** — 專門用於 KRAS-mutated recurrent LGSC（FAKtor-FRAME-1 trial）。建議所有 recurrent LGSC 做 KRAS testing。"
     },
     {
       "topic": "Sex Cord-Stromal — Granulosa Cell Special",
-      "detail": "Adult granulosa cell tumor（95%）—  **FOXL2 c.402C>G mut（>97% 特異性）**。Surgery + observation 為主；recurrent 可 BEP / hormone（**Aromatase Inhibitor letrozole** 為新興 hormone option）。Endocrine active → 子宮內膜增生風險，**必做 endometrial sampling**（CR / fertility-sparing 前必確認）。"
+      "detail": "Adult granulosa cell tumor（95%）— **FOXL2 c.402C>G mut（>97% 特異）**。Surgery + observation 為主；recurrent 可 BEP / hormone（**Aromatase Inhibitor letrozole** 新興 hormone option）。Endocrine active → 子宮內膜增生風險，**必做 endometrial sampling**。"
     },
     {
       "topic": "Germ Cell Tumor — Fertility-sparing 首選",
-      "detail": "年輕（<30 歲）女性多見；首選 **單側 USO + comprehensive staging**（保留對側卵巢與子宮）。化療：**BEP × 3-4 cycles**（Bleomycin + Etoposide + Cisplatin）對 yolk sac、immature teratoma、mixed 必加；**Dysgerminoma** stage IA 可 observe（高度 chemo/RT 敏感，復發再治療仍 CR）。治癒率 >85%。"
+      "detail": "年輕（<30 歲）女性多見；首選 **單側 USO + comprehensive staging**（保留對側卵巢與子宮）。化療：**BEP × 3-4 cycles** 對 yolk sac、immature teratoma、mixed 必加；**Dysgerminoma** stage IA 可 observe（高度 chemo/RT 敏感）。治癒率 >85%。"
+    },
+    {
+      "topic": "Carcinosarcoma of Ovary (MMMT)",
+      "detail": "雖組織學特殊（含 epithelial + sarcomatous），**NCCN 視同 high-grade epithelial 處理**，輔助化療首選 **IV Pac/Carbo**。**不沿用 uterine carcinosarcoma 的 ifosfamide sarcoma 路徑**；目前 ovarian CS 走 epithelial 路徑。Maintenance 依 BRCA/HRD 評估。"
     }
   ]
 }

@@ -10,7 +10,7 @@
 
 <header class="site-header">
   <h1><a href="../../index.html">← 婦癌專科準備</a> / 卵巢癌</h1>
-  <div class="site-sub">Ovarian Cancer · FIGO 2014（IIIA 切點 2023 微調）· NCCN v.2.2026 · TSGH 處方</div>
+  <div class="site-sub">Ovarian Cancer · FIGO 2014（IIIA 切點 2023 微調）· NCCN v.3.2025 · TSGH 處方 (20260112)</div>
 </header>
 
 <main class="container">
@@ -29,21 +29,21 @@
     <div class="cancer-grid">
       <a class="cancer-card" href="staging.html">
         <h2>📊 分期速查</h2>
-        <div class="meta">FIGO 2014（IA-IVB 全期）+ 2023 IIIA 細節微調</div>
-        <div class="meta">含 epithelial vs sex cord-stromal vs germ cell 分流</div>
-        <div class="progress">v1 draft</div>
+        <div class="meta">FIGO 2014（IA-IVB 全期）+ 2023 IIIA 微調</div>
+        <div class="meta">Endometrioid 依 Grade 拆 + Mucinous Expansile/Infiltrative + LCOC 補</div>
+        <div class="progress">v2 · NotebookLM 3 大修正</div>
       </a>
       <a class="cancer-card" href="treatment.html">
         <h2>🌳 處置流程</h2>
-        <div class="meta">3 個 Mermaid 決策樹（含 PARPi maintenance / BRCA-HRD 路徑）</div>
-        <div class="meta">GOG-218 / SOLO-1 / PAOLA-1 / PRIMA / MIRASOL</div>
-        <div class="progress">v1 draft</div>
+        <div class="meta">3 個 Mermaid（PDS-NACT + PARPi v.3.2025 + HER2/FRα/Histology 三軸）</div>
+        <div class="meta">SOLO-1 / PAOLA-1 / PRIMA / MIRASOL / T-DXd / Avutometinib</div>
+        <div class="progress">v2 · NotebookLM 9 大修正</div>
       </a>
       <a class="cancer-card" href="drugs.html">
         <h2>💊 藥物 cheatsheet</h2>
-        <div class="meta">TSGH 處方 5 分類（一線 / Bev / PARPi maint / 後線 / FRα ADC）</div>
-        <div class="meta">含 Olaparib / Niraparib / Rucaparib / Mirvetuximab</div>
-        <div class="progress">v1</div>
+        <div class="meta">9 分類（一線 / PARPi maint / Bev / 後線 / HER2 ADC / Mucinous / LGSC / Germ cell / 注意事項）</div>
+        <div class="meta">Olap / Niraparib / Rucaparib / Mirvetuximab / T-DXd / FOLFIRI / Avutometinib</div>
+        <div class="progress">v2</div>
       </a>
       <a class="cancer-card" href="trials.html">
         <h2>📚 Landmark Trials</h2>
@@ -65,13 +65,17 @@
   </section>
 
   <section class="section">
-    <h2>📌 最新更新焦點</h2>
+    <h2>📌 v2 更新（NotebookLM 對 NCCN v.3.2025 review）</h2>
     <ul>
-      <li><b>Primary cytoreductive surgery vs NACT</b>：可達 R0 為首選；EOC IIIC-IV 大瘤量、PS 差、CA125/CT 不利者用 NACT × 3 → interval debulking → chemo × 3</li>
-      <li><b>Front-line PARPi maintenance 三主軸</b>：BRCA1/2 mut → <b>SOLO-1 (Olaparib 單藥)</b>；HRD+ → <b>PAOLA-1 (Olap + Bev)</b>；不論 biomarker → <b>PRIMA (Niraparib)</b></li>
-      <li><b>Bevacizumab 益處</b>：GOG-218 / ICON7 對 high-risk（stage IV、residual disease）PFS 提升較明顯；OS benefit 主要在 ICON7 high-risk subgroup</li>
-      <li><b>Platinum-resistant 後線新標準</b>：<b>MIRASOL (2024)</b> Mirvetuximab soravtansine（FRα-targeted ADC）OS 16.5 vs 12.8 月（HR 0.67），FRα-high 適用</li>
-      <li><b>Dose-dense weekly paclitaxel</b>：<b>JGOG-3016</b> 亞洲族群顯著益處；西方族群 GOG-262 / ICON8 未複製</li>
+      <li><b>Endometrioid 依 Grade 拆</b>：G1 → low-grade 路徑（等同 LGSC）；G2-3 → high-grade 路徑（等同 HGSC）</li>
+      <li><b>Mucinous Expansile vs Infiltrative</b>：Expansile Stage I 可 observe；Infiltrative IB/IC 也加 chemo</li>
+      <li><b>Borderline (LMP) 補</b>：化療無益處純手術 + observe；NACT 不適用</li>
+      <li>🚨 <b>PARPi v.3.2025 邏輯更新</b>：以 Bev 用否 × BRCA/HRD/HRP 雙軸決定；HRD+ non-BRCA 未用 Bev 新增 <b>Olap 單藥 Cat 2B</b></li>
+      <li><b>MIRASOL FRα 三段</b>：≥75% 單藥；<b>≥50% 或 ≥25% +Bev Cat 2B（新）</b></li>
+      <li>🚨 <b>HER2+ T-DXd 新分支</b>：IHC 3+ 或 2+ platinum-resistant → Fam-trastuzumab deruxtecan</li>
+      <li><b>Mucinous FOLFIRI ± Bev Cat 2B</b>：採大腸直腸路徑</li>
+      <li>🚨 <b>LGSC KRAS 標靶</b>：MEKi Trametinib + <b>Avutometinib/Defactinib for KRAS-mut（v.3.2025 新核准）</b></li>
+      <li><b>HIPEC 升主流程</b>：NACT 後 IDS 可加（Cisplatin 100 mg/m² 42°C × 90 分）</li>
     </ul>
   </section>
 
