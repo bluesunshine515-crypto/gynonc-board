@@ -3,8 +3,8 @@
     "source": "TSGH 婦癌多專科團隊 - 癌症治療藥物處方修訂 V1（修訂日 2026-01-20）",
     "external_basis": "NCCN Ovarian Cancer Guidelines v.2.2026 + 各 trial 原始 protocol（GOG-218 / SOLO-1 / PAOLA-1 / PRIMA / MIRASOL）",
     "last_updated": "2026-05-17",
-    "review_status": "v2 - 加入 NotebookLM NCCN v.3.2025 review 新 regimens（T-DXd / FOLFIRI / MEKi / Avutometinib）",
-    "note": "Regimen / dose / cycle 依 NCCN OV-C v.3.2025 + landmark trials 原始 protocol + 台灣婦癌處方修訂 (20260112)。"
+    "review_status": "v3 - 加入 NCCN v.4.2026 重大更新（nab-Pac+Relacorilant / SCCOHT / Pembro SC）",
+    "note": "Regimen / dose / cycle 依 NCCN OV-C v.4.2026 + landmark trials 原始 protocol + 台灣婦癌處方修訂 (20260112)。v3 重要：PARPi 單藥 active treatment for recurrence 已撤銷；nab-Pac+Relacorilant 為 PR 新首選（禁 steroid premed）；SCCOHT VPCBAE/PAVEP + auto-SCT 為 LCOC-5 標準。"
   },
 
   "categories": [
@@ -152,8 +152,19 @@
     {
       "id": "platinum_resistant",
       "title": "Platinum-Resistant Recurrent — 後線 + FRα ADC",
-      "subtitle": "PFI ≤6 月，non-platinum 後線",
+      "subtitle": "PFI ≤6 月，non-platinum 後線；v.4.2026 新首選 nab-Pac+Relacorilant",
       "regimens": [
+        {
+          "name": "🆕 Albumin-bound Paclitaxel + Relacorilant（v.4.2026 PR 新首選）",
+          "drugs": [
+            {"name": "nab-Paclitaxel (Abraxane)", "dose": "80 mg/m²", "route": "IV (30 min, NO premedication with steroids)", "schedule": "D1, D8, D15"},
+            {"name": "Relacorilant (glucocorticoid receptor modulator)", "dose": "150 mg PO QD", "route": "Oral", "schedule": "持續每日，於 nab-Pac 之前 1 天起，之後也持續"}
+          ],
+          "cycle": "28-day cycle 直到 progression / 不可耐受",
+          "indication": "**Platinum-resistant ovarian cancer 首選 (Preferred, v.4.2026)** — 適用 **≤3 線治療 + 曾用過 Bevacizumab**",
+          "note": "⚠️ **絕對禁止 steroid premedication**（與 Relacorilant 機制衝突 — glucocorticoid receptor modulator 需避免外源 steroid）。需重新設計 antiemetic 策略（5-HT3 + NK1 antagonist 為主，避免 dexamethasone）。",
+          "reference": "NCCN Ovarian Cancer v.4.2026 OV-C / ROSELLA / Olema-Corcept Phase 3"
+        },
         {
           "name": "Mirvetuximab Soravtansine (MIRASOL)",
           "drugs": [
@@ -232,9 +243,20 @@
 
     {
       "id": "her2_biomarker",
-      "title": "HER2-positive 後線（v.3.2025 新增）",
-      "subtitle": "Tumor-agnostic HER2 ADC",
+      "title": "HER2-positive / MSI-H 後線（v.3.2025 + v.4.2026 新增）",
+      "subtitle": "Tumor-agnostic HER2 ADC + Pembrolizumab IV/SC",
       "regimens": [
+        {
+          "name": "🆕 Pembrolizumab — IV 或 SC 劑型（v.4.2026 新 SC 選項）",
+          "drugs": [
+            {"name": "Pembrolizumab (IV)", "dose": "200 mg Q3W 或 400 mg Q6W", "route": "IV (N/S 100 mL, 30 min)", "schedule": "Q3W or Q6W"},
+            {"name": "Pembrolizumab + berahyaluronidase alfa-pmph (SC)", "dose": "依等效劑量配置", "route": "**SC injection (~2 分鐘給藥)**", "schedule": "Q3W or Q6W"}
+          ],
+          "cycle": "持續至 progression / 不可耐受 / 24 月",
+          "indication": "**MSI-H / dMMR 或 TMB-H** ovarian cancer（NCCN tumor-agnostic 適應）",
+          "note": "**v.4.2026 新增 SC 劑型**：Pembro + berahyaluronidase alfa-pmph SC injection 替代 IV。SC ~2 分鐘 vs IV 30 分鐘；PK 等效，療效相當。提升 chair time 利用率。",
+          "reference": "NCCN Ovarian Cancer v.4.2026 / Pembrolizumab SC FDA 2024 approval"
+        },
         {
           "name": "Fam-trastuzumab Deruxtecan-nxki (T-DXd / Enhertu)",
           "drugs": [
@@ -321,9 +343,56 @@
     },
 
     {
+      "id": "sccoht_lcoc5",
+      "title": "🆕 SCCOHT — Small Cell Carcinoma of Ovary, Hypercalcemic Type（v.4.2026 LCOC-5 新章節）",
+      "subtitle": "多藥化療 + auto-SCT consolidation；SMARCA4 testing 必考",
+      "regimens": [
+        {
+          "name": "VPCBAE — SCCOHT 一線首選之一",
+          "drugs": [
+            {"name": "Vincristine", "dose": "1.5 mg/m² (max 2 mg)", "route": "IV push", "schedule": "D1"},
+            {"name": "Cisplatin", "dose": "20 mg/m²", "route": "IV (1 hr)", "schedule": "D1-D4"},
+            {"name": "Cyclophosphamide", "dose": "1500 mg/m²", "route": "IV (1 hr)", "schedule": "D1"},
+            {"name": "Bleomycin", "dose": "15 mg", "route": "IV bolus", "schedule": "D1, D15"},
+            {"name": "Doxorubicin (Adriamycin)", "dose": "30 mg/m²", "route": "IV push", "schedule": "D2"},
+            {"name": "Etoposide", "dose": "100 mg/m²", "route": "IV (1 hr)", "schedule": "D1-D3"}
+          ],
+          "cycle": "21-day cycle × 4-6 cycles",
+          "indication": "**SCCOHT（高血鈣型卵巢小細胞癌）一線**",
+          "note": "**多藥組合**：Vincristine + Cisplatin + Cyclophosphamide + Bleomycin + Adriamycin + Etoposide。Bleomycin 累積劑量 <360 units；Adriamycin 累積 <450 mg/m² + LVEF 監測。**Consolidation 考慮轉介 auto-SCT**。",
+          "reference": "NCCN Ovarian Cancer v.4.2026 LCOC-5"
+        },
+        {
+          "name": "PAVEP — SCCOHT 一線替代",
+          "drugs": [
+            {"name": "Cisplatin", "dose": "100 mg/m²", "route": "IV (2 hr)", "schedule": "D1"},
+            {"name": "Doxorubicin (Adriamycin)", "dose": "40 mg/m²", "route": "IV push", "schedule": "D1"},
+            {"name": "Etoposide", "dose": "75 mg/m²", "route": "IV (1 hr)", "schedule": "D1-D3"},
+            {"name": "Cyclophosphamide", "dose": "300 mg/m²", "route": "IV (1 hr)", "schedule": "D1-D3"}
+          ],
+          "cycle": "21-day cycle × 4-6 cycles",
+          "indication": "**SCCOHT 一線替代方案**",
+          "note": "Cisplatin + Adriamycin + Etoposide + Cyclophosphamide 四藥組合。比 VPCBAE 少 Bleomycin / Vincristine，毒性 profile 不同。**Consolidation auto-SCT 同樣考慮**。",
+          "reference": "NCCN Ovarian Cancer v.4.2026 LCOC-5"
+        },
+        {
+          "name": "High-Dose Chemo + Autologous SCT — SCCOHT Consolidation",
+          "drugs": [
+            {"name": "Conditioning regimen (varies by center)", "dose": "高劑量 Carboplatin + Etoposide + Cyclophosphamide 為常用組合", "route": "IV", "schedule": "依移植 protocol（D-7 到 D-1）"},
+            {"name": "Autologous Hematopoietic Stem Cell Transplant", "dose": "≥2 × 10⁶ CD34+ cells/kg", "route": "IV", "schedule": "D0"}
+          ],
+          "cycle": "Single procedure 後 follow-up",
+          "indication": "**SCCOHT consolidation after first-line response**（NCCN v.4.2026 推薦考慮）",
+          "note": "需轉介**高劑量化療 + 幹細胞移植中心**。前置 stem cell mobilization（G-CSF ± plerixafor）。研究數據限於 case series + Phase II（French Network、GINECO 等）；5-yr OS ~40-50%（vs 無 SCT ~25%）。",
+          "reference": "NCCN Ovarian Cancer v.4.2026 LCOC-5 / Pautier P, Ann Oncol 2007"
+        }
+      ]
+    },
+
+    {
       "id": "germ_cell_sex_cord",
       "title": "Germ Cell / Sex Cord-Stromal — 特殊組織型",
-      "subtitle": "BEP 與 hormone therapy",
+      "subtitle": "BEP 與 hormone therapy（BEP 也可用於 SCCOHT）",
       "regimens": [
         {
           "name": "BEP — Bleomycin + Etoposide + Cisplatin",
@@ -399,6 +468,18 @@
     {
       "topic": "Mucinous FOLFIRI 借大腸路徑",
       "detail": "Mucinous ovarian 對 platinum 反應差。**FOLFIRI 採大腸直腸標準 14-day cycle**（Irinotecan + LV + 5-FU bolus + 46-hr continuous infusion）。Bev 可加（5-10 mg/kg Q2W）。CVC/port 必要。"
+    },
+    {
+      "topic": "🆕 nab-Pac + Relacorilant — 嚴禁 Steroid Premedication",
+      "detail": "**Relacorilant 為 glucocorticoid receptor modulator**，與外源 steroid 衝突。**禁用 dexamethasone / methylprednisolone 等 premedication**。需重新設計：(1) Antiemetic 改用 5-HT3 (ondansetron, palonosetron) + NK1 antagonist (aprepitant, fosaprepitant)；(2) Hypersensitivity 預防靠 H1/H2 blocker（diphenhydramine + famotidine），不用 steroid；(3) 過敏發生時急救 steroid 可用但需停 Relacorilant 重新評估。"
+    },
+    {
+      "topic": "🆕 SCCOHT 治療三大特色",
+      "detail": "(1) **Germline SMARCA4 testing**：所有 SCCOHT 必做（合併家族性 rhabdoid tumor 預傾向風險）；(2) **多藥化療**：VPCBAE / PAVEP / BEP — 比一般 epithelial 強度高；(3) **Auto-SCT consolidation**：first-line 反應好可轉介幹細胞中心做高劑量化療 + 自體幹細胞移植，5-yr OS ~40-50% vs 25%。"
+    },
+    {
+      "topic": "🆕 Pembrolizumab SC — 給藥時間與便利性",
+      "detail": "**SC 劑型**：Pembro + berahyaluronidase alfa-pmph（hyaluronidase enzyme 促進 SC 吸收），給藥約 2 分鐘 vs IV 30 分鐘。PK / 療效與 IV 等效。**注射部位反應**為主要新 AE（紅腫、瘀血），需教育居家觀察。可大幅減少 chair time 與 IV 通路需求。"
     }
   ]
 }

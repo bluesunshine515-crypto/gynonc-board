@@ -10,8 +10,8 @@
       "NCCN Ovarian Cancer Guidelines v.2.2026"
     ],
     "last_updated": "2026-05-17",
-    "review_status": "v2 - 吃入 NotebookLM NCCN v.3.2025 review 3 大修正",
-    "review_notes": "v2 修正：(1) Endometrioid 必須依 Grade 拆分 — G1 走 low-grade 路徑（等同 LGSC）/ G2-3 走 high-grade（等同 HGSC）；(2) Mucinous 加 Expansile vs Infiltrative pattern — Expansile 預後極佳 Stage I 可觀察 / Infiltrative IB/IC 也加 chemo；(3) 補 Less Common Ovarian Cancers (LCOC) — Borderline 化療無益處純手術 + Carcinosarcoma 視同 high-grade epithelial + Clear cell IC 必加化療 + Mucinous 後線 FOLFIRI ± Bev。基礎結構（IA-IVB FIGO 2014 切點 / IC 三類 / IIIA1(i)(ii) / 肝脾包膜 vs 實質）NotebookLM 已確認準確。"
+    "review_status": "v3 - 吃入 NotebookLM NCCN v.4.2026 重大更新（SCCOHT + biomarker 術語）",
+    "review_notes": "v3 修正（基於 NCCN v.4.2026）：(1) 🆕 **SCCOHT (Small Cell Carcinoma of Ovary, Hypercalcemic Type)** 獨立 histology + special consideration（NCCN LCOC-5 新章節）— SMARCA4 germline testing 必考，治療 VPCBAE/PAVEP/BEP + auto-SCT consolidation；(2) Biomarker 術語精確化（NCCN global change）：'testing' → 'germline and somatic biomarker testing'，'BRCA mutation' → 'BRCA1/2 P/LP variants'。基礎結構（IA-IVB FIGO 2014 / IC 三類 / IIIA1(i)(ii) / 肝脾包膜 vs 實質）NotebookLM 已確認準確。v2 修正：Endometrioid 依 Grade、Mucinous Expansile/Infiltrative、LCOC（Borderline/CS/Clear cell）。"
   },
 
   "clarifications_2023": [
@@ -41,6 +41,12 @@
       "subtypes": "Dysgerminoma、Yolk sac (endodermal sinus)、Immature teratoma、Embryonal、Choriocarcinoma、Mixed",
       "molecular": "標誌物：Dysgerminoma → LDH ± hCG；Yolk sac → AFP；Choriocarcinoma → hCG；Immature teratoma → 多陰",
       "treatment_implication": "年輕女性（<30 歲）多見；fertility-sparing surgery（單側 USO + staging）+ BEP × 3-4 cycles；化療反應極佳，治癒率 >85%"
+    },
+    {
+      "name": "🆕 SCCOHT — Small Cell Carcinoma of Ovary, Hypercalcemic Type（LCOC，極稀少但考相重要）",
+      "subtypes": "SCCOHT（高血鈣型卵巢小細胞癌） — 不要與 pulmonary-type small cell ovarian carcinoma 混淆",
+      "molecular": "**SMARCA4 (BRG1) inactivation 為主要分子事件**（germline + somatic 都可能）— **NCCN v.4.2026 強烈建議 germline SMARCA4 testing** 為必考；可能合併家族性 rhabdoid tumor predisposition syndrome",
+      "treatment_implication": "**年輕女性（中位約 24 歲）+ 血鈣升高 + 卵巢腫塊 三聯徵**。Stage 評估同 epithelial ovarian。一線：**多藥化療 VPCBAE / PAVEP / BEP**；考慮**高劑量化療 + 自體幹細胞移植 (auto-SCT) consolidation**（轉介幹細胞中心）。**SMARCA4 germline 陰性 + 強烈意願** → 可諮詢後考慮 fertility-sparing。預後差，治癒率 ~30%。"
     }
   ],
 
@@ -283,6 +289,31 @@
         "鑑別：須排除 GI primary（appendiceal / colorectal primary metastatic to ovary）— CEA / CA19-9 / 影像 / 組織學 IHC（CK7/CK20/CDX2/SATB2）"
       ],
       "implication": "Mucinous 不是均質族群；pattern 決定觀察 vs 化療閾值，FOLFIRI 為 epithelial ovarian 中獨特的後線"
+    },
+    {
+      "topic": "🆕 SCCOHT — Hypercalcemic Type 獨立處置（NCCN v.4.2026 LCOC-5 新章節）",
+      "source": "NCCN Ovarian Cancer v.4.2026 LCOC-5",
+      "applies_to": ["Small Cell Carcinoma of Ovary, Hypercalcemic Type (SCCOHT)"],
+      "rules": [
+        "**三聯徵**：年輕女性（中位 ~24 歲）+ 高血鈣 + 卵巢腫塊 — 高度懷疑 SCCOHT",
+        "**SMARCA4 (BRG1) inactivation** 為驅動分子事件 — **NCCN v.4.2026 強烈建議 germline SMARCA4 testing 為必考**（可能合併家族性 rhabdoid tumor 預傾向）",
+        "Stage 評估沿用 epithelial ovarian FIGO 2014",
+        "**一線化療**：多藥組合 — **VPCBAE / PAVEP / BEP** 為 NCCN 推薦選項",
+        "**Consolidation**：治療計畫應考慮轉介幹細胞中心，行 **高劑量化療 + 自體幹細胞移植 (auto-SCT)**",
+        "**Fertility-sparing**：若 germline SMARCA4 陰性 + 強烈意願 + 充分諮詢，可考慮（極限制條件）"
+      ],
+      "implication": "SCCOHT 預後差（5-yr OS ~30%）但 NCCN v.4.2026 已建立專屬演算法。SMARCA4 testing 為診斷與家族遺傳評估雙重關鍵。"
+    },
+    {
+      "topic": "🆕 Biomarker 術語精確化（NCCN v.4.2026 global change）",
+      "source": "NCCN Ovarian Cancer v.4.2026 global terminology update",
+      "applies_to": ["All epithelial ovarian cancer biomarker workup"],
+      "rules": [
+        "**'testing' → 'germline and somatic biomarker testing'**：強調 germline + somatic 雙軌（過去常忽略 somatic-only mutations）",
+        "**'BRCA mutation' → 'BRCA1/2 P/LP variants'**（Pathogenic / Likely Pathogenic variants）— 對應 ClinVar / ACMG 分類，排除 VUS (Variants of Uncertain Significance)",
+        "**HRD assays**：Myriad myChoice CDx / FoundationOne CDx 等仍為主流；NCCN 接受多種 validated platforms"
+      ],
+      "implication": "報告與臨床溝通使用精確術語，避免 VUS 誤判為 actionable mutation；germline + somatic 同時檢測為標準"
     }
   ]
 }
