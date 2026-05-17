@@ -1,0 +1,499 @@
+{
+  "_metadata": {
+    "subject": "婦癌專科考 — 子宮內膜癌",
+    "source": "自製專科考題（依 NCCN Uterine Neoplasms v.2.2026 + FIGO 2023 + 台灣婦癌處方修訂 高 yield 考點）",
+    "compiled_for": "TSGH 婦癌專科準備",
+    "last_updated": "2026-05-17",
+    "total_questions": 15,
+    "schema_version": "1.0",
+    "localStorage_keys": {
+      "gynonc_endometrial_attempts": "已作答 QID 與作答",
+      "gynonc_endometrial_wrong": "錯題 QID"
+    }
+  },
+
+  "questions": [
+    {
+      "id": "endometrial-Q1",
+      "category": "婦癌-子宮內膜癌-FIGO 分期",
+      "topic": "🚨 FIGO 2023 IA1 vs IA2 切點（v2 修正重點）",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **FIGO 2023** 子宮內膜癌 Stage **IA1 與 IA2** 的定義，何者**最正確**？",
+      "options": {
+        "A": "IA1 = low-grade endometrioid + <50% 肌層侵犯 + no/focal LVSI；IA2 = confined to endometrium / polyp",
+        "B": "**IA1 = confined to endometrium / polyp（無肌層侵犯）；IA2 = low-grade endometrioid + <50% 肌層侵犯 + no/focal LVSI**",
+        "C": "IA1 = serous + 無肌層侵犯；IA2 = endometrioid + 任何深度",
+        "D": "IA1 與 IA2 預後相同，治療策略無差異"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**⚠️ 重大易錯考點**：FIGO 2023 正確版本為 **IA1 = confined to endometrium / polyp（無肌層侵犯）**；**IA2 = low-grade endometrioid + <50% 肌層侵犯 + no/focal LVSI**。許多舊筆記寫反（A 選項）。記憶口訣：**IA1 「壹」級（最早期）= 沒有 myo 侵犯**；**IA2 = 才開始 <50% 侵犯**。IA1 為 fertility-sparing 首選候選；IA2 需更嚴格挑（含 'no invasion' 影像佐證）。",
+      "explanation_structured": {
+        "key_points": [
+          "IA1 = confined to endometrium/polyp（無 myo invasion）— 預後最好",
+          "IA2 = <50% myometrial invasion + no/focal LVSI",
+          "IA3 = low-grade + concurrent ovarian（特定條件）",
+          "易錯：許多筆記把 IA1/IA2 寫反 — 切記 IA1 才是無肌層侵犯",
+          "Fertility-sparing 首選 IA1；IA2 需嚴格挑"
+        ],
+        "references": [
+          "Berek JS, FIGO 2023 update",
+          "NCCN Uterine Neoplasms v.2.2026"
+        ],
+        "related_question_ids": ["endometrial-Q2"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q2",
+      "category": "婦癌-子宮內膜癌-FIGO 分期",
+      "topic": "FIGO 2023 — Substantial LVSI ≥ 5 灶 升期",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "55 歲女性 endometrioid endometrial cancer，TAH+BSO 術後病理：grade 2、myometrial invasion <50%、**LVSI ≥ 5 灶（per H&E slide）**、無 cervical stromal invasion、無 adnexal involvement、無 LN+。FIGO 2023 應分為何期？",
+      "options": {
+        "A": "IA2（<50% myo invasion，LVSI 不計入分期）",
+        "B": "IIA（必須有 cervical stromal invasion）",
+        "C": "**IIB（substantial LVSI ≥ 5 灶，即使無 cervical invasion 也升 II 期）**",
+        "D": "IIIA（必須有 adnexal involvement）"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "FIGO 2023 重大改變：**LVSI 納入分期**。**Substantial LVSI（per WHO 5th ed: ≥ 5 LVSI 灶 per H&E slide）**為 **Stage IIB**（low-grade endometrioid + substantial LVSI，**不論有無 cervical stromal invasion**）。NCCN v.2.2026 採用 WHO 5th ed 的「≥5 灶」定義。",
+      "explanation_structured": {
+        "key_points": [
+          "FIGO 2023 substantial LVSI 切點：≥ 5 LVSI 灶 (per H&E slide, WHO 5th ed)",
+          "IIA = cervical stromal invasion (low-grade)",
+          "IIB = substantial LVSI (low-grade，不論 cervical)",
+          "IIC = aggressive histology + 任何 myo invasion",
+          "LVSI 預後等同 cervical stromal invasion，故升至 II 期"
+        ],
+        "references": [
+          "Berek JS, FIGO 2023 update",
+          "WHO Female Genital Tumours 5th ed (2020)",
+          "NCCN Uterine Neoplasms v.2.2026"
+        ],
+        "related_question_ids": ["endometrial-Q1"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q3",
+      "category": "婦癌-子宮內膜癌-Molecular",
+      "topic": "4 分子分群 — POLEmut 降階",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **POLEmut**（POLE-ultramutated）子宮內膜癌的敘述，何者**最正確**？",
+      "options": {
+        "A": "盛行率約 25-30%，IHC 即可診斷",
+        "B": "**盛行率約 7%，需 NGS 偵測 POLE exonuclease domain mutation；預後極佳（5-yr OS >95% TCGA 整合分析約略值），FIGO 2023 認可 stage I-II 可考慮 observation 降階**",
+        "C": "預後最差，需升階 adjuvant chemo + RT",
+        "D": "對 IO（pembrolizumab）反應最差"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**POLEmut 為 FIGO 2023 4 分子分群中預後最佳組**：盛行率 ~7%，**需 NGS 偵測**（IHC 無法），5-yr OS >95%（TCGA 整合分析約略值）。**FIGO 2023 認可 stage I-II POLEmut 可考慮 observation 或極簡化輔助治療**（PORTEC-4a 等試驗支持）。MMRd 才是 IO 高度敏感族群（25-30%）；p53abn 才是預後最差（~15%）。",
+      "explanation_structured": {
+        "key_points": [
+          "POLEmut 盛行率 ~7%；NGS 偵測（IHC 無法）",
+          "5-yr OS >95%（TCGA 整合分析約略值，非 FIGO 絕對標準）",
+          "stage I-II 可 observation（PORTEC-4a）",
+          "FIGO 2023 寫法：IAm_POLEmut",
+          "其他三群：MMRd 25-30% (IO 敏感) / p53abn 15% (預後最差) / NSMP 50% (中等)"
+        ],
+        "related_decision_tree": "flowchart TD\n  Surg([TAH+BSO 術後病理]) --> Mol{分子分群}\n  Mol -->|POLEmut stage I-II| Obs[**降階/Observation**<br>PORTEC-4a]\n  Mol -->|p53abn 任何 stage| Esc[**升階 chemo+RT**<br>HER2 IHC 必做]\n  Mol -->|MMRd / NSMP| Std[依解剖風險走標準<br>MMRd → Lynch 篩檢]\n  classDef good fill:#d4edda,stroke:#27ae60,stroke-width:3px;\n  class Obs good;\n  classDef bad fill:#f8d7da,stroke:#c0392b,stroke-width:3px;\n  class Esc bad;",
+        "references": [
+          "Berek JS, FIGO 2023 update",
+          "NCCN Uterine Neoplasms v.2.2026"
+        ],
+        "related_question_ids": ["endometrial-Q4"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q4",
+      "category": "婦癌-子宮內膜癌-Molecular",
+      "topic": "p53abn — 升階治療 + HER2 testing 擴大",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **p53 abnormal (p53abn)** 子宮內膜癌的敘述，何者**錯誤**？",
+      "options": {
+        "A": "p53 IHC 顯示 complete absence 或 strong overexpression 即為 abnormal",
+        "B": "盛行率 ~15%，常見於 serous 與 carcinosarcoma",
+        "C": "預後最差（5-yr OS ~50% TCGA 整合分析約略值），即使 stage I 也考慮 adjuvant chemo+RT",
+        "D": "**HER2 testing 僅限 stage III-IV serous，NCCN v.2.2026 未擴大適應**"
+      },
+      "answer": "D",
+      "has_image": false,
+      "explanation": "**NCCN v.2.2026 已擴大 HER2 testing 適應範圍**：(1) **所有 p53abn（不論組織學）**；(2) **所有轉移/復發疾病**。舊版僅限 stage III-IV / recurrent serous / carcinosarcoma。其他選項皆正確：p53abn 預設為 serous/carcinosarcoma；預後最差；升階 chemo+RT。HER2+ → Pac/Carbo + Trastuzumab；後線 HER2 IHC 3+/2+ T-DXd（carcinosarcoma 例外 1+/2+/3+）。",
+      "explanation_structured": {
+        "key_points": [
+          "p53abn 盛行率 ~15%；常見 serous + carcinosarcoma",
+          "預後最差（5-yr OS ~50%）",
+          "升階治療：即使 stage I 也考慮 adjuvant chemo+RT",
+          "NCCN v.2.2026 HER2 testing 擴大：所有 p53abn + 所有 met/recurrent",
+          "HER2+ → Pac/Carbo + Trastuzumab；後線 T-DXd IHC 3+/2+（Carcinosarcoma 1+/2+/3+）"
+        ],
+        "references": [
+          "NCCN Uterine Neoplasms v.2.2026",
+          "Fader AN, Clin Cancer Res 2020 (HER2+ serous Trastuzumab)"
+        ],
+        "related_question_ids": ["endometrial-Q3", "endometrial-Q13"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q5",
+      "category": "婦癌-子宮內膜癌-Adjuvant",
+      "topic": "PORTEC-2 — HIR Vault Brachy 取代 EBRT",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **PORTEC-2 trial** 的結果與臨床意義，何者**最正確**？",
+      "options": {
+        "A": "PORTEC-2 證實 high-risk endometrial cancer adjuvant CCRT + chemo OS HR 0.70",
+        "B": "**PORTEC-2 證實 HIR (high-intermediate risk) 族群 vault brachy non-inferior to pelvic EBRT，GI/GU 毒性顯著低；改寫指引將 vault brachy 為 HIR 首選**",
+        "C": "PORTEC-2 證實 Pembrolizumab + adjuvant 提升 DFS",
+        "D": "PORTEC-2 證實 fertility-sparing progestin 對 grade 1 IA 病人有效"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**PORTEC-2 (Lancet 2010)**：HIR 族群（依年齡+grade+invasion 篩選），**vault brachy vs pelvic EBRT non-inferiority**，5-yr vaginal recurrence 1.8% vs 1.6%（NI），**GI/GU 毒性顯著低**。改寫指引：**NCCN 現以 vault brachy 為 HIR 首選**；pelvic RT 保留給更高風險。PORTEC-3 才是 high-risk CCRT+chemo（A 選項）；KEYNOTE-B21 才是 adjuvant Pembro（C 選項，且為 negative）。",
+      "explanation_structured": {
+        "key_points": [
+          "PORTEC-1：stage I 中度風險 adjuvant RT vs observe，RT 降復發但無 OS",
+          "PORTEC-2：HIR vault brachy = pelvic EBRT（NI，GI/GU 毒性低）",
+          "PORTEC-3：high-risk CCRT + adjuvant chemo（OS HR 0.70）",
+          "PORTEC-4a：POLEmut 可降階 observation",
+          "GOG-99：HIR 概念基礎（年齡+grade+invasion+LVSI 組合）"
+        ],
+        "references": [
+          "Nout RA, Lancet 2010;375:816 (PORTEC-2)",
+          "Creutzberg CL, Lancet 2000;355:1404 (PORTEC-1)",
+          "de Boer SM, Lancet Oncol 2018 (PORTEC-3)"
+        ],
+        "related_question_ids": ["endometrial-Q6"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q6",
+      "category": "婦癌-子宮內膜癌-Adjuvant",
+      "topic": "PORTEC-3 — High-Risk CCRT + Chemo",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "**PORTEC-3** 證實 high-risk endometrial cancer adjuvant CCRT (cisplatin) + adjuvant carbo/paclitaxel × 4 對下列哪一族群益處最大？",
+      "options": {
+        "A": "Low-grade endometrioid IA1",
+        "B": "POLEmut stage I-II",
+        "C": "**Serous + stage III subgroup**",
+        "D": "Granulosa cell tumor"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "**PORTEC-3 (Lancet Oncol 2018)**：High-risk endometrial cancer（FIGO 2009 IA G3+LVSI / IB G3 / II-III / serous-clear cell 任 stage），**CCRT + adjuvant chemo vs pelvic RT alone**，5-yr OS 81% vs 76%（HR 0.70）。**Serous + stage III subgroup 益處最大**。NCCN high-risk 標準採此 regimen。",
+      "explanation_structured": {
+        "key_points": [
+          "PORTEC-3 high-risk 定義：IA G3+LVSI / IB G3 / II-III / serous-clear cell 任 stage",
+          "Regimen：CCRT (cisplatin) + adjuvant Carbo/Pac × 4",
+          "5-yr OS 81% vs 76%（HR 0.70）",
+          "Serous + stage III subgroup 益處最大",
+          "現代 v.2.2026：stage III-IV 直接走 NRG-GY018/RUBY (Pembro+chemo Cat 1)"
+        ],
+        "references": [
+          "de Boer SM, Lancet Oncol 2018;19:295 (PORTEC-3)",
+          "NCCN Uterine Neoplasms v.2.2026"
+        ],
+        "related_question_ids": ["endometrial-Q5", "endometrial-Q7"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q7",
+      "category": "婦癌-子宮內膜癌-Advanced",
+      "topic": "NRG-GY018 / RUBY — IO + Chemo 一線 Cat 1",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "65 歲女性新診斷 **stage IIIC1 endometrioid endometrial cancer**（pelvic LN+），MMR IHC 顯示 MLH1/PMS2 loss（**dMMR/MSI-H**）。下列何者**最符合** NCCN v.2.2026 的第一線全身性治療建議？",
+      "options": {
+        "A": "Pac/Carbo × 6 alone（不加 IO，等復發再用 IO）",
+        "B": "Pembrolizumab 單藥 IO 一線",
+        "C": "**Carbo/Pac + Pembrolizumab (NRG-GY018) 或 + Dostarlimab (RUBY) = Cat 1，含 stage III-IV primary/adjuvant 適應**",
+        "D": "Lenvatinib + Pembrolizumab 一線（KEYNOTE-775 pattern）"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "**NRG-GY018 + RUBY (2023)** 為 advanced/recurrent endometrial cancer 第一線 paradigm shift：**Carbo/Pac + Pembro / Dostarlimab = NCCN Cat 1**。v.2.2026 update：**適應範圍含 stage III-IV primary/adjuvant**（不只 advanced/recurrent）。**dMMR PFS HR 0.28-0.30**（巨大）；pMMR Pembro 較強（HR 0.54）。Lenva+Pembro 為 pMMR **後線 platinum-failed**（KEYNOTE-775）。",
+      "explanation_structured": {
+        "key_points": [
+          "NRG-GY018 = Pembrolizumab；RUBY = Dostarlimab",
+          "適應：stage III-IV primary/adjuvant + advanced/recurrent (Cat 1 擴大)",
+          "dMMR PFS HR ~0.30；pMMR Pembro HR 0.54",
+          "DUO-E (Durva+Olap)：dMMR Cat 1；pMMR Carbo/Pac/Durva + Durva/Olap maint = Cat 2B",
+          "Carcinosarcoma 例外：first-line 不加 Pembro（Carbo/Pac alone ± Trastuzumab if HER2+）"
+        ],
+        "references": [
+          "Eskander RN, NEJM 2023;388:2159 (NRG-GY018)",
+          "Mirza MR, NEJM 2023;388:2145 (RUBY)",
+          "Westin SN, JCO 2024 (DUO-E)",
+          "NCCN Uterine Neoplasms v.2.2026"
+        ],
+        "related_question_ids": ["endometrial-Q8", "endometrial-Q9"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q8",
+      "category": "婦癌-子宮內膜癌-Advanced",
+      "topic": "DUO-E — dMMR Cat 1 vs pMMR Cat 2B",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **DUO-E trial (Durvalumab + Olaparib maintenance)** 在 advanced endometrial cancer 第一線的 NCCN 分類，何者**最正確**？",
+      "options": {
+        "A": "dMMR 與 pMMR 都是 Category 1",
+        "B": "**dMMR：Carbo/Pac + Durvalumab = Cat 1；pMMR：Carbo/Pac/Durvalumab + Durvalumab/Olaparib maintenance = Cat 2B**",
+        "C": "pMMR 不適用，僅 dMMR 有效",
+        "D": "dMMR 為 Cat 2B；pMMR 為 Cat 1"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**DUO-E (Westin SN, JCO 2024)** NCCN 分類分明：**dMMR**：Carbo/Pac + Durvalumab = Cat 1（與 Pembro/Dostarlimab 並列）。**pMMR**：Carbo/Pac/Durva + **Durva/Olaparib maintenance** = Cat 2B（pMMR 也獲益但等級較低，因 PFS HR 0.55 與其他 trial 直接比較）。DUO-E 是 pMMR 唯一含 PARPi maintenance 的一線選項。",
+      "explanation_structured": {
+        "key_points": [
+          "DUO-E：Durvalumab + Olaparib 雙重 maintenance",
+          "dMMR Carbo/Pac+Durva = Cat 1（單純 IO+chemo）",
+          "pMMR Carbo/Pac/Durva + Durva/Olap maint = Cat 2B（加 PARPi maint）",
+          "與 NRG-GY018 (Pembro Cat 1) / RUBY (Dostarlimab Cat 1) 比較：DUO-E 提供 pMMR 加 PARPi maint 選項",
+          "Olaparib MDS/AML 長期風險 <1.5%"
+        ],
+        "references": [
+          "Westin SN, JCO 2024;42:283 (DUO-E)",
+          "NCCN Uterine Neoplasms v.2.2026"
+        ],
+        "related_question_ids": ["endometrial-Q7"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q9",
+      "category": "婦癌-子宮內膜癌-Advanced 後線",
+      "topic": "KEYNOTE-775 Lenva+Pembro — pMMR 後線 Cat 1",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **Lenvatinib + Pembrolizumab (KEYNOTE-775)** 在 endometrial cancer 的應用，何者**最正確**？",
+      "options": {
+        "A": "第一線首選，取代 Carbo/Pac + Pembrolizumab",
+        "B": "**pMMR + 曾接受過含鉑金化療（含 neoadjuvant 與 adjuvant 都算）之後 = Cat 1**；Lenvatinib 20 mg PO QD + Pembrolizumab 200 mg Q3W；OS 17.4 vs 12.0 月",
+        "C": "限 dMMR 病人，pMMR 不適用",
+        "D": "Lenvatinib 副作用輕，不需減量"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**KEYNOTE-775 (Makker V, NEJM 2022)**：advanced/recurrent endometrial cancer **platinum-failed**，pMMR：PFS 6.6 vs 3.8 月、**OS 17.4 vs 12.0 月（HR 0.68）**。NCCN v.2.2026 Cat 1 適應：**pMMR + 曾接受含鉑金化療（含 neoadjuvant + adjuvant 都算）之後**。Lenva 副作用顯著：**高血壓 70%、proteinuria、diarrhea**，常需減量（14 → 10 → 8 → 4 mg）。dMMR 後線多走 IO maintenance（不是 Lenva+Pembro）。",
+      "explanation_structured": {
+        "key_points": [
+          "KEYNOTE-775 適應：pMMR + 曾用含鉑金（含 neoadjuvant/adjuvant）",
+          "Lenva 20 mg QD + Pembro 200 mg Q3W；OS 17.4 vs 12.0 月",
+          "Lenva 高血壓 ~70%、proteinuria、diarrhea，常需減量",
+          "dMMR 後線：一線已用 IO+chemo → IO maintenance（不換單藥）；未用 IO → 單藥 Pembro/Dostarlimab",
+          "LEAP-001（一線 Lenva+Pembro vs chemo）為 negative trial"
+        ],
+        "references": [
+          "Makker V, NEJM 2022;386:437 (KEYNOTE-775)",
+          "NCCN Uterine Neoplasms v.2.2026"
+        ],
+        "related_question_ids": ["endometrial-Q7"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q10",
+      "category": "婦癌-子宮內膜癌-Adjuvant 試驗",
+      "topic": "🚨 KEYNOTE-B21 Negative — Pembro Adjuvant 不對等",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **KEYNOTE-B21 (2024)** 在 high-risk endometrial cancer adjuvant setting 的結果與意義，何者**最正確**？",
+      "options": {
+        "A": "Pembrolizumab 加 adjuvant 在 all-comer high-risk 達 DFS 主要終點，提升 OS HR 0.7",
+        "B": "**為 negative trial：Pembro 加 adjuvant 在 all-comer high-risk 未達 DFS（HR 1.02）；dMMR subgroup 有趨勢（HR 0.31 但非預設分析）；提示 adjuvant 與 advanced setting IO 益處不對等**",
+        "C": "證實 dMMR 在 adjuvant 也是 Cat 1",
+        "D": "已撤銷 advanced setting 的 NRG-GY018 / RUBY 適應"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**KEYNOTE-B21 (Van Gorp T, Ann Oncol 2024)** Phase III 1095 patients high-risk endometrial cancer adjuvant：Pembro + adjuvant chemo ± RT → Pembro maintenance vs placebo。**主要終點 DFS 未達**（HR 1.02 不顯著）；**dMMR subgroup 有趨勢 HR 0.31 但非預設分析**。**重要 take-home**：advanced/recurrent IO+chemo（NRG-GY018/RUBY）大成功，但 adjuvant high-risk 不同 — 提示 **dMMR 篩選的重要性**；adjuvant 與 advanced setting 益處不對等。",
+      "explanation_structured": {
+        "key_points": [
+          "KEYNOTE-B21 主要終點 DFS：HR 1.02（不顯著 negative）",
+          "dMMR subgroup HR 0.31 但非預設分析（hypothesis-generating）",
+          "Adjuvant 不等於 advanced：NRG-GY018/RUBY 在 advanced 大成功",
+          "NCCN 仍列 Pembro+adjuvant 為選項（非首選）",
+          "MMR 為 IO 反應預測，全 high-risk 不分群 IO 失敗"
+        ],
+        "references": [
+          "Van Gorp T, Ann Oncol 2024;35:968 (KEYNOTE-B21)"
+        ],
+        "related_question_ids": ["endometrial-Q7"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q11",
+      "category": "婦癌-子宮內膜癌-Lynch 篩檢",
+      "topic": "Universal MMR IHC Screening for Lynch Syndrome",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **endometrial cancer Lynch syndrome 篩檢** 的敘述，何者**最符合** NCCN 與普世建議？",
+      "options": {
+        "A": "只有 <50 歲或家族史強的病人才需做 MMR IHC",
+        "B": "**所有 endometrial cancer 病人做 MMR IHC（MLH1/MSH2/MSH6/PMS2）；MMR 缺損 → MLH1 methylation testing；無甲基化則疑似 Lynch → 基因諮詢**",
+        "C": "MMR IHC 只用於決定 Pembrolizumab 適應，不為 Lynch 篩檢",
+        "D": "Endometrial cancer 比 colorectal cancer 不常見 Lynch，不需 universal screening"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**Universal MMR IHC screening**：所有 endometrial cancer 病人做 MMR IHC（MLH1/MSH2/MSH6/PMS2）。**MMR 缺損 → MLH1 methylation testing**（區分偶發 vs 遺傳）。**無甲基化 = 疑似 Lynch** → 基因諮詢（**MSH6 與 PMS2 在 endometrial cancer 比 colorectal cancer 更常見**）。雙重意義：(1) IO 適應；(2) 家族遺傳評估（大腸/卵巢/泌尿等多癌篩檢）。",
+      "explanation_structured": {
+        "key_points": [
+          "Universal screening：all endometrial cancer 做 MMR IHC",
+          "MMR loss → MLH1 methylation → 無甲基化 = 疑似 Lynch",
+          "MSH6 / PMS2 在 endometrial cancer 較 colorectal 常見",
+          "雙重意義：IO 適應 + 家族遺傳評估",
+          "Lynch 攜帶者一生 endometrial cancer 風險 ~40-60%（與 colorectal ~50% 相當）"
+        ],
+        "references": [
+          "NCCN Uterine Neoplasms v.2.2026",
+          "NCCN Genetic/Familial High-Risk Assessment: Colorectal v.3.2024"
+        ],
+        "related_question_ids": []
+      }
+    },
+
+    {
+      "id": "endometrial-Q12",
+      "category": "婦癌-子宮內膜癌-Fertility-sparing",
+      "topic": "Fertility-Sparing Progestin — 嚴格條件",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "32 歲未婚女性，AUB 久治不癒，子宮內膜切片顯示 **grade 1 endometrioid endometrial carcinoma**。MRI 顯示 **無 myometrial invasion**，**無 LVSI**，無 LN+ 或腹腔擴散。BMI 32，已知 PCOS 多年。下列何者**最符合** NCCN fertility-sparing 標準？",
+      "options": {
+        "A": "立即 TAH+BSO，年輕族群風險最低",
+        "B": "**Megestrol Acetate 80 mg BID PO 或 MPA 400-600 mg QD PO + 每 3-6 個月 D&C 監測；完成生育後仍需 definitive hysterectomy**",
+        "C": "Tamoxifen 20 mg BID PO 為首選",
+        "D": "等待自然懷孕後再評估"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "Fertility-sparing 適應症（FIGO 2023 對應 **IA1** = confined to endometrium）嚴格條件：**Grade 1 endometrioid + no myometrial invasion (MRI 確認) + no LVSI + 強烈希望保留生育**。療程：**MPA 400-600 mg QD 或 Megestrol 80 mg BID + 每 3-6 月 D&C**。**CR 率 ~70%、復發率 ~30%**。**完成生育後仍需 definitive hysterectomy + BSO**（progestin 為延遲手術非治癒）。",
+      "explanation_structured": {
+        "key_points": [
+          "適應症：FIGO 2023 IA1 confined to endometrium + grade 1 + no LVSI",
+          "Progestin：MPA 400-600 mg QD 或 Megestrol 80 mg BID",
+          "監測：每 3-6 月 D&C（不是 endometrial sampling 即可）",
+          "CR ~70%、復發 ~30%；治療 6 個月 D&C 評估",
+          "完成生育後 → definitive TAH+BSO"
+        ],
+        "references": [
+          "Thigpen JT, JCO 1999;17:1736 (MPA)",
+          "NCCN Uterine Neoplasms v.2.2026 UTERINE-1"
+        ],
+        "related_question_ids": ["endometrial-Q1"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q13",
+      "category": "婦癌-子宮內膜癌-HER2",
+      "topic": "HER2+ Serous — Trastuzumab + T-DXd",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **HER2+ uterine serous carcinoma** 的處置，何者**錯誤**？",
+      "options": {
+        "A": "Stage III-IV serous → Pac/Carbo + Trastuzumab（Fader 2018 Phase II 證實 OS 提升）",
+        "B": "後線 HER2 IHC 3+ 或 2+ 可用 Fam-trastuzumab deruxtecan (T-DXd) 5.4 mg/kg IV Q3W",
+        "C": "Carcinosarcoma 特殊：T-DXd 適用 IHC 1+/2+/3+ 皆可（不限 2+/3+）",
+        "D": "**HER2 IHC 判讀 cutoff 與 breast cancer 完全相同，不需特殊考量**"
+      },
+      "answer": "D",
+      "has_image": false,
+      "explanation": "**Endometrial serous HER2 cutoff 與 breast cancer 不同（更寬鬆）**：IHC 3+ 直接 HER2+；IHC 2+ 加 ISH amplification 也 HER2+。**NCCN v.2.2026 擴大 HER2 testing**：(1) 所有 p53abn（不論組織學）；(2) 所有 met/recurrent。其他選項皆正確。T-DXd ILD/pneumonitis 嚴重 AE 需 baseline + 監測 CT。",
+      "explanation_structured": {
+        "key_points": [
+          "Endometrial serous HER2 cutoff 較 breast cancer 寬鬆",
+          "NCCN v.2.2026 擴大：所有 p53abn + 所有 met/recurrent 做 HER2",
+          "Fader 2018 Phase II：HER2+ serous Pac/Carbo+Trastuzumab OS 提升",
+          "T-DXd 適應：一般 IHC 2+/3+；Carcinosarcoma 1+/2+/3+ 皆可",
+          "⚠️ T-DXd ILD/pneumonitis 嚴重 AE 必監測"
+        ],
+        "references": [
+          "Fader AN, Clin Cancer Res 2020;26:3928",
+          "NCCN Uterine Neoplasms v.2.2026"
+        ],
+        "related_question_ids": ["endometrial-Q4", "endometrial-Q14"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q14",
+      "category": "婦癌-子宮內膜癌-Special Histology",
+      "topic": "🚨 Carcinosarcoma 例外（First-Line 不加 Pembro）",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "55 歲女性 **uterine carcinosarcoma (MMMT) stage IIIC1**。下列何者**最符合** NCCN v.2.2026 對其第一線全身性治療的建議？",
+      "options": {
+        "A": "Carbo/Pac + Pembrolizumab（NRG-GY018 pattern，與 endometrioid 相同）",
+        "B": "**Carbo/Pac alone ± Trastuzumab（若 HER2+）；NCCN 明確標示 first-line Carbo/Pac+Pembro 適用範圍除 Carcinosarcoma 外**",
+        "C": "Ifosfamide/Paclitaxel（沿用 uterine sarcoma 路徑）",
+        "D": "Lenvatinib + Pembrolizumab 一線"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**Carcinosarcoma 例外**：雖然病理上歸 high-grade epithelial（依 endometrial cancer 路徑），**NCCN v.2.2026 明確標示 Stage III-IV first-line Carbo/Pac + Pembrolizumab 適用範圍除 Carcinosarcoma 外**（except for carcinosarcoma）。CS first-line 仍以 **Carbo/Pac alone ± Trastuzumab（HER2+）** 為主。**後線 T-DXd IHC 1+/2+/3+ 皆可**（CS 特殊，一般 endometrial 只 2+/3+）。",
+      "explanation_structured": {
+        "key_points": [
+          "Carcinosarcoma 一線：Carbo/Pac alone ± Trastuzumab if HER2+",
+          "NCCN 明確 except for carcinosarcoma from NRG-GY018/RUBY",
+          "後線 T-DXd 適用 IHC 1+/2+/3+（CS 特殊）",
+          "不沿用 uterine sarcoma 的 ifosfamide 路徑（CS 病理視 epithelial）",
+          "Maintenance 依 BRCA/HRD 評估（與 endometrial 相同）"
+        ],
+        "references": [
+          "NCCN Uterine Neoplasms v.2.2026 UTERINE-11"
+        ],
+        "related_question_ids": ["endometrial-Q7", "endometrial-Q13"]
+      }
+    },
+
+    {
+      "id": "endometrial-Q15",
+      "category": "婦癌-子宮內膜癌-Hormone Therapy",
+      "topic": "ER+ Advanced Endometrial — Hormone 一線/後線選項",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "72 歲女性 recurrent endometrioid endometrial carcinoma，pMMR + **ER/PR strongly positive**，低惡性度 (grade 1)，肺部 2 顆 < 1 cm 結節（低瘤量、緩慢病程），ECOG PS 1。下列何者**最符合** NCCN v.2.2026 對其後續治療的建議？",
+      "options": {
+        "A": "立即 Pac/Carbo + Pembrolizumab 一線 chemo（不論瘤量）",
+        "B": "**Hormone therapy 一線選項：Megestrol acetate 80 mg BID PO 或 Letrozole + Palbociclib（CDK4/6i 組合），適用低惡性度 + ER+ + 緩慢病程 + 低瘤量**",
+        "C": "Hormone 僅限 fertility-sparing 適應，72 歲不適用",
+        "D": "Lenvatinib + Pembrolizumab 為首選（與其他 pMMR 病人相同）"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**NCCN v.2.2026 新增 ER+ recurrent endometrial cancer hormone therapy 為一線/後線「特定情況下有用」選項**：**Megestrol、MPA、Tamoxifen 交替、Letrozole + Palbociclib（CDK4/6i 組合）**。適用：**低惡性度、緩慢病程、低瘤量**患者（如本題）。Hormone 不限 fertility-sparing；72 歲 ER+ 低瘤量 慢病程適合 hormone first，待進展再 chemo。",
+      "explanation_structured": {
+        "key_points": [
+          "ER+ recurrent EC hormone 為一線/後線選項（特定情況下有用）",
+          "選擇：Megestrol 80 mg BID、MPA、Tamoxifen 交替、Letrozole+Palbociclib",
+          "適用：低惡性度、緩慢、低瘤量、年長/不適合 chemo",
+          "Hormone 不限 fertility-sparing；advanced setting 也適用",
+          "進展後再走 chemo + IO + 標靶"
+        ],
+        "references": [
+          "NCCN Uterine Neoplasms v.2.2026",
+          "Whitney CW, Gynecol Oncol 2004;92:4 (MPA+Tamoxifen 交替)"
+        ],
+        "related_question_ids": []
+      }
+    }
+  ]
+}

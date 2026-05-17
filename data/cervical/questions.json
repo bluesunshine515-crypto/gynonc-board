@@ -1,0 +1,491 @@
+{
+  "_metadata": {
+    "subject": "婦癌專科考 — 子宮頸癌",
+    "source": "自製專科考題（依 NCCN Cervical Cancer v.2.2026 + FIGO 2018/2023 + 台灣婦癌處方修訂 高 yield 考點）",
+    "compiled_for": "TSGH 婦癌專科準備",
+    "last_updated": "2026-05-17",
+    "total_questions": 15,
+    "schema_version": "1.0",
+    "localStorage_keys": {
+      "gynonc_cervical_attempts": "已作答 QID 與作答（含 correct/incorrect）",
+      "gynonc_cervical_wrong": "錯題 QID 集合"
+    }
+  },
+
+  "questions": [
+    {
+      "id": "cervical-Q1",
+      "category": "婦癌-子宮頸癌-FIGO 分期",
+      "topic": "FIGO 2018 IB1 vs IB2 vs IB3 切點",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "下列 cervical cancer 病人何者**符合** FIGO 2018 Stage **IB1**？",
+      "options": {
+        "A": "Squamous cell carcinoma, 病灶深度侵犯 2.5 mm，無 LVSI",
+        "B": "Squamous cell carcinoma, 局限於子宮頸，最大徑 1.8 cm",
+        "C": "Adenocarcinoma, 局限於子宮頸，最大徑 3.5 cm",
+        "D": "Squamous cell carcinoma, 局限於子宮頸，最大徑 5 cm"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "FIGO 2018 IB 三級切分：**IB1 > 5mm depth 至 < 2cm**；**IB2 ≥ 2cm 至 < 4cm**；**IB3 ≥ 4cm**。選項 A 屬 IA2（≤ 5mm）；C 屬 IB2；D 屬 IB3。**2cm 是 IB1 的關鍵切點**，對應 NCCN trachelectomy 保留生育的標準。",
+      "explanation_structured": {
+        "key_points": [
+          "FIGO 2018 IB 三級切分：IB1 (>5mm-<2cm) / IB2 (≥2cm-<4cm) / IB3 (≥4cm)",
+          "2018 取消 IA 橫向寬度限制（IA1 ≤3mm depth；IA2 >3-5mm depth）",
+          "2cm 切點對應 trachelectomy 保留生育標準（≤2cm + 無 LN+ + low-grade）",
+          "FIGO 2018 引入 IIIC = LN-defined（IIIC1 pelvic LN+ / IIIC2 para-aortic LN+）"
+        ],
+        "references": [
+          "Bhatla N, Int J Gynaecol Obstet 2019;145:129 (FIGO 2018)",
+          "NCCN Cervical Cancer v.2.2026 CERV-1"
+        ],
+        "related_question_ids": ["cervical-Q2", "cervical-Q3"]
+      }
+    },
+
+    {
+      "id": "cervical-Q2",
+      "category": "婦癌-子宮頸癌-FIGO 分期",
+      "topic": "FIGO 2018 IIIC 淋巴結分期 + suffix r/p",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "32 歲女性新診斷子宮頸鱗狀細胞癌，腫瘤大小 3.5 cm 局限於子宮頸，PET-CT 顯示 **單顆 1.2 cm pelvic lymph node FDG avid 但未做切片**，無 para-aortic LN+，無遠端轉移。下列何者**最正確**？",
+      "options": {
+        "A": "FIGO 2018 IB2 — pelvic LN 影像懷疑不算入分期",
+        "B": "FIGO 2018 IIIC1p（pathologic）",
+        "C": "**FIGO 2018 IIIC1r（radiologic，影像懷疑 pelvic LN+ 而未病理證實）**",
+        "D": "FIGO 2018 IVB — 淋巴結轉移直接歸 IV"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "FIGO 2018 重大改變：**LN 狀態正式納入分期**，pelvic LN+ → IIIC1；para-aortic LN+ → IIIC2。**Suffix 標註**：**r（radiologic）= 影像懷疑**；**p（pathologic）= 病理證實**。本題 PET-CT 影像顯示但未切片 → **IIIC1r**。如後續做 biopsy 證實 → 改 IIIC1p。",
+      "explanation_structured": {
+        "key_points": [
+          "FIGO 2018 IIIC1 = pelvic LN+；IIIC2 = para-aortic LN+",
+          "Suffix r = radiologic（影像）；p = pathologic（病理）",
+          "FIGO 2023 update：Macromet (>2mm) 計入 IIIC；Micromet (0.2-2mm) 計入但備註；ITC (<0.2mm) 不計入",
+          "不論原發腫瘤大小，LN+ 即升至 IIIC"
+        ],
+        "references": [
+          "Bhatla N, FIGO 2018 + 2023 update",
+          "NCCN Cervical Cancer v.2.2026"
+        ],
+        "related_question_ids": ["cervical-Q1"]
+      }
+    },
+
+    {
+      "id": "cervical-Q3",
+      "category": "婦癌-子宮頸癌-Surgery",
+      "topic": "Radical Hysterectomy — LACC Trial 重大改變",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 early-stage cervical cancer radical hysterectomy 的手術路徑選擇，何者**最符合** LACC Trial (2018) 後的 NCCN/ESGO 指引？",
+      "options": {
+        "A": "Routine 採 minimally invasive surgery (MIS)（腹腔鏡或機器人）",
+        "B": "**預設 open abdominal radical hysterectomy；MIS 僅限選擇個案 + 充分知情同意**",
+        "C": "MIS 與 open 結果完全相同，由病人選擇",
+        "D": "MIS 適用 IA2-IB3 所有早期病人"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**LACC Trial (2018, NEJM)**：MIS DFS 86.0% vs Open 96.5%（HR 3.74）；MIS OS 顯著較差（HR 6.0）。此 trial 推翻過去 routine MIS 做法。NCCN/ESGO 隨後改寫指引：**預設 open**；MIS 僅限選擇個案 + 充分知情同意（討論 LACC 結果）。",
+      "explanation_structured": {
+        "key_points": [
+          "LACC Trial：MIS DFS 顯著較差（HR 3.74），OS HR 6.0",
+          "可能機制：CO2 氣腹擴散瘤細胞 + uterine manipulator 干擾",
+          "NCCN/ESGO 改為「預設 open」",
+          "MIS 仍可選擇性使用，但需充分知情同意"
+        ],
+        "references": [
+          "Ramirez PT, NEJM 2018;379:1895 (LACC Trial)",
+          "NCCN Cervical Cancer v.2.2026 CERV-A"
+        ],
+        "related_question_ids": []
+      }
+    },
+
+    {
+      "id": "cervical-Q4",
+      "category": "婦癌-子宮頸癌-Fertility-sparing",
+      "topic": "Trachelectomy 適應症（IB1 < 2cm）",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "28 歲未婚女性新診斷 cervical squamous cell carcinoma，局限於子宮頸，最大徑 **1.7 cm**，無 LVSI，影像 (MRI + PET) 無 LN+，強烈希望保留生育。下列何者**最符合** NCCN v.2.2026 fertility-sparing 建議？",
+      "options": {
+        "A": "Conization 即可，不需 trachelectomy",
+        "B": "**Radical trachelectomy + pelvic lymphadenectomy（可考慮 SLN mapping）**",
+        "C": "Simple hysterectomy + ovarian preservation",
+        "D": "CCRT 後再評估生育能力"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "Fertility-sparing 標準：**FIGO 2018 IB1 (<2cm) + 強烈希望保留生育 + 無 LN+ + low-grade**。標準術式為 **radical trachelectomy + pelvic lymphadenectomy**（含 SLN mapping）。1.7 cm 屬 IB1 切點內。FIGO 2018 IB2 trachelectomy 也重新開放（NCCN v.2.2026 v2 修正第 2 條）但個案化。",
+      "explanation_structured": {
+        "key_points": [
+          "Trachelectomy 適應症：IB1 (<2cm) + 強烈希望保留生育 + 無 LN+",
+          "Conization 限於 IA1 (LVSI-)、IA2 highly selected",
+          "FIGO 2018 IB2 (2-4cm) trachelectomy 已重新開放（個案化）",
+          "Open abdominal trachelectomy 為標準（LACC trial 後）；vaginal 與 MIS 限選擇個案"
+        ],
+        "references": [
+          "NCCN Cervical Cancer v.2.2026 CERV-A",
+          "Bhatla N, FIGO 2018"
+        ],
+        "related_question_ids": ["cervical-Q1", "cervical-Q3"]
+      }
+    },
+
+    {
+      "id": "cervical-Q5",
+      "category": "婦癌-子宮頸癌-Adjuvant 輔助治療",
+      "topic": "Sedlis Criteria — Intermediate-Risk 適應症",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **GOG-92 (Sedlis criteria)** 後輔助治療的敘述，何者**最正確**？",
+      "options": {
+        "A": "適用於 LN+ / parametrial+ / margin+ 高風險術後",
+        "B": "**適用 IB 術後具中度風險（intermediate risk）：LVSI + 深度間質侵犯 + tumor size 三因子組合，建議加 pelvic RT**",
+        "C": "建議 CCRT（含 cisplatin），非單純 RT",
+        "D": "由 RTOG 9001 trial 建立"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**Sedlis criteria (GOG-92, 1999)**：IB 術後具 **intermediate risk**（LVSI + 間質侵犯深度 + tumor size 三因子組合）→ 加 **pelvic RT alone**（非 CCRT）。**Peters criteria (GOG-109)** 才是 high-risk（LN+/parametrial+/margin+）→ CCRT。兩者區分為國考重點。",
+      "explanation_structured": {
+        "key_points": [
+          "Sedlis (GOG-92)：intermediate risk → pelvic RT alone（HR 0.53 for RFS）",
+          "Peters (GOG-109)：high risk → CCRT（4-yr PFS 80% vs 63%, HR 0.54）",
+          "高風險定義：LN+ / parametrial+ / margin+ 任一",
+          "中度風險定義：LVSI + 深度間質侵犯 + tumor size 三因子組合"
+        ],
+        "related_decision_tree": "flowchart TD\n  Surg([Radical Hysterectomy 術後病理]) --> Risk{Risk?}\n  Risk -->|LN+ / parametrial+ / margin+ 任一<br>High risk Peters| Peters[**CCRT**<br>GOG-109<br>4-yr OS 81% vs 71%]\n  Risk -->|LVSI + 深度侵犯 + size<br>三因子組合<br>Intermediate risk Sedlis| Sedlis[**Pelvic RT alone**<br>GOG-92<br>HR 0.53 for RFS]\n  Risk -->|無高/中風險| Obs[Observation]\n  classDef high fill:#f8d7da,stroke:#c0392b,stroke-width:3px;\n  class Peters high;\n  classDef med fill:#fff3cd,stroke:#c89a3a,stroke-width:3px;\n  class Sedlis med;",
+        "references": [
+          "Sedlis A, Gynecol Oncol 1999;73:177 (GOG-92)",
+          "Peters WA III, JCO 2000;18:1606 (GOG-109)",
+          "NCCN Cervical Cancer v.2.2026 CERV-A"
+        ],
+        "related_question_ids": ["cervical-Q6"]
+      }
+    },
+
+    {
+      "id": "cervical-Q6",
+      "category": "婦癌-子宮頸癌-Adjuvant 輔助治療",
+      "topic": "Peters Criteria — High-Risk 適應症",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "45 歲 cervical SCC stage IB2 病人，接受 radical hysterectomy + pelvic LND，病理結果：**Pelvic LN 1/15 positive**，parametrial margin 陰性，cervical margin 1 cm clear，LVSI absent。下列何者**最符合** NCCN 對其輔助治療的建議？",
+      "options": {
+        "A": "Observation — 只有 1 顆 LN+ 不需輔助",
+        "B": "Pelvic RT alone（Sedlis criteria）",
+        "C": "**Concurrent chemoradiation (CCRT) with weekly cisplatin（Peters criteria）**",
+        "D": "Adjuvant chemo only（pac/carbo × 6）"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "Pelvic LN+（不論幾顆）= **Peters criteria 高風險**，標準為 **CCRT（pelvic RT + concurrent weekly cisplatin）**。GOG-109 證實 CCRT 較單純 RT 顯著提升 PFS (HR 0.54) 與 OS (HR 0.50)。",
+      "explanation_structured": {
+        "key_points": [
+          "Peters 高風險：LN+ / parametrial+ / margin+ 任一即觸發",
+          "CCRT = pelvic EBRT 50.4 Gy + 同時 weekly cisplatin 40 mg/m²",
+          "GOG-109：4-yr OS 81% vs 71%",
+          "後線可加 brachytherapy boost（個案化）"
+        ],
+        "references": [
+          "Peters WA III, JCO 2000 (GOG-109)",
+          "NCCN Cervical Cancer v.2.2026 CERV-A"
+        ],
+        "related_question_ids": ["cervical-Q5"]
+      }
+    },
+
+    {
+      "id": "cervical-Q7",
+      "category": "婦癌-子宮頸癌-Locally Advanced",
+      "topic": "🆕 INTERLACE — Induction Chemo 前置 CCRT",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "55 歲 cervical SCC stage IIB（parametrial 侵犯）pelvic LN PET 陽性（IIIC1r）病人，下列何者**最符合** NCCN v.2.2026 **INTERLACE-based** 治療建議？",
+      "options": {
+        "A": "Standard CCRT alone（cisplatin weekly + EBRT + brachy）— INTERLACE 沒改變指引",
+        "B": "**Induction chemo (Carbo AUC 2 + Pac 80 mg/m² weekly × 6 週) → 接 standard CCRT**",
+        "C": "CCRT 後 adjuvant Pac/Carbo × 4 cycles（OUTBACK pattern）",
+        "D": "Radical hysterectomy + adjuvant CCRT"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**INTERLACE (2024, Lancet)**：FIGO 2008 IB1+LN / IB2 / II / IIIB / IVA 等 locally advanced 病人，**Induction chemo (Carbo AUC 2 + Pac 80 mg/m² weekly × 6 週) → CCRT**，5-yr PFS 72% vs 64% (HR 0.65)；5-yr OS 80% vs 72% (HR 0.61)。**OUTBACK (CCRT 後 adjuvant chemo) 為 negative trial**，方向相反。NCCN v.2.2026 已納入 INTERLACE pattern。",
+      "explanation_structured": {
+        "key_points": [
+          "INTERLACE 為 positive trial：化療放 CCRT 之前才有益",
+          "OUTBACK 為 negative trial：化療放 CCRT 之後無 OS 益處",
+          "適用範圍：locally advanced（IB1+LN+ / IB2 / II / IIIB / IVA）",
+          "Induction regimen：Carbo AUC 2 + Pac 80 mg/m² weekly × 6 週"
+        ],
+        "related_decision_tree": "flowchart TD\n  LACC([Locally Advanced Cervical Cancer<br>IB1+LN+/IB2/II/IIIB/IVA]) --> Choice{治療策略}\n  Choice -->|INTERLACE pattern<br>✅ positive| INDUCT[**Induction Carbo+Pac weekly × 6 週**<br>→ Standard CCRT<br>PFS HR 0.65<br>OS HR 0.61]\n  Choice -->|OUTBACK pattern<br>❌ negative| OUT[Standard CCRT<br>→ Adjuvant Carbo/Pac × 4<br>5-yr OS 72% vs 71% NS]\n  Choice -->|KEYNOTE-A18 pattern<br>✅ positive 含 IIIA-IVA| KA18[**Pembro + CCRT** → Pembro maint<br>PFS HR 0.70 Cat 1 含 IIIA-IVA]\n  classDef positive fill:#d4edda,stroke:#27ae60,stroke-width:3px;\n  class INDUCT,KA18 positive;\n  classDef negative fill:#f8d7da,stroke:#c0392b,stroke-dasharray:5 5;\n  class OUT negative;",
+        "references": [
+          "McCormack M, Lancet 2024;404:1525 (INTERLACE)",
+          "Mileshkin LR, Lancet Oncol 2023 (OUTBACK negative)",
+          "NCCN Cervical Cancer v.2.2026"
+        ],
+        "related_question_ids": ["cervical-Q8"]
+      }
+    },
+
+    {
+      "id": "cervical-Q8",
+      "category": "婦癌-子宮頸癌-Locally Advanced",
+      "topic": "🆕 KEYNOTE-A18 — Pembro + CCRT 適應症",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **KEYNOTE-A18 (2024)** 與 NCCN v.2.2026 對 IO + CCRT 的應用，何者**最正確**？",
+      "options": {
+        "A": "Pembrolizumab + CCRT 適用於所有 cervical cancer 病人",
+        "B": "KEYNOTE-A18 為 negative trial，IO + CCRT 不推薦",
+        "C": "**FIGO 2014 IIIA-IVA 用 Pembrolizumab + CCRT 為 Category 1；FIGO 2018 純粹 LN-defined III（IIIC1/IIIC2）為 Category 2B**",
+        "D": "適用於早期（IA1-IB1）術後輔助"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "**KEYNOTE-A18 (2024, Lancet)** 為**首個 IO + CCRT 在 cervical cancer 的 positive trial**。3-yr PFS 65% vs 57%（HR 0.70）；OS interim HR 0.67。NCCN 納入：**FIGO 2014 IIIA-IVA Pembro+CCRT = Cat 1**；**FIGO 2018 純粹 LN-defined III（IIIC1/IIIC2，原發未到 III 解剖期）= Cat 2B**。把 IO 從 advanced/recurrent (KEYNOTE-826) 推進到 locally advanced + CCRT。",
+      "explanation_structured": {
+        "key_points": [
+          "KEYNOTE-A18：首個 IO+CCRT positive trial",
+          "Pembro + CCRT（含 cisplatin weekly）→ Pembro maintenance 12 cycles",
+          "FIGO 2014 IIIA-IVA = Cat 1（解剖期較進階）",
+          "FIGO 2018 純 LN-defined III (IIIC1/IIIC2，原發 ≤IIB) = Cat 2B",
+          "與 INTERLACE 為兩條獨立路徑（induction chemo vs concurrent IO）"
+        ],
+        "references": [
+          "Lorusso D, Lancet 2024;403:1341 (KEYNOTE-A18)",
+          "NCCN Cervical Cancer v.2.2026"
+        ],
+        "related_question_ids": ["cervical-Q7", "cervical-Q9"]
+      }
+    },
+
+    {
+      "id": "cervical-Q9",
+      "category": "婦癌-子宮頸癌-Recurrent/Metastatic",
+      "topic": "KEYNOTE-826 — IO + Chemo 一線（PD-L1 CPS）",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "60 歲 cervical SCC 病人，初診即 stage IVB（遠端 LN + 肝轉移），PD-L1 IHC CPS = 5。下列何者**最符合** NCCN v.2.2026 對其 **第一線** 全身性治療的建議？",
+      "options": {
+        "A": "Cemiplimab 單藥",
+        "B": "Pac + Cisplatin + Bevacizumab（GOG-240 standard）",
+        "C": "**Pembrolizumab + chemo (Pac+Cisplatin 或 Pac+Carbo) + Bevacizumab**",
+        "D": "Tisotumab vedotin 單藥"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "**KEYNOTE-826 (2021)**：persistent/recurrent/metastatic cervical cancer 第一線，**Pembro + chemo ± Bev** vs chemo ± Bev。**PD-L1 CPS ≥ 1** subgroup：PFS 10.4 vs 8.2 月、OS 24.4 vs 16.5 月（HR 0.64）。NCCN 第一線首選。Cemiplimab 是**第二線** (EMPOWER-Cervical 1, platinum failed)；Tisotumab vedotin 是**後線**（innovaTV 204/301）。",
+      "explanation_structured": {
+        "key_points": [
+          "KEYNOTE-826 第一線：Pembro + chemo ± Bev",
+          "CPS ≥ 1 為主要適應，但 all-comer 也 positive",
+          "Cemiplimab = 第二線（platinum-failed）",
+          "Tisotumab vedotin (TV) = 後線 ADC（anti-Tissue Factor）",
+          "Bev 注意：既往 RT 區域 fistula 風險（GOG-240：8.6% vs 0.6%）"
+        ],
+        "references": [
+          "Colombo N, NEJM 2021;385:1856 (KEYNOTE-826)",
+          "Tewari KS, NEJM 2022;386:544 (EMPOWER-Cervical 1, Cemiplimab)",
+          "Coleman RL, Lancet Oncol 2021 (innovaTV 204)",
+          "NCCN Cervical Cancer v.2.2026"
+        ],
+        "related_question_ids": ["cervical-Q10"]
+      }
+    },
+
+    {
+      "id": "cervical-Q10",
+      "category": "婦癌-子宮頸癌-Recurrent/Metastatic",
+      "topic": "Cemiplimab — 第二線（Platinum-Failed）",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **Cemiplimab** 在 cervical cancer 的應用，何者**最符合** NCCN？",
+      "options": {
+        "A": "與 Pembrolizumab 同樣為第一線首選",
+        "B": "**EMPOWER-Cervical 1：platinum chemo 失敗後二線標準，OS 12.0 vs 8.5 月（HR 0.69），不論 PD-L1**",
+        "C": "限 PD-L1 CPS ≥ 1 才適用",
+        "D": "只適用 squamous 不適用 adenocarcinoma"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**EMPOWER-Cervical 1 (2022)**：Recurrent/metastatic + platinum 失敗，**Cemiplimab 350 mg Q3W vs investigator's chemo**，OS 12.0 vs 8.5 月（HR 0.69）。**不限 PD-L1**（all-comer positive）；squamous 較高益處但 adeno 也 positive。NCCN 第二線首選。第一線首選為 Pembro+chemo±Bev（KEYNOTE-826）。",
+      "explanation_structured": {
+        "key_points": [
+          "EMPOWER-Cervical 1 = 第二線（platinum-failed）",
+          "Cemiplimab 不限 PD-L1（與 KEYNOTE-826 不同）",
+          "Squamous > adeno 但兩者皆 positive",
+          "第一線 Pembro+chemo±Bev（KEYNOTE-826）→ failed → 第二線 Cemiplimab"
+        ],
+        "references": [
+          "Tewari KS, NEJM 2022;386:544 (EMPOWER-Cervical 1)",
+          "NCCN Cervical Cancer v.2.2026"
+        ],
+        "related_question_ids": ["cervical-Q9"]
+      }
+    },
+
+    {
+      "id": "cervical-Q11",
+      "category": "婦癌-子宮頸癌-Recurrent/Metastatic",
+      "topic": "Tisotumab Vedotin — 後線 ADC",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 **Tisotumab vedotin (TV)** 的敘述，何者**錯誤**？",
+      "options": {
+        "A": "為 anti-Tissue Factor antibody-drug conjugate (ADC)，MMAE payload",
+        "B": "FDA 2021 加速批准，**innovaTV 301 (2024) Phase III 確認 OS 益處後 2024 完全批准**",
+        "C": "常見 AE：alopecia、conjunctival AE（眼科）、epistaxis、peripheral neuropathy",
+        "D": "**為 platinum 失敗後第一線首選，取代 Cemiplimab**"
+      },
+      "answer": "D",
+      "has_image": false,
+      "explanation": "Tisotumab vedotin 為 **後線** ADC（platinum + Pembro/Cemiplimab 都失敗後），不是「第一線」也不取代 Cemiplimab。**InnovaTV 204 (Phase II)** ORR 24%；**InnovaTV 301 (Phase III, 2024)** 證實 OS 益處後 FDA 2024 完全批准。其他選項皆正確。眼毒性（conjunctival/keratopathy）需 baseline 眼科 + eye drops 預防。",
+      "explanation_structured": {
+        "key_points": [
+          "Tisotumab vedotin = anti-Tissue Factor ADC，MMAE payload",
+          "後線位置：platinum + IO failed 之後",
+          "InnovaTV 204 加速批准 → 301 完全批准",
+          "眼毒性管理：baseline 眼科 + steroid eye drops + 人工淚液",
+          "Alopecia / epistaxis / peripheral neuropathy 為其他常見 AE"
+        ],
+        "references": [
+          "Coleman RL, Lancet Oncol 2021 (innovaTV 204)",
+          "Vergote I, Lancet Oncol 2024 (innovaTV 301)"
+        ],
+        "related_question_ids": ["cervical-Q9", "cervical-Q10"]
+      }
+    },
+
+    {
+      "id": "cervical-Q12",
+      "category": "婦癌-子宮頸癌-篩檢/疫苗",
+      "topic": "HPV-based Primary Screening",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 cervical cancer screening 與 HPV vaccine 的敘述，何者**最符合**最新建議？",
+      "options": {
+        "A": "Pap smear 每年一次優於 HPV testing",
+        "B": "**Primary HPV testing 每 5 年為首選（25-65 歲）；25 歲以下不建議篩檢；HPV 疫苗接種對象為 9-26 歲（含男女）；27-45 歲依個人風險評估**",
+        "C": "9 價 HPV 疫苗對已感染 HPV-16/18 的女性無預防效果",
+        "D": "停經後不需再做 cervical screening"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**Primary HPV testing 每 5 年為首選**（美國 ACS 2020、ASCCP 2024）；co-testing (HPV + Pap) 每 5 年為替代；Pap alone 每 3 年為較弱選項。**25 歲以下不建議篩檢**（自然清除率高，過度治療風險）。HPV vaccine 9-26 歲為主要對象（含男女）；27-45 歲依個人風險 shared decision。停經後仍需篩檢（除非 ≥65 歲 + 過去 10 年正常 + 無高風險史）。",
+      "explanation_structured": {
+        "key_points": [
+          "Primary HPV testing 每 5 年（25-65 歲）為首選",
+          "25 歲以下不建議篩檢",
+          "HPV vaccine 9-26 歲；27-45 歲依個人風險",
+          "停經後仍需篩檢直到 65 歲 + 過去 10 年正常",
+          "9 價疫苗對未接觸的 HPV 型別仍有預防效果"
+        ],
+        "references": [
+          "ACS 2020 cervical cancer screening update",
+          "ASCCP 2024 colposcopy / management guidelines"
+        ],
+        "related_question_ids": []
+      }
+    },
+
+    {
+      "id": "cervical-Q13",
+      "category": "婦癌-子宮頸癌-特殊組織型",
+      "topic": "NECC + Gastric-Type Adenocarcinoma 例外",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "下列哪一個 cervical cancer 組織型在 NCCN v.2.2026 中**不適用** SLN-only algorithm（即使早期也建議完整 pelvic LND）？",
+      "options": {
+        "A": "Squamous cell carcinoma 1.5 cm",
+        "B": "HPV-related adenocarcinoma（usual-type）",
+        "C": "**Neuroendocrine carcinoma of cervix (NECC) 與 Gastric-type adenocarcinoma**",
+        "D": "Adenosquamous carcinoma"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "**NECC（neuroendocrine carcinoma of cervix，含 small cell + large cell NEC）與 gastric-type adenocarcinoma** 為 NCCN v.2.2026 認可的**特殊組織型例外**：(1) HPV 不相關；(2) 預後差；(3) 早期擴散傾向高 → **不適用 SLN-only**，建議完整 pelvic ± para-aortic LND，且輔助 chemo（platinum+etoposide for NECC）+ RT 為標準。Silva classification 也支持 gastric-type 為高風險亞型。",
+      "explanation_structured": {
+        "key_points": [
+          "NECC：含 small cell + large cell neuroendocrine carcinoma；platinum+etoposide 為標準（仿 SCLC）",
+          "Gastric-type adenocarcinoma：HPV-negative，預後差",
+          "兩者皆不適用 SLN-only，建議完整 pelvic±para-aortic LND",
+          "Silva classification 用於 invasive endocervical adenocarcinoma 預後分層"
+        ],
+        "references": [
+          "NCCN Cervical Cancer v.2.2026 CERV-A",
+          "WHO 2020 Female Genital Tumours"
+        ],
+        "related_question_ids": []
+      }
+    },
+
+    {
+      "id": "cervical-Q14",
+      "category": "婦癌-子宮頸癌-Brachytherapy",
+      "topic": "Brachytherapy 在 Definitive CCRT 的關鍵性",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 brachytherapy 在 cervical cancer **definitive CCRT** 中的角色，何者**最正確**？",
+      "options": {
+        "A": "Brachytherapy 為選項，可由 EBRT boost 替代",
+        "B": "**Brachytherapy 為 definitive CCRT 必要組成；無 brachy 顯著降低 OS（不可由 EBRT boost 完全替代）**",
+        "C": "僅適用於 stage I 早期病人",
+        "D": "HDR (high-dose-rate) 顯著優於 LDR，LDR 已淘汰"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**Brachytherapy 為 definitive CCRT 必要組成**，多項回溯研究顯示**省略 brachy 會顯著降低 OS**（HR 1.5-2.0）。NCCN 明確規定 locally advanced cervical cancer definitive RT 必含 brachy（intracavitary ± interstitial）。EBRT SBRT boost 不能完全替代（劑量分佈不同）。HDR 與 LDR 結果相當（HDR 已成主流但 LDR 仍可），不是淘汰。",
+      "explanation_structured": {
+        "key_points": [
+          "Definitive CCRT = EBRT 45-50 Gy + concurrent cisplatin + brachy boost",
+          "Brachy 目標 EQD2 ≥ 85 Gy 至 HR-CTV",
+          "Image-guided adaptive brachytherapy (IGABT) 為當代標準",
+          "完整療程需 ≤56 天（拖長顯著降低 OS）"
+        ],
+        "references": [
+          "NCCN Cervical Cancer v.2.2026 CERV-B",
+          "Han K, IJROBP 2013 (US National Cancer Database)"
+        ],
+        "related_question_ids": []
+      }
+    },
+
+    {
+      "id": "cervical-Q15",
+      "category": "婦癌-子宮頸癌-併發症",
+      "topic": "Bevacizumab — Fistula 風險（GOG-240）",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "65 歲 recurrent cervical cancer 病人，既往 pelvic RT 後 vaginal cuff 復發。準備給予 Pac+Carbo+Bevacizumab 治療（GOG-240 pattern）。最需要警告病人哪一項 Bevacizumab 特有併發症？",
+      "options": {
+        "A": "Bleomycin 肺毒性",
+        "B": "**Genitourinary / gastrointestinal fistula（特別既往 RT 區域）**",
+        "C": "心衰竭",
+        "D": "ILD / pneumonitis"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**GOG-240** 證實 Bev + chemo 改善 OS（17.0 vs 13.3 月，HR 0.71），但 **fistula 風險 8.6% vs 0.6%**（GU/GI 主要）。**既往 RT 區域為主要風險因子**。其他 Bev 禁忌：穿孔史、近 4-6 週手術、高血壓未控、proteinuria UPC>2.0。Bleomycin 是 germ cell BEP；心衰竭是 Doxorubicin；ILD 是 T-DXd。",
+      "explanation_structured": {
+        "key_points": [
+          "GOG-240 OS 提升 3.7 月（17.0 vs 13.3）",
+          "Fistula 8.6% vs 0.6%（既往 RT 區域）",
+          "Bev 禁忌：穿孔史、近期手術、高血壓未控、proteinuria",
+          "停 Bev ≥4 週後再行手術；手術後 ≥4 週才重啟"
+        ],
+        "references": [
+          "Tewari KS, NEJM 2014;370:734 (GOG-240)",
+          "NCCN Cervical Cancer v.2.2026"
+        ],
+        "related_question_ids": ["cervical-Q9"]
+      }
+    }
+  ]
+}
