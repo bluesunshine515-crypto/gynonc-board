@@ -317,3 +317,222 @@ function renderStaging(data) {
 
   return html;
 }
+
+// ──────────────────────────────────────────────────────────────
+// 渲染 Quiz / 練習題 (questions.json)
+// 支援：作答 → 顯示正解 + 詳解 + inline mermaid 關聯決策樹
+// localStorage：gynonc_<cancer>_attempts、gynonc_<cancer>_wrong
+// ──────────────────────────────────────────────────────────────
+
+function quizStorageKey(cancer, kind) {
+  return `gynonc_${cancer}_${kind}`;
+}
+
+function loadQuizState(cancer) {
+  try {
+    const attempts = JSON.parse(localStorage.getItem(quizStorageKey(cancer, 'attempts')) || '{}');
+    return attempts;
+  } catch { return {}; }
+}
+
+function saveQuizAttempt(cancer, qid, selected, isCorrect) {
+  const attempts = loadQuizState(cancer);
+  attempts[qid] = { selected, isCorrect, at: Date.now() };
+  localStorage.setItem(quizStorageKey(cancer, 'attempts'), JSON.stringify(attempts));
+}
+
+function renderQuiz(data, cancer) {
+  let html = '';
+
+  // metadata + 進度區
+  const total = data.questions?.length || 0;
+  const attempts = loadQuizState(cancer);
+  const answered = Object.keys(attempts).length;
+  const correct = Object.values(attempts).filter(a => a.isCorrect).length;
+  const accuracy = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+
+  if (data._metadata) {
+    html += `
+      <div class="staging-meta">
+        <div><b>來源</b>：${escapeHtml(data._metadata.source || '')}</div>
+        <div class="meta-small">最後更新：${escapeHtml(data._metadata.last_updated || '—')} · 共 ${total} 題</div>
+      </div>
+    `;
+  }
+
+  html += `
+    <div class="quiz-progress-summary">
+      <div class="quiz-progress-stat">
+        <span class="quiz-progress-label">已作答</span>
+        <span class="quiz-progress-value">${answered} / ${total}</span>
+      </div>
+      <div class="quiz-progress-stat">
+        <span class="quiz-progress-label">正確</span>
+        <span class="quiz-progress-value">${correct}</span>
+      </div>
+      <div class="quiz-progress-stat">
+        <span class="quiz-progress-label">正確率</span>
+        <span class="quiz-progress-value">${accuracy}%</span>
+      </div>
+      <button class="quiz-reset-btn" onclick="if(confirm('確定要重置所有作答紀錄？')) { localStorage.removeItem('${quizStorageKey(cancer, 'attempts')}'); location.reload(); }">重置紀錄</button>
+    </div>
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" style="width:${total > 0 ? (answered / total) * 100 : 0}%"></div>
+    </div>
+  `;
+
+  // 題目列表
+  if (data.questions?.length) {
+    data.questions.forEach((q, idx) => {
+      const prevAttempt = attempts[q.id];
+      const isAnswered = !!prevAttempt;
+      const diffStars = '★'.repeat(q.difficulty || 0) + '☆'.repeat(5 - (q.difficulty || 0));
+
+      html += `
+        <article class="quiz-card" id="quiz-${escapeHtml(q.id)}" data-qid="${escapeHtml(q.id)}" data-answer="${escapeHtml(q.answer)}">
+          <header class="quiz-card-header">
+            <div class="quiz-card-title">
+              <span class="quiz-card-num">Q${idx + 1}</span>
+              <span class="quiz-card-topic">${escapeHtml(q.topic || '')}</span>
+            </div>
+            <div class="quiz-card-meta">
+              <span class="quiz-card-difficulty" title="難度">${diffStars}</span>
+              <span class="quiz-card-category">${escapeHtml(q.category || '')}</span>
+              ${isAnswered ? `<span class="quiz-card-badge ${prevAttempt.isCorrect ? 'correct' : 'wrong'}">${prevAttempt.isCorrect ? '✓ 已答對' : '✗ 答錯（已紀錄）'}</span>` : ''}
+            </div>
+          </header>
+
+          <div class="quiz-question">${escapeHtml(q.question || '')}</div>
+
+          ${q.has_image && q.image_data_uri ? `
+            <figure class="quiz-image">
+              <img src="${q.image_data_uri}" alt="${escapeHtml(q.image_description || 'question image')}" />
+              ${q.image_description ? `<figcaption>${escapeHtml(q.image_description)}</figcaption>` : ''}
+            </figure>
+          ` : ''}
+
+          <div class="quiz-options" role="radiogroup">
+            ${['A', 'B', 'C', 'D'].map(opt => {
+              const optText = q.options?.[opt] || '';
+              if (!optText) return '';
+              let cls = 'quiz-option';
+              if (isAnswered) {
+                if (opt === q.answer) cls += ' correct';
+                else if (opt === prevAttempt.selected) cls += ' wrong';
+                else cls += ' disabled';
+              }
+              return `
+                <button class="${cls}" data-opt="${opt}" ${isAnswered ? 'disabled' : ''} onclick="handleQuizAnswer('${escapeHtml(cancer)}', '${escapeHtml(q.id)}', '${opt}', '${escapeHtml(q.answer)}')">
+                  <span class="quiz-option-letter">${opt}</span>
+                  <span class="quiz-option-text">${escapeHtml(optText)}</span>
+                </button>
+              `;
+            }).join('')}
+          </div>
+
+          <div class="quiz-explanation" id="explain-${escapeHtml(q.id)}" ${isAnswered ? '' : 'hidden'}>
+            ${renderQuizExplanation(q)}
+          </div>
+        </article>
+      `;
+    });
+  }
+
+  return html;
+}
+
+function renderQuizExplanation(q) {
+  let html = `<div class="quiz-explain-header">💡 詳解 — 正解 <b>${escapeHtml(q.answer)}</b></div>`;
+
+  if (q.explanation) {
+    html += `<div class="quiz-explain-text">${escapeHtml(q.explanation)}</div>`;
+  }
+
+  const structured = q.explanation_structured;
+  if (structured) {
+    if (structured.key_points?.length) {
+      html += `
+        <div class="quiz-explain-section">
+          <h5>關鍵重點</h5>
+          <ul>${structured.key_points.map(p => `<li>${escapeHtml(p)}</li>`).join('')}</ul>
+        </div>
+      `;
+    }
+
+    if (structured.related_decision_tree) {
+      const mid = 'mermaid-' + q.id.replace(/[^a-z0-9]/gi, '-');
+      html += `
+        <div class="quiz-explain-section">
+          <h5>關聯決策樹</h5>
+          <div class="mermaid-wrap">
+            <pre class="mermaid" id="${mid}">${escapeHtml(structured.related_decision_tree)}</pre>
+          </div>
+        </div>
+      `;
+    }
+
+    if (structured.references?.length) {
+      html += `
+        <div class="quiz-explain-section">
+          <h5>引註</h5>
+          <ul class="quiz-explain-refs">${structured.references.map(r => `<li><code>${escapeHtml(r)}</code></li>`).join('')}</ul>
+        </div>
+      `;
+    }
+  }
+
+  return html;
+}
+
+// 全域 handler：作答 → 顯示詳解 + 觸發 mermaid 渲染
+async function handleQuizAnswer(cancer, qid, selected, correctAnswer) {
+  const isCorrect = selected === correctAnswer;
+  saveQuizAttempt(cancer, qid, selected, isCorrect);
+
+  const card = document.getElementById('quiz-' + qid);
+  if (!card) return;
+
+  // 標記選項：正解 green、所選錯誤 red、其他 disabled
+  card.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.disabled = true;
+    const opt = btn.dataset.opt;
+    btn.classList.remove('selected');
+    if (opt === correctAnswer) btn.classList.add('correct');
+    else if (opt === selected) btn.classList.add('wrong');
+    else btn.classList.add('disabled');
+  });
+
+  // 加 header badge
+  const header = card.querySelector('.quiz-card-meta');
+  if (header && !header.querySelector('.quiz-card-badge')) {
+    const badge = document.createElement('span');
+    badge.className = 'quiz-card-badge ' + (isCorrect ? 'correct' : 'wrong');
+    badge.textContent = isCorrect ? '✓ 已答對' : '✗ 答錯（已紀錄）';
+    header.appendChild(badge);
+  }
+
+  // 顯示詳解 + 渲染 mermaid
+  const explain = document.getElementById('explain-' + qid);
+  if (explain) {
+    explain.hidden = false;
+    if (window.mermaid) {
+      const mermaidEl = explain.querySelector('.mermaid');
+      if (mermaidEl) {
+        await mermaid.run({ nodes: [mermaidEl] });
+      }
+    }
+  }
+
+  // 更新進度條
+  const attempts = loadQuizState(cancer);
+  const total = document.querySelectorAll('.quiz-card').length;
+  const answered = Object.keys(attempts).length;
+  const correct = Object.values(attempts).filter(a => a.isCorrect).length;
+  const accuracy = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+  const stats = document.querySelectorAll('.quiz-progress-stat .quiz-progress-value');
+  if (stats[0]) stats[0].textContent = `${answered} / ${total}`;
+  if (stats[1]) stats[1].textContent = String(correct);
+  if (stats[2]) stats[2].textContent = `${accuracy}%`;
+  const fill = document.querySelector('.quiz-progress-fill');
+  if (fill && total > 0) fill.style.width = `${(answered / total) * 100}%`;
+}

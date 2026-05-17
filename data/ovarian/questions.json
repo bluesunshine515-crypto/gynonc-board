@@ -1,0 +1,516 @@
+{
+  "_metadata": {
+    "subject": "婦癌專科考 — 卵巢癌",
+    "source": "自製專科考題（依 NCCN Ovarian Cancer v.4.2026 + FIGO 2014 + 台灣婦癌處方修訂 20260112 v.4.2026 高 yield 考點）",
+    "compiled_for": "TSGH 婦癌專科準備",
+    "last_updated": "2026-05-17",
+    "total_questions": 15,
+    "schema_version": "1.0",
+    "schema": {
+      "id": "ovarian-Qn（流水號）",
+      "category": "臨床分類（婦癌-卵巢癌-子分類）",
+      "topic": "考點主題",
+      "difficulty": "1-5 星（5 = 最高 yield 但易錯）",
+      "exam": "self-made-specialty-v1",
+      "question": "題幹",
+      "options": "A/B/C/D 字典",
+      "answer": "標準答案",
+      "has_image": "是否含圖",
+      "image_data_uri": "(若有) base64 編碼圖片",
+      "image_source": "(若有) 來源 metadata",
+      "explanation": "純文字詳解",
+      "explanation_structured": {
+        "key_points": "重點條列",
+        "related_decision_tree": "(可選) inline mermaid",
+        "references": "出處引註",
+        "related_question_ids": "相關題目 QID"
+      }
+    },
+    "localStorage_keys": {
+      "gynonc_ovarian_attempts": "已作答 QID 與作答（含 correct/incorrect）",
+      "gynonc_ovarian_wrong": "錯題 QID 集合"
+    }
+  },
+
+  "questions": [
+    {
+      "id": "ovarian-Q1",
+      "category": "婦癌-卵巢癌-1L Maintenance PARPi",
+      "topic": "PARPi 1L 三選一：BRCA mut 未用 Bev",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "55 歲女性新診斷 stage IIIC high-grade serous ovarian carcinoma，接受 primary debulking surgery 達 R0，後續 1L 治療為 Carboplatin AUC 6 + Paclitaxel 175 mg/m² × 6 cycles（未加 Bevacizumab）。完成化療後達 complete response。germline 與 somatic biomarker testing 顯示 **BRCA1 P/LP variant**。下列何者最符合 NCCN v.4.2026 對其 1L maintenance therapy 的 Category 1 首選建議？",
+      "options": {
+        "A": "Olaparib + Bevacizumab × 2 yr（PAOLA-1 path）",
+        "B": "Olaparib 單藥 × 2 yr（SOLO-1 path）",
+        "C": "Bevacizumab maintenance × 22 cycles total",
+        "D": "Niraparib + Pembrolizumab combo"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "BRCA1/2 P/LP variant + 1L 未用 Bev + platinum response → NCCN v.4.2026 Cat 1 首選為 Olaparib 單藥（SOLO-1 path）。SOLO-1 trial 5-yr PFS 48% vs 21%（HR 0.30），7-yr OS update 67% vs 47%（HR 0.55）。",
+      "explanation_structured": {
+        "key_points": [
+          "Front-line PARPi 選擇 = Bev 用否 × biomarker 雙軸",
+          "未用 Bev + BRCA P/LP → Olaparib / Niraparib / Rucaparib 任一 Cat 1（首選 Olaparib 單藥）",
+          "已用 Bev + BRCA P/LP → Olaparib + Bev Cat 1（PAOLA-1）",
+          "未用 Bev + HRD+ non-BRCA → Niraparib / Rucaparib 首選；Olaparib 單藥 Cat 2B（v.3.2025 新增）",
+          "未用 Bev + HRP / Unknown → Niraparib / Rucaparib（不選 Olap 單藥）"
+        ],
+        "related_decision_tree": "flowchart TD\n  Start([完成 1L Pac/Carbo × 6 CR/PR]) --> BevUsed{1L 是否用 Bev?}\n  BevUsed -->|未用 Bev| BevNo{BRCA/HRD?}\n  BevUsed -->|有用 Bev| BevYes{BRCA/HRD?}\n  BevNo -->|BRCA P/LP ✅| Ans[**Olaparib 單藥 Cat 1**<br>SOLO-1 path]\n  BevNo -->|HRD+ non-BRCA| Nira1[Niraparib/Rucaparib<br>Olap 單藥 Cat 2B]\n  BevNo -->|HRP/Unknown| Nira2[Niraparib/Rucaparib]\n  BevYes -->|BRCA P/LP| OlapBev[Olap + Bev Cat 1<br>PAOLA-1]\n  classDef ans fill:#d4edda,stroke:#27ae60,stroke-width:3px;\n  class Ans ans;",
+        "references": [
+          "Moore K, et al. NEJM 2018;379:2495 (SOLO-1)",
+          "DiSilvestro P, JCO 2023 (SOLO-1 7-yr OS update)",
+          "NCCN Ovarian Cancer Guidelines v.4.2026 OV-D"
+        ],
+        "related_question_ids": ["ovarian-Q2", "ovarian-Q3"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q2",
+      "category": "婦癌-卵巢癌-1L Maintenance PARPi",
+      "topic": "PARPi 1L 三選一：HRD+ non-BRCA 已用 Bev",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "62 歲女性 stage IV HGSC，接受 NACT × 3 + IDS（達 R0）+ adjuvant Carbo/Pac/Bev × 3 + Bev maintenance continuing。1L 完成後達 partial response。germline + somatic biomarker testing：BRCA1/2 wild-type，但 **HRD score positive**（Myriad myChoice CDx）。下列何者為 NCCN v.4.2026 Cat 1 首選 maintenance？",
+      "options": {
+        "A": "Niraparib 單藥 200 mg QD × 3 yr，停 Bev",
+        "B": "Olaparib 單藥 × 2 yr，停 Bev",
+        "C": "Olaparib + Bevacizumab maintenance × 2 yr（continue Bev to 22 cycles total）",
+        "D": "Bev alone × 至 22 cycles，不加 PARPi"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "HRD+ non-BRCA + 1L 已用 Bev → NCCN Cat 1 首選為 PAOLA-1 path = Olaparib + Bevacizumab maintenance。PAOLA-1 HRD+ subgroup PFS 37.2 vs 17.7 月（HR 0.33）；HRD+ non-BRCA subgroup PFS 28.1 vs 16.6 月（HR 0.43）。Bev 持續至總 22 cycles。",
+      "explanation_structured": {
+        "key_points": [
+          "PAOLA-1 是「已用 Bev + HRD+（含 BRCA mut）」的 Cat 1 答案",
+          "HRD- 在 PAOLA-1 無顯著益處 → 不加 Olap，繼續 Bev only 或 Niraparib",
+          "Bev 劑量：GOG-218 15 mg/kg vs ICON-7 7.5 mg/kg；total 22 cycles 含 chemo+maint"
+        ],
+        "related_decision_tree": "flowchart TD\n  Start([1L 已用 Bev<br>HRD+ non-BRCA<br>response CR/PR]) --> Ans[**Olap + Bev Cat 1**<br>PAOLA-1 path<br>Olap 300 mg BID × 2 yr<br>Bev 15 mg/kg Q3W to 22 cycles total]\n  classDef ans fill:#d4edda,stroke:#27ae60,stroke-width:3px;\n  class Ans ans;",
+        "references": [
+          "Ray-Coquard I, et al. NEJM 2019;381:2416 (PAOLA-1)",
+          "NCCN Ovarian Cancer v.4.2026 OV-D"
+        ],
+        "related_question_ids": ["ovarian-Q1", "ovarian-Q3"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q3",
+      "category": "婦癌-卵巢癌-1L Maintenance PARPi",
+      "topic": "PARPi 1L 三選一：HRP / 不論 biomarker",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 NCCN v.4.2026 對 **HRP (HR proficient) / HRD-** advanced ovarian cancer 1L platinum response 後的 maintenance therapy，何者敘述最正確？",
+      "options": {
+        "A": "HRP 患者首選 Olaparib 單藥（Cat 1）",
+        "B": "HRP 患者 PARPi 完全無益處，僅能 Bev maintenance",
+        "C": "HRP 患者首選 Niraparib（或 Rucaparib），不論是否已用 Bev；Olaparib 單藥**不適用** HRP",
+        "D": "HRP 患者首選 Olaparib + Bevacizumab（PAOLA-1）"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "HRP/HRD- 族群：(1) Olap 單藥（SOLO-1 / 2B 選項）**不適用** HRP；(2) PAOLA-1 在 HRD- subgroup **無顯著益處**，所以 Olap+Bev 也非首選；(3) 首選為 Niraparib（PRIMA HRP subgroup HR 0.68 顯著但較弱）或 Rucaparib（ATHENA-MONO）。PRIMA 是唯一不論 biomarker 全族群 positive 的 1L PARPi。",
+      "explanation_structured": {
+        "key_points": [
+          "三大 PARPi 1L trial pivotal subgroup：SOLO-1 (BRCA only) / PAOLA-1 (HRD+，含 BRCA) / PRIMA (不論 biomarker)",
+          "HRP 益處遞減順序：BRCA mut > HRD+ non-BRCA > HRP（仍有但較弱）",
+          "Bevacizumab maintenance 對 HRP 是替代選項（特別 stage IV / suboptimal）"
+        ],
+        "references": [
+          "González-Martín A, NEJM 2019;381:2391 (PRIMA)",
+          "Monk BJ, JCO 2022;40:3952 (ATHENA-MONO)",
+          "NCCN Ovarian Cancer v.4.2026 OV-D"
+        ],
+        "related_question_ids": ["ovarian-Q1", "ovarian-Q2"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q4",
+      "category": "婦癌-卵巢癌-復發治療",
+      "topic": "🚨 PARPi 復發 active treatment 撤銷（v.4.2026）",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "65 歲 BRCA1 P/LP variant 攜帶者，stage IIIC HGSC 兩年前完成 1L Carbo/Pac × 6 + SOLO-1 Olaparib maintenance。Maintenance 進行 18 個月後 CT 與 CA125 顯示**復發**（platinum-sensitive，PFI 約 9 個月）。下列何者**最符合** NCCN v.4.2026 對其後續處置的建議？",
+      "options": {
+        "A": "繼續 Olaparib 單藥治療復發病灶（dose escalation）",
+        "B": "改 Rucaparib 600 mg BID 單藥治療復發病灶",
+        "C": "重新挑戰 platinum-based chemo（Carbo/Gem ± Bev 或 Carbo/PLD），若達 response 後再考慮 SOLO-2 Olaparib maintenance",
+        "D": "直接給 Niraparib 200 mg QD 單藥治療復發"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "**v.4.2026 重大變動**：FDA 撤銷公告後，NCCN 將 PARPi（Niraparib/Olaparib/Rucaparib）作為 **recurrent setting 的 targeted monotherapy** 全面移除（OV-D 8/12）。PARPi 在復發只剩 **'response after recurrence therapy 後的 maintenance'** 角色（SOLO-2 / ARIEL3 / NOVA pattern）。Platinum-sensitive 復發應重新挑戰 platinum，達 response 後再考慮 PARPi maintenance（SOLO-2）。",
+      "explanation_structured": {
+        "key_points": [
+          "v.4.2026 OV-D 8/12 撤銷：Niraparib/Olaparib/Rucaparib 不再作為 recurrent monotherapy",
+          "PARPi 在復發 = maintenance only（response 後）",
+          "Platinum-sensitive (PFI >6 月) → 重新挑戰 platinum；platinum-resistant (PFI ≤6 月) → non-platinum 後線（含 nab-Pac+Relacorilant / Mirvetuximab / T-DXd 等）",
+          "SOLO-2：BRCA mut platinum-sensitive recurrent + platinum re-treatment response → Olap maintenance PFS 19.1 vs 5.5 月"
+        ],
+        "related_decision_tree": "flowchart TD\n  Recur([Recurrent OC]) --> PFI{Platinum-Free Interval}\n  PFI -->|>6 月| PS[**Platinum-Sensitive**<br>重新挑戰 platinum<br>Carbo/PLD 或 Carbo/Gem±Bev]\n  PFI -->|≤6 月| PR[Platinum-Resistant<br>non-platinum 後線]\n  PS --> Response{Response CR/PR?}\n  Response -->|Yes + BRCA P/LP| SOLO2[**SOLO-2 Olaparib maintenance** ✅<br>⚠️ PARPi 單藥 active treatment 已撤銷]\n  Response -->|Yes + HRD+| ARIEL3[ARIEL3 Rucaparib<br>OR NOVA Niraparib maintenance]\n  classDef ans fill:#d4edda,stroke:#27ae60,stroke-width:3px;\n  class SOLO2 ans;\n  classDef removed fill:#f8d7da,stroke:#c0392b,stroke-dasharray:5 5;",
+        "references": [
+          "NCCN Ovarian Cancer v.4.2026 OV-D 8/12 (PARPi monotherapy for recurrence withdrawal)",
+          "Pujade-Lauraine E, Lancet Oncol 2017 (SOLO-2)",
+          "FDA Niraparib/Rucaparib 撤銷公告 2022-2024"
+        ],
+        "related_question_ids": ["ovarian-Q1", "ovarian-Q5"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q5",
+      "category": "婦癌-卵巢癌-Platinum-Resistant",
+      "topic": "🆕 nab-Paclitaxel + Relacorilant — 禁類固醇 premedication",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "58 歲 HGSC platinum-resistant 復發病人（PFI 4 個月），曾接受 2 線治療含 Bevacizumab，目前計畫使用 NCCN v.4.2026 新首選 **Albumin-bound Paclitaxel + Relacorilant** regimen。下列關於 premedication 與支持治療的敘述，何者**最正確**？",
+      "options": {
+        "A": "常規給予 dexamethasone 20 mg IV 預防 hypersensitivity，與 nab-Pac 標準 premedication 相同",
+        "B": "**絕對禁止 steroid premedication**（因 Relacorilant 為 glucocorticoid receptor modulator）；改用 5-HT3 + NK1 antagonist 作 antiemetic，必要時加 H1/H2 blocker",
+        "C": "可使用 prednisolone PO 但避免 IV dexamethasone",
+        "D": "需 prophylactic G-CSF 但 steroid 照常給"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**Relacorilant 為 glucocorticoid receptor modulator**，外源 steroid 會直接拮抗其療效機制，因此**絕對禁止 steroid premedication**。需重新設計 antiemetic：以 5-HT3 antagonist（ondansetron, palonosetron）+ NK1 antagonist（aprepitant, fosaprepitant）為主；hypersensitivity 預防靠 H1（diphenhydramine）+ H2（famotidine）blocker。急救情況下 steroid 可用但需停 Relacorilant 重新評估。",
+      "explanation_structured": {
+        "key_points": [
+          "nab-Pac + Relacorilant 為 NCCN v.4.2026 platinum-resistant 新首選（Preferred）",
+          "適用：≤3 線治療 + 曾用 Bevacizumab",
+          "⚠️ steroid premedication 絕對禁忌（Relacorilant 為 GR modulator）",
+          "Antiemetic：5-HT3 + NK1 antagonist；H1/H2 blocker for hypersensitivity prevention"
+        ],
+        "references": [
+          "NCCN Ovarian Cancer v.4.2026 OV-C",
+          "ROSELLA / Olema-Corcept Phase 3 trial"
+        ],
+        "related_question_ids": ["ovarian-Q4", "ovarian-Q6"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q6",
+      "category": "婦癌-卵巢癌-Platinum-Resistant",
+      "topic": "MIRASOL — FRα 三段切點與 Bev 合用",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列病人何者**最符合** NCCN v.4.2026 對 Mirvetuximab soravtansine **單藥** 的適應症？",
+      "options": {
+        "A": "Platinum-sensitive 復發 OC（PFI 8 個月），FRα IHC PS2+ score ≥75%",
+        "B": "Platinum-resistant 復發 OC，FRα IHC PS2+ score ≥75% (High)，曾接受 2 線治療",
+        "C": "Platinum-resistant 復發 OC，FRα IHC ≥50% 中度表現（不到 75%），曾接受 Bevacizumab",
+        "D": "Platinum-resistant 復發 OC，FRα IHC 陰性，BRCA P/LP variant"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "Mirvetuximab soravtansine 適應症為 **FRα-high (IHC PS2+ ≥75%) platinum-resistant** ovarian cancer，前提：≤3 previous regimens。MIRASOL trial OS 16.5 vs 12.8 月（HR 0.67）。中度 FRα（≥50% 或 ≥25%）為 NCCN v.3.2025 新增 **Mirvetuximab + Bevacizumab Cat 2B** 適應症（C 選項）。FRα 陰性或 platinum-sensitive 不適用。",
+      "explanation_structured": {
+        "key_points": [
+          "FRα 三段切點：≥75% (High) → 單藥；≥50% 或 ≥25% (中度) → +Bev Cat 2B；<25% → 不適用",
+          "MIRASOL：Platinum-resistant only（PFI ≤6 月），≤3 previous regimens",
+          "VENTANA assay 為標準 FRα IHC platform",
+          "⚠️ 眼毒性 keratopathy ~40% 必 baseline + 每 cycle 眼科評估"
+        ],
+        "related_decision_tree": "flowchart TD\n  PR([Platinum-Resistant Recurrent]) --> FRa{FRα IHC<br>VENTANA assay}\n  FRa -->|≥75% High| Mono[**Mirvetuximab 單藥** ✅<br>MIRASOL OS 16.5 vs 12.8 月<br>HR 0.67]\n  FRa -->|≥50% 或 ≥25%| Combo[Mirvetuximab + Bev<br>Cat 2B v.3.2025 新]\n  FRa -->|<25%| Other[其他選項<br>nab-Pac+Relacorilant /<br>單藥化療 / T-DXd if HER2+]\n  classDef ans fill:#d4edda,stroke:#27ae60,stroke-width:3px;\n  class Mono ans;",
+        "references": [
+          "Moore KN, et al. NEJM 2024;390:1191 (MIRASOL)",
+          "NCCN Ovarian Cancer v.4.2026 OV-C"
+        ],
+        "related_question_ids": ["ovarian-Q5", "ovarian-Q7"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q7",
+      "category": "婦癌-卵巢癌-LCOC-SCCOHT",
+      "topic": "🆕 SCCOHT 三聯徵 + SMARCA4 testing",
+      "difficulty": 5,
+      "exam": "self-made-specialty-v1",
+      "question": "24 歲女性以**右下腹痛**就診，CT 顯示 8 cm 卵巢實質性腫塊，CA125 偏高，**血鈣 12.8 mg/dL**（升高）。手術切除後病理回報「**Small Cell Carcinoma of Ovary, Hypercalcemic Type (SCCOHT)**」。下列何者**最符合** NCCN v.4.2026 LCOC-5 對其後續處置的建議？",
+      "options": {
+        "A": "視同 high-grade epithelial，給 Pac/Carbo × 6 + Olaparib maintenance",
+        "B": "**Germline SMARCA4 testing 必做**；一線給予多藥化療 VPCBAE / PAVEP / BEP；考慮轉介幹細胞中心行高劑量化療 + 自體幹細胞移植 (auto-SCT) consolidation",
+        "C": "視同 germ cell tumor，BEP × 3 cycles 後 observation 即可",
+        "D": "立即給予 Pembrolizumab IO 單藥（SCCOHT 高度 TMB）"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "SCCOHT 三聯徵：**年輕女性（中位 ~24 歲）+ 高血鈣 + 卵巢腫塊**。**SMARCA4 (BRG1) inactivation 為驅動分子事件**；NCCN v.4.2026 **強烈建議 germline SMARCA4 testing 必做**（可能合併家族性 rhabdoid tumor 預傾向）。一線：多藥化療 VPCBAE（Vincristine+Cisplatin+Cyclophosphamide+Bleomycin+Adriamycin+Etoposide）/ PAVEP / BEP。**Consolidation 考慮 auto-SCT**（5-yr OS ~40-50% vs 25% with chemo alone）。",
+      "explanation_structured": {
+        "key_points": [
+          "三聯徵：年輕（中位 ~24 歲）+ 高血鈣 + 卵巢腫塊 → 高度懷疑 SCCOHT",
+          "分子：SMARCA4 (BRG1) inactivation；germline 與 somatic 都可能",
+          "Germline SMARCA4 testing 必考（家族性 rhabdoid tumor predisposition syndrome）",
+          "一線化療：VPCBAE / PAVEP / BEP（多藥組合，比 epithelial 強度高）",
+          "Consolidation：高劑量化療 + auto-SCT，需轉介幹細胞中心",
+          "SMARCA4 germline 陰性 + 強烈意願 + 充分諮詢 → 可考慮 fertility-sparing"
+        ],
+        "related_decision_tree": "flowchart TD\n  Diag([年輕女性+高血鈣+卵巢腫塊<br>三聯徵]) --> Path[病理確認 SCCOHT]\n  Path --> SMARCA4[**Germline SMARCA4 testing 必做** ✅]\n  SMARCA4 --> Chemo[一線化療<br>VPCBAE / PAVEP / BEP]\n  Chemo --> Consol[**Auto-SCT consolidation** ✅<br>轉介幹細胞中心<br>高劑量化療]\n  Consol --> Fert{Germline SMARCA4 status?}\n  Fert -->|陰性 + 強烈意願| FS[考慮 fertility-sparing<br>充分諮詢]\n  Fert -->|陽性| Family[家族遺傳評估]\n  classDef ans fill:#d4edda,stroke:#27ae60,stroke-width:3px;\n  class SMARCA4,Consol ans;",
+        "references": [
+          "NCCN Ovarian Cancer v.4.2026 LCOC-5",
+          "Witkowski L, Nat Genet 2014 (SMARCA4 in SCCOHT)",
+          "Pautier P, Ann Oncol 2007 (auto-SCT for SCCOHT)"
+        ],
+        "related_question_ids": []
+      }
+    },
+
+    {
+      "id": "ovarian-Q8",
+      "category": "婦癌-卵巢癌-FIGO 分期",
+      "topic": "FIGO 2014 — IC1 vs IC2 vs IC3 鑑別",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 FIGO 2014 Stage IC 三類細分的敘述，何者**錯誤**？",
+      "options": {
+        "A": "IC1 = 術中（intraoperative）囊腫破裂（surgical spill）",
+        "B": "IC2 = 術前包膜破裂或腫瘤在卵巢/輸卵管表面",
+        "C": "IC3 = 腹腔細胞學陽性或腹水陽性",
+        "D": "IC1 / IC2 / IC3 預後完全相同，三者治療策略均為 observation 不需化療"
+      },
+      "answer": "D",
+      "has_image": false,
+      "explanation": "FIGO 2014 IC 三類預後不同：**IC1 接近 IA-IB**（醫師造成）；**IC2 較差**（surface 侵犯 = 已可能擴散）；**IC3 較差**（已 dissemination 證據）。NCCN 治療：high-grade IC 任何 subtype 必加 Pac/Carbo × 6；low-grade IC 可選 adjuvant chemo（IC1）或必加（IC2/IC3）。**所有 IC 都不是 observation only**。",
+      "explanation_structured": {
+        "key_points": [
+          "IC1 = surgical spill（術中醫師造成）→ 預後接近 IA-IB",
+          "IC2 = 術前破裂或表面 → 已 dissemination 可能",
+          "IC3 = washing+ 或 ascites+ → 已 dissemination 證據",
+          "報告時需明確記載破裂時間點（intraoperative vs preoperative）",
+          "Clear cell IC（任 subtype）= 必加化療絕對適應症"
+        ],
+        "references": [
+          "Prat J, Int J Gynaecol Obstet 2014;124:1 (FIGO 2014)",
+          "NCCN Ovarian Cancer v.4.2026 OV-1"
+        ],
+        "related_question_ids": ["ovarian-Q9"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q9",
+      "category": "婦癌-卵巢癌-FIGO 分期",
+      "topic": "FIGO 2014 — IIIC vs IVB 肝/脾包膜 vs 實質",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "60 歲 HGSC 病人術中發現腹膜廣泛瘤量、骨盆腔外瘤結 4 cm、橫膈下表面瘤結、**肝臟表面包膜（capsule）可見 1 cm 結節，肝實質無侵犯**、無 pleural effusion。下列分期何者**最正確**（FIGO 2014）？",
+      "options": {
+        "A": "IIIA2（microscopic extrapelvic peritoneal）",
+        "B": "IIIB（macroscopic ≤2 cm）",
+        "C": "**IIIC（macroscopic >2 cm 含 capsular liver/splenic）**",
+        "D": "IVB（parenchymal liver mets）"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "FIGO 2014：**肝/脾包膜（capsule）侵犯仍為 IIIC**；**肝/脾實質（parenchymal）才升至 IVB**。本題：腹膜瘤結 >2 cm（4 cm + 橫膈表面）+ 肝包膜（不是實質） → 符合 IIIC。**易混淆考點**：肝包膜結節許多醫師會直接報 IV 期，但 FIGO 2014 明確規定 capsule = IIIC，parenchymal = IVB。同樣 IVA 需 pleural cytology 陽性（不只是有 effusion）。",
+      "explanation_structured": {
+        "key_points": [
+          "IIIC：macroscopic extrapelvic peritoneal **>2 cm** ± LN+；含 **capsular** liver/splenic mets",
+          "IVA：pleural effusion **with positive cytology**（單純胸水陰性 cytology 仍 III）",
+          "IVB：**parenchymal** hepatic/splenic mets、腹腔外器官（含腹股溝 LN）、腸壁全層侵犯",
+          "區分 capsule vs parenchymal 為極易混淆考點"
+        ],
+        "references": [
+          "Prat J, Int J Gynaecol Obstet 2014;124:1",
+          "NCCN Ovarian Cancer v.4.2026 OV-1"
+        ],
+        "related_question_ids": ["ovarian-Q8"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q10",
+      "category": "婦癌-卵巢癌-Histology",
+      "topic": "Mucinous — Expansile vs Infiltrative Pattern",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "45 歲女性發現 12 cm 卵巢黏液性腫塊，手術完整切除後分期為 **IB**，病理顯示「**mucinous adenocarcinoma, infiltrative pattern**」，包膜完整、無 LVSI、washing 陰性。下列建議何者**最符合** NCCN？",
+      "options": {
+        "A": "因為 IB + 包膜完整 + washing 陰性，**observation 即可**",
+        "B": "**Infiltrative pattern 為高度破壞性 → IB 也建議加 adjuvant chemo Pac/Carbo × 6**",
+        "C": "改 FOLFIRI ± Bev 作 adjuvant（採大腸直腸路徑）",
+        "D": "立即給 hormone therapy（letrozole）"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "Mucinous ovarian carcinoma 依 pattern 分：**Expansile（推擠式）預後極佳，Stage I 多可 observation**；**Infiltrative（浸潤式）高度破壞性，Stage IB/IC 也建議化療**。本題 IB + infiltrative → 加 adjuvant Pac/Carbo × 6（不可只 observe）。**FOLFIRI ± Bev Cat 2B 為 v.3.2025 復發後的選項**，不是 adjuvant 標準。",
+      "explanation_structured": {
+        "key_points": [
+          "Expansile pattern：推擠式生長（pushing border）→ Stage I 可 observe",
+          "Infiltrative pattern：浸潤式生長 → Stage IB/IC 也加 chemo",
+          "報告必須明確標示 pattern；混合 pattern 以 infiltrative 為主",
+          "Mucinous 復發後可考慮 FOLFIRI ± Bev Cat 2B（採大腸直腸路徑）",
+          "鑑別必排除 GI primary（CK7/CK20/CDX2/SATB2 IHC）"
+        ],
+        "references": [
+          "NCCN Ovarian Cancer v.4.2026 OV-1 / Mucinous histology footnote"
+        ],
+        "related_question_ids": ["ovarian-Q11"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q11",
+      "category": "婦癌-卵巢癌-Fertility-sparing",
+      "topic": "Fertility-sparing histology 限制",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列 stage IA ovarian cancer 病人中，依 NCCN v.4.2026，**哪一位最不建議**進行 fertility-sparing surgery（單側 USO + comprehensive staging）？",
+      "options": {
+        "A": "28 歲，IA Grade 1 endometrioid carcinoma，強烈希望保留生育",
+        "B": "30 歲，IA mucinous adenocarcinoma, **expansile pattern**，未婚",
+        "C": "32 歲，IA Low-grade serous carcinoma，已婚未生育",
+        "D": "27 歲，**IA Clear cell carcinoma**，強烈希望保留生育"
+      },
+      "answer": "D",
+      "has_image": false,
+      "explanation": "Fertility-sparing 限 **low-risk histology**：Grade 1 Endometrioid、LGSC、Mucinous expansile、IA epithelial low-grade。**Clear cell carcinoma 與 high-grade（HGSC、G2-3 Endometrioid）不建議 fertility-sparing**，除非 IA + 充分告知風險。Clear cell platinum 反應差、預後較不佳，不適合單側保留。SCCOHT germline SMARCA4 陰性 + 強烈意願可考慮（極限制）。",
+      "explanation_structured": {
+        "key_points": [
+          "Fertility-sparing low-risk histology：G1 Endometrioid / LGSC / Mucinous expansile",
+          "Clear cell 與 high-grade（HGSC、G2-3 Endo、Carcinosarcoma）不建議",
+          "Germ cell tumor 為 fertility-sparing 首要候選",
+          "Sex cord-stromal（granulosa）可考慮，需 endometrial sampling"
+        ],
+        "references": [
+          "NCCN Ovarian Cancer v.4.2026 OV-1"
+        ],
+        "related_question_ids": ["ovarian-Q10"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q12",
+      "category": "婦癌-卵巢癌-Surgery",
+      "topic": "HIPEC at IDS — OVHIPEC-1 適應症",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 HIPEC（Hyperthermic Intraperitoneal Chemotherapy）at Interval Debulking Surgery 的敘述，何者**最符合** NCCN v.4.2026？",
+      "options": {
+        "A": "Stage IV ovarian cancer primary debulking surgery 必加 HIPEC",
+        "B": "**Stage III ovarian cancer 接受 NACT 後 IDS 時可考慮加 HIPEC**，cisplatin 100 mg/m² 42°C × 90 分鐘；OVHIPEC-1 trial 顯示 OS 45.7 vs 33.9 月（HR 0.67）",
+        "C": "HIPEC 限 fertility-sparing 個案使用",
+        "D": "HIPEC 用 carboplatin（不是 cisplatin）"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "**OVHIPEC-1**：Stage III ovarian cancer 接受 NACT-IDS 時加 HIPEC（**cisplatin 100 mg/m² 42°C × 90 分鐘**），RFS 14.2 vs 10.7 月、**OS 45.7 vs 33.9 月（HR 0.67）**。NCCN v.3.2025 將 HIPEC **從腳註升至主流程**，明確列為 stage III NACT-IDS 可考慮選項（Cat 2A）。台灣部分中心已導入。",
+      "explanation_structured": {
+        "key_points": [
+          "HIPEC 適應症：Stage III + NACT-IDS + residual ≤2.5 mm",
+          "藥劑：cisplatin 100 mg/m² 42°C × 90 分鐘",
+          "OVHIPEC-1：OS 提升 12 個月（HR 0.67）",
+          "NCCN v.3.2025 升主流程 → v.4.2026 維持"
+        ],
+        "references": [
+          "van Driel WJ, et al. NEJM 2018;378:230 (OVHIPEC-1)",
+          "NCCN Ovarian Cancer v.4.2026 OV-A"
+        ],
+        "related_question_ids": []
+      }
+    },
+
+    {
+      "id": "ovarian-Q13",
+      "category": "婦癌-卵巢癌-Bevacizumab",
+      "topic": "Bevacizumab — 劑量 / 療程 / 禁忌",
+      "difficulty": 3,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 Bevacizumab 在 ovarian cancer 1L treatment 與 maintenance 的敘述，何者**錯誤**？",
+      "options": {
+        "A": "GOG-218 trial 使用 Bev **15 mg/kg Q3W**；ICON-7 使用 **7.5 mg/kg Q3W**（兩者劑量差兩倍）",
+        "B": "總療程 up to 22 cycles（含 chemo concurrent + maintenance）",
+        "C": "FDA 核准的 Biosimilar 為 Bevacizumab 合理替代品（NCCN v.3.2025 新增）",
+        "D": "Bev **可以在腸穿孔史病人安全使用**，不增加 GI 穿孔風險"
+      },
+      "answer": "D",
+      "has_image": false,
+      "explanation": "Bev **腸穿孔史為絕對禁忌**，因再次穿孔風險顯著增加。其他禁忌：近 4-6 週手術、未控制高血壓、明顯蛋白尿（UPC > 2.0）、活動性出血、近期動脈血栓。停 Bev ≥4 週後再行手術。其他選項皆正確：劑量差兩倍、22 cycles total、Biosimilar 替代為 v.3.2025 新增。",
+      "explanation_structured": {
+        "key_points": [
+          "GOG-218 15 mg/kg vs ICON-7 7.5 mg/kg（劑量差兩倍）",
+          "Total 22 cycles（含 chemo + maintenance ~15 個月）",
+          "Biosimilar 為 NCCN v.3.2025 新增合理替代",
+          "禁忌：腸穿孔史、近 4-6 週手術、未控制高血壓、UPC>2.0、活動性出血"
+        ],
+        "references": [
+          "Burger RA, NEJM 2011;365:2473 (GOG-218)",
+          "Perren TJ, NEJM 2011;365:2484 (ICON7)",
+          "NCCN Ovarian Cancer v.4.2026 OV-C"
+        ],
+        "related_question_ids": ["ovarian-Q2"]
+      }
+    },
+
+    {
+      "id": "ovarian-Q14",
+      "category": "婦癌-卵巢癌-LGSC 標靶",
+      "topic": "LGSC — Avutometinib/Defactinib for KRAS-mut（v.3.2025 新核准）",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "52 歲 stage IIIC **low-grade serous carcinoma (LGSC)** 復發病人，已接受 2 線含 platinum 治療失敗。NGS 顯示 **KRAS mutation**，ER/PR positive。下列何者**最符合** NCCN v.3.2025 對其後線的新選項？",
+      "options": {
+        "A": "改用 high-dose platinum + Pac",
+        "B": "Pembrolizumab 單藥（LGSC 通常 MSI-H）",
+        "C": "**Avutometinib + Defactinib** combo（RAMP 201 / FAKtor-FRAME-1，v.3.2025 新核准專用 KRAS-mut LGSC）",
+        "D": "PARPi 單藥（Olaparib），即使非 BRCA mut"
+      },
+      "answer": "C",
+      "has_image": false,
+      "explanation": "**LGSC 與 G1 Endometrioid 共享 low-grade 路徑**，MAPK pathway 為驅動（KRAS/BRAF mut）。**NCCN v.3.2025 新核准 Avutometinib（RAF/MEK clamp）+ Defactinib（FAK inhibitor）** 專用於 **KRAS-mut recurrent LGSC**（RAMP 201）。其他 LGSC 治療：Letrozole/Anastrozole（ER+ recurrent）、MEK inhibitor Trametinib（GOG-281 PFS 13 vs 7.2 月，HR 0.48）、Binimetinib。LGSC 通常不是 MSI-H，PARPi 也無顯著益處（無 BRCA driver）。",
+      "explanation_structured": {
+        "key_points": [
+          "LGSC 與 G1 Endometrioid 共享 low-grade 路徑（KRAS/BRAF mut）",
+          "Hormone（Letrozole/Anastrozole）為 ER+ recurrent LGSC 首選",
+          "MEK inhibitor Trametinib（GOG-281）/ Binimetinib",
+          "Avutometinib + Defactinib（v.3.2025 新核准 KRAS-mut 專用）",
+          "建議所有 recurrent LGSC routine 做 KRAS testing"
+        ],
+        "related_decision_tree": "flowchart TD\n  LGSC([Recurrent LGSC]) --> KRAS{KRAS mut?}\n  KRAS -->|✅ KRAS mut| Avu[**Avutometinib + Defactinib**<br>v.3.2025 新核准]\n  KRAS -->|wt 或 unknown| Other[MEKi Trametinib/Binimetinib<br>或 Hormone Letrozole/Anastrozole<br>或 Carbo+Pac]\n  classDef ans fill:#d4edda,stroke:#27ae60,stroke-width:3px;\n  class Avu ans;",
+        "references": [
+          "Gershenson DM, Lancet 2022;399:541 (GOG-281 Trametinib)",
+          "Banerjee S, Lancet Oncol 2024 (RAMP 201 Avutometinib/Defactinib)",
+          "NCCN Ovarian Cancer v.4.2026 OV-C"
+        ],
+        "related_question_ids": []
+      }
+    },
+
+    {
+      "id": "ovarian-Q15",
+      "category": "婦癌-卵巢癌-HER2",
+      "topic": "HER2+ Ovarian — T-DXd（v.3.2025 新增）",
+      "difficulty": 4,
+      "exam": "self-made-specialty-v1",
+      "question": "下列關於 HER2-positive ovarian cancer 與 Fam-trastuzumab deruxtecan-nxki (T-DXd) 的敘述，何者**最正確**（NCCN v.3.2025）？",
+      "options": {
+        "A": "T-DXd 為 1L treatment 標準，取代 Carbo/Pac",
+        "B": "適應症為 **HER2 IHC 3+ 或 2+ platinum-resistant** ovarian cancer，5.4 mg/kg IV Q3W；主要嚴重 AE 為 **ILD/pneumonitis** 需 baseline + 監測 CT",
+        "C": "僅適用於 carcinosarcoma 不適用其他組織型",
+        "D": "HER2 IHC 1+ 也適用 T-DXd（與 carcinosarcoma 同標準）"
+      },
+      "answer": "B",
+      "has_image": false,
+      "explanation": "T-DXd 適應症：**HER2 IHC 3+ 或 2+** platinum-resistant ovarian cancer（NCCN v.3.2025 新納入 tumor-agnostic HER2 ADC）。劑量 **5.4 mg/kg IV Q3W**。最重要嚴重 AE 為 **ILD/pneumonitis**（grade ≥2 約 12%、grade ≥5 約 1%），需 baseline CT + 監測；任何呼吸症狀立即停藥 + 高劑量 corticosteroid。**Carcinosarcoma 例外**：T-DXd 適用 **IHC 1+/2+/3+ 皆可**（一般 ovarian 只 2+/3+）。心毒性需 baseline LVEF。",
+      "explanation_structured": {
+        "key_points": [
+          "適應症：HER2 IHC 3+ 或 2+ platinum-resistant ovarian cancer（一般組織型）",
+          "Carcinosarcoma 例外：IHC 1+/2+/3+ 皆可",
+          "劑量：5.4 mg/kg IV Q3W",
+          "⚠️ ILD/pneumonitis 嚴重 AE 需 baseline + 監測 CT",
+          "心毒性需 baseline LVEF"
+        ],
+        "references": [
+          "Meric-Bernstam F, JCO 2024;42:47 (DESTINY-PanTumor02)",
+          "NCCN Ovarian Cancer v.4.2026 OV-C"
+        ],
+        "related_question_ids": []
+      }
+    }
+  ]
+}

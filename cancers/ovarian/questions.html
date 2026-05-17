@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>練習題 · 卵巢癌 · gynonc-board</title>
 <link rel="stylesheet" href="../../shared/styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
 <body>
 
 <header class="site-header">
   <h1><a href="../../index.html">← 婦癌專科準備</a> / <a href="index.html">卵巢癌</a> / 練習題</h1>
-  <div class="site-sub">沿用 Obstetrica ovarian 題 + 自製專科考題</div>
+  <div class="site-sub">15 自製專科考題 · NCCN v.4.2026 高 yield 考點 · 詳解含關聯決策樹</div>
 </header>
 
 <main class="container">
@@ -25,23 +26,41 @@
   </nav>
 
   <section class="section">
-    <h2>練習題</h2>
-    <div class="stub">
-      <p>📝 練習題模組尚未開工。</p>
-      <p>計畫整合：</p>
-      <ul>
-        <li>從 Obstetrica EXAM_BANK 拉出卵巢癌題目（112-1 到 115-1）</li>
-        <li>依專科考重點補製自製題（BRCA/HRD 路徑 / SOLO-1/PAOLA-1/PRIMA 三選一 / MIRASOL / Bev 適應症）</li>
-        <li>沿用 Obstetrica quiz UX：作答 → 詳解 → 錯題追蹤</li>
-      </ul>
-    </div>
+    <h2>練習題 · v1 自製 15 題</h2>
+    <div id="quizContainer">載入中…</div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div>練習題模組規劃中</div>
+  <div>作答進度與錯題紀錄存於 localStorage（裝置本地，不上雲）· 詳解含 inline mermaid 關聯決策樹</div>
 </footer>
+
+<script src="../../shared/components.js"></script>
+<script>
+  (async () => {
+    try {
+      // mermaid 全域初始化（不自動 run，待詳解展開時手動 run）
+      if (window.mermaid) {
+        mermaid.initialize({ startOnLoad: false, theme: 'neutral', flowchart: { htmlLabels: true, curve: 'basis' } });
+      }
+      const res = await fetch('../../data/ovarian/questions.json');
+      const data = await res.json();
+      document.getElementById('quizContainer').innerHTML = renderQuiz(data, 'ovarian');
+
+      // 已作答題目的 mermaid 需在初次載入時也渲染
+      if (window.mermaid) {
+        const alreadyShown = document.querySelectorAll('.quiz-explanation:not([hidden]) .mermaid');
+        if (alreadyShown.length > 0) {
+          await mermaid.run({ nodes: Array.from(alreadyShown) });
+        }
+      }
+    } catch (e) {
+      document.getElementById('quizContainer').innerHTML =
+        '<div class="stub">questions.json 載入失敗: ' + e.message + '</div>';
+    }
+  })();
+</script>
 
 </body>
 </html>
